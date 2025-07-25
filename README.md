@@ -49,35 +49,60 @@
 &#128203;Actividad 5:
 - [Proyecto en Java Puntaje obtenido en competencia deportiva, orden invertido](https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/puntajes_invertidos_estudiantes)
 
+&#128203;Actividad 6:
+- [Proyecto en Java Asientos en el Cine, matriz realizada con valores asignados](https://github.com/KathyAlde21/asientos_cine_matriz_java)
+
+&#128203;Actividad 7:
+- [Proyecto en Java Turnos Semanales, matriz de asignación de turnos](https://github.com/KathyAlde21/turnos_trabajador)
+
+&#128203;Actividad 8:
+- [Proyecto en Java Monitoreo del Cambio Climático, ingreso de temperatura y conversión a Farenheit, Kelvin y Celsius](https://github.com/KathyAlde21/monitoreo_climatico)
 
 
 **<h2>Aprendizaje Esperado 3</h2>**
 
-&#128203;Actividad 6:
-- [Proyecto en Java ]()
+&#128203;Actividad 1:
+- [Proyecto en Java Gestion de Inventario, incorporando por Consola para realizar los calculos](https://github.com/KathyAlde21/gestion_de_productos)
 
-&#128203;Actividad 7:
-- [Proyecto en Java ]()
-
-&#128203;Actividad 8:
-- [Proyecto en Java ]()
+&#128203;Actividad 2:
+- [Proyecto en Java]()
 
 
 
 **<h2>Aprendizaje Esperado 4</h2>**
 
-&#128203;Aprendizaje Esperado 4 Actividad 9:
+&#128203; Actividad 1:
 - [Proyecto en Java ]()
 
-&#128203;Aprendizaje Esperado 5 Actividad 1:
+&#128203; Actividad 2:
 - [Proyecto en Java ]()
 
-&#128203;Aprendizaje Esperado 6 Actividad 1:
+
+**<h2>Aprendizaje Esperado 5</h2>**
+
+&#128203; Actividad 1:
 - [Proyecto en Java ]()
 
-&#128203;Aprendizaje Esperado 7 Actividad 1:
+&#128203; Actividad 2:
 - [Proyecto en Java ]()
 
+
+**<h2>Aprendizaje Esperado 6</h2>**
+
+&#128203; Actividad 1:
+- [Proyecto en Java ]()
+
+&#128203; Actividad 2:
+- [Proyecto en Java ]()
+
+
+**<h2>Aprendizaje Esperado 7</h2>**
+
+&#128203; Actividad 1:
+- [Proyecto en Java ]()
+
+&#128203; Actividad 2:
+- [Proyecto en Java ]()
 
 
 
