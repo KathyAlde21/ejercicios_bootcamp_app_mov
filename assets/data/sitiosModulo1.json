@@ -1,0 +1,27 @@
+[
+    {
+        "nombre": "M1_AE1 ABP1-A",
+        "descripcion": "Proyecto en PSeInt (.psc)  Descuento en Compra del 10% según monto:",
+        "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_4/descuento10porciento.psc"
+    },
+    {
+        "nombre": "M1_AE1 ABP1-B",
+        "descripcion": "Proyecto en Java Descuento en Compra del 10% según monto:",
+        "url": "https://github.com/KathyAlde21/descuento_java"
+    },
+    {
+        "nombre": "M1_AE2 ABP2",
+        "descripcion": "&#128203;Actividad M1AE3 - ABP3:",
+        "url": "https://github.com/KathyAlde21/promedio_notas_python"
+    },
+    {
+        "nombre": "M1_AE3 ABP3",
+        "descripcion": "Poyecto en Python y PSeInt Calculadora Interactiva:",
+        "url": "https://github.com/KathyAlde21/calculadora_interactiva_python_pseint"
+    },
+    {
+    "nombre": "M1_AE4 ABP4",
+    "descripcion": "Poyecto en Python llamado Buenas Prácticas, evalua promedio de notas para aprobar",
+    "url": "https://github.com/KathyAlde21/notas_apruebo_python"
+    }
+]

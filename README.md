@@ -138,7 +138,7 @@
 -[Tablas de la base de datos MySQL Asesorias en Prevención de Riesgos](https://github.com/KathyAlde21/tabla_asesorias_pr_abpro_ae4_kagika)
 
 &#128203;Actividad AE4 ABPRO2:
--[]()
+-[Tabla de Asesorias MySQL de empresa Prevención de Riesgos, compuesta inicialmente por 4 tablas, se modifico mediante instrucciones sin eliminar tablas](https://github.com/KathyAlde21/asesorias_prev_riesgos_m4_abpro2_ae4)
 <!-- ---------------------------------------------------------------------------------------------- -->
 &#128203;Actividad AE5 ABP:
 -[]()
@@ -147,7 +147,7 @@
 -[]()
 
 &#128203;Actividad AE5 ABPRO:
--[]()
+-[Tablas de la base de datos MySQL Asesorias en Prevención de Riesgos](https://github.com/KathyAlde21/tabla_asesorias_pr_abpro_ae4_kagika)
 
 &#128203;Actividad AE5 ABPRO2:
 -[]()

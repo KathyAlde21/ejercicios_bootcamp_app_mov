@@ -1,0 +1,88 @@
+[
+    {
+    "nombre": "M3_AE1 ABP",
+    "descripcion": "Tabla de Ventas MySQL, incluye creación, consultas y ejemplos de salida.",
+    "url": "https://github.com/KathyAlde21/tabla_ventas_mysql"
+    },
+
+    {
+    "nombre": "M3_AE1 ABPRO",
+    "descripcion": "Tabla de Prevención de Riesgos MySQL, incluye creación, consultas y ejemplos de salida.",
+    "url": "https://github.com/KathyAlde21/tabla_prevencion_de_riesgos_mysql"
+    },
+    {
+    "nombre": "M3_AE2 ABP",
+    "descripcion": "Tabla de Ventas MySQL segunda parte, se incorpora la tabla clientes pero se alimenta en esta ocación con datos especificos. Incluye cinco consultas que utilizaron JOIN, CONCAT, entre otros.",
+    "url": "https://github.com/KathyAlde21/tablas_ventas_clientes_mysql.git"
+    },
+    {
+    "nombre": "M3_AE2 ABPRO",
+    "descripcion": "Tabla de Prevención de Riesgos MySQL segunda parte, incluye creación, consultas y ejemplos de salida.",
+    "url": "https://github.com/KathyAlde21/tabla_prevencion_de_riesgos_mysql_2"
+    },
+    {
+    "nombre": "M3_AE3 ABP",
+    "descripcion": "Tabla de Ventas MySQL parte tres, incluye creación, consultas y ejemplos de salida.",
+    "url": "https://github.com/KathyAlde21/ventas_negocio_parte_3"
+    },
+    {
+    "nombre": "M3_AE3 ABP2",
+    "descripcion": "Tabla de Ventas MySQL parte cuatro, incluye creación tablas y contenido, consultas y ejemplos de salida.",
+    "url": "https://github.com/KathyAlde21/ventas_negocio_parte_4"
+    },
+    {
+    "nombre": "M3_AE3 ABPRO",
+    "descripcion": "Tabla de Prevención de Riesgos MySQL parte tres, incluye creación, consultas y ejemplos de salida.",
+    "url": "https://github.com/KathyAlde21/tabla_prevencion_de_riesgos_mysql_3"
+    },
+    {
+    "nombre": "M3_AE3 ABPRO2",
+    "descripcion": "Tabla de Prevención de Riesgos MySQL parte cuatro, incluye creación, consultas y ejemplos de salida.",
+    "url": "https://github.com/KathyAlde21/tabla_prevencion_de_riesgos_mysql_4"
+    },
+    {
+    "nombre": "M3_AE4 ABP",
+    "descripcion": "Tabla de Ventas MySQL compuesta por 4 tablas, incluye creación, consultas y ejemplos de salida.",
+    "url": "https://github.com/KathyAlde21/ventas_negocio_parte_5"
+    },
+    {
+    "nombre": "M3_AE4 ABP2",
+    "descripcion": "Tabla de Ventas MySQL original compuesta por 4 tablas al terminar quedo de 5 tablas. Mediante instrucciones y sin eliminar tablas se modifico agregando y enlazando la tabla categoria a tabla producto.",
+    "url": "https://github.com/KathyAlde21/ventas_negocio_m4_abp_ae4_1"
+    },
+    {
+    "nombre": "M3_AE4 ABPRO",
+    "descripcion": "Tablas de la base de datos MySQL Asesorias en Prevención de Riesgos.",
+    "url": "https://github.com/KathyAlde21/tabla_asesorias_pr_abpro_ae4_kagika"
+    },
+    {
+    "nombre": "M3_AE4 ABPRO2",
+    "descripcion": "Tabla de Asesorias MySQL de empresa Prevención de Riesgos, compuesta inicialmente por 4 tablas, se modifico mediante instrucciones sin eliminar tablas.",
+    "url": "https://github.com/KathyAlde21/asesorias_prev_riesgos_m4_abpro2_ae4"
+    },
+    {
+    "nombre": "M3_AE5 ABP",
+    "descripcion": "MySQL",
+    "url": "https://github.com"
+    },
+    {
+    "nombre": "M3_AE5 ABP2",
+    "descripcion": "MySQL",
+    "url": "https://github.com"
+    },
+    {
+    "nombre": "M3_AE5 ABPRO",
+    "descripcion": "Tablas de la base de datos MySQL Asesorias en Prevención de Riesgos.",
+    "url": "https://github.com/KathyAlde21/tabla_asesorias_pr_abpro_ae4_kagika"
+    },
+    {
+    "nombre": "M3_AE5 ABPRO2",
+    "descripcion": "MySQL",
+    "url": "https://github.com/KathyAlde21/asesorias_prev_riesgos_m4_abpro2_ae4"
+    },
+    {
+    "nombre": "M3_Evaluación Final del Módulo",
+    "descripcion": "MySQL",
+    "url": "https://github.com/KathyAlde21/evaluacion_final_modulo"
+    }
+]
