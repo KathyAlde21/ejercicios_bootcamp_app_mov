@@ -1,4 +1,9 @@
+body {
+  background-color: #6cceff3b;
+}
+
 .card {
+      background-color: rgba(0, 255, 255, 0.15);
       border-radius: 1rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -15,7 +20,31 @@
       border-top-right-radius: 1rem;
     }
 
-    .card-footer {
-      background-color: transparent;
-      border-top: none;
-    }
+.icon-github {
+  vertical-align: middle;
+  /* para que se vea blanco en fondo oscuro: */
+  filter: brightness(0) invert(1);
+}
+
+#bienvenido {
+  color: rgb(5, 41, 170);
+  font-weight: bold;
+}
+
+#proyectos-container {
+  color: rgb(5, 60, 5);
+  border: solid green;
+  background-color: rgba(0, 128, 0, 0.298);
+  border-radius: 1rem;
+  width: 100%;
+  padding: 1.5rem 1rem;
+}
+
+#titulo {
+  color: rgb(103, 5, 195);
+  font-weight: bold;
+}
+
+#descripcion {
+  color: rgba(169, 7, 115, 0.78);
+}
