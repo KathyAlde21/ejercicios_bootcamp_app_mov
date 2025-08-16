@@ -1,31 +1,33 @@
+/* ===== Base ===== */
 body {
   background-color: #6cceff3b;
 }
 
+/* Cards (tus proyectos) */
 .card {
-      background-color: rgba(0, 255, 255, 0.15);
-      border-radius: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+  background-color: rgba(0, 255, 255, 0.15);
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+/* Si más adelante usas imágenes en cards, limita solo la img superior */
+.card .card-img-top {
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
 
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .card img {
-      height: 160px;
-      object-fit: cover;
-      border-top-left-radius: 1rem;
-      border-top-right-radius: 1rem;
-    }
-
+/* Ícono GitHub en nav/footer oscuros */
 .icon-github {
   vertical-align: middle;
-  /* para que se vea blanco en fondo oscuro: */
   filter: brightness(0) invert(1);
 }
 
+/* Textos/secciones */
 #bienvenido {
   color: rgb(5, 41, 170);
   font-weight: bold;
@@ -47,4 +49,109 @@ body {
 
 #descripcion {
   color: rgba(169, 7, 115, 0.78);
+}
+/* =======================
+   Carrusel
+   ======================= */
+/* Imágenes del carrusel – tamaño uniforme */
+.carrusel-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* todas misma proporción */
+  object-fit: cover;      /* recorta sin deformar */
+  max-height: 340px;      /* tope alto por defecto */
+  cursor: zoom-in;        /* indica que se puede ampliar (modal) */
+}
+/* Desktop grande */
+@media (min-width: 992px) {
+  .carrusel-img { max-height: 420px; }
+}
+/* Móvil */
+@media (max-width: 576px) {
+  .carrusel-img { max-height: 240px; }
+}
+
+/* Suaviza la aparición de captions del carrusel */
+.carousel-caption { opacity: .9; transition: opacity .3s ease; }
+.carousel:hover .carousel-caption { opacity: 1; }
+
+/* Respeta usuarios con menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .card, .card .card-img-top, .carousel-caption { transition: none; }
+}
+
+/* El item del carrusel debe permitir overlay */
+.carousel .carousel-item { 
+  position: relative; 
+}
+
+/* overlay para dar contraste al texto sobre cualquier fondo */
+.carousel .carousel-item { position: relative; }
+.carousel .carousel-item::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 45%;
+  background: linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+/* Caja detrás del caption (píldora) */
+.carousel-caption .caption-box {
+  display: inline-block;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  max-width: min(90vw, 720px);
+}
+
+/* Un poco de sombra para el texto */
+.carousel-caption h5,
+.carousel-caption p {
+  text-shadow: 0 1px 2px rgb(41, 40, 40), 0 0 10px rgba(0,0,0,.35);
+  margin-bottom: .25rem;
+}
+
+/* === Flechas (prev/next) color azul === */
+/* Tamaño un poco mayor y sombra para contraste */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-size: 100% 100%;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.5));
+}
+
+/* Izquierda (chevron-left) */
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230d6efd' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 8l4.647 4.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+}
+
+/* Derecha (chevron-right) */
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230d6efd' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+/* área clickeable con leve fondo en hover */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(2, 47, 116, 0.08); /* azul muy suave */
+}
+
+/* === Indicadores (barras) azules === */
+.carousel-indicators [data-bs-target] {
+  width: 30px;              /* barra (no punto) */
+  height: 4px;
+  border-radius: 999px;
+  background-color: #0d6efd;  /* azul Bootstrap */
+  opacity: .45;               /* similar a default */
+  margin: 0 4px;
+  border: 0;                  /* quita el borde heredado */
+}
+.carousel-indicators .active {
+  background-color: #0b5ed7;  /* azul un poco más oscuro */
+  opacity: 1;
+}
+.carousel-indicators [data-bs-target]:focus {
+  outline: none;
+  box-shadow: 0 0 0 .2rem rgba(13,110,253,.35);
 }

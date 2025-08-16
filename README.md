@@ -2,30 +2,31 @@
 <!-- ---------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------- -->
-**<h2 align="center">&#128204;Estructura del Proyecto</h2>**
+**<h2 align="center">&#128204;ESTRUCTURA DEL PROYECTO</h2>**
 
 ```
 📁proyectos_modulos_plataforma
-├── README.md
-├── index.html
+├── 📘README.md
+├── 🟧index.html
 └─── 📁assets
     ├── 📁css
-    │   └── style.css
+    │   └── 🟦style.css
     ├── 📁data
-    │   ├── sitiosModulo1.json
-    │   ├── sitiosModulo2.json
-    │   └── sitiosModulo3.json
+    │   ├── 🟩sitiosModulo1.json
+    │   ├── 🟩sitiosModulo2.json
+    │   └── 🟩sitiosModulo3.json
     ├── 📁img
-    │   └── github.png
+    │   └── 🖼️github.png
     └── 📁js
-       ├── script.js
-       └── sitios.js
+       ├── 🟨script.js
+       └── 🟨sitios.js
 ```
+<hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 <!-- ---------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-**<h2 align="center">&#128204;MODULO 1</h2>**
+**<h2 align="center">&#128204;MÓDULO 1: ORIENTACIÓN AL PERFIL Y METODOLOGÍA DEL CURSO</h2>**
 
 &#128203;Actividad M1AE1 - ABP1:
 - [Proyecto en PSeInt (.psc)  Descuento en Compra del 10% según monto](https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_4/descuento10porciento.psc)
@@ -45,7 +46,7 @@
 <!-- ---------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-**<h2 align="center">&#128204;MODULO 2</h2>**
+**<h2 align="center">&#128204;MÓDULO 2: FUNDAMENTOS DE PROGRAMACIÓN EN JAVA</h2>**
 
 &#128203;Actividad AE1 ABP1:
 - [Proyecto en PSeInt Instrucciones mensaje WhatsApp, paso a paso](https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_1/enviarMensajeWapp.psc)
@@ -113,7 +114,7 @@
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-**<h2>Evaluación Final del Módulo</h2>**
+**<h2>Evaluación Final del Módulo 2</h2>**
 
 &#128203;Evaluación Final:
 -[Proyecto en Java sobre Prevención de Riesgos Laborales, solicita datos, valida, elimina y genera listados](https://github.com/KathyAlde21/final_m2_prevencionistas_kagika)
@@ -123,7 +124,7 @@
 <!-- ---------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-**<h2 align="center">&#128204;MODULO 3</h2>**
+**<h2 align="center">&#128204;MÓDULO 3: FUNDAMENTOS DE BASES DE DATOS RELACIONALES</h2>**
 
 &#128203;Actividad AE1 ABP:
 -[Tabla de Ventas MySQL, incluye creación, consultas y ejemplos de salida](https://github.com/KathyAlde21/tabla_ventas_mysql)
@@ -176,9 +177,9 @@
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-**<h2>Evaluación Final del Módulo</h2>**
+**<h2>Evaluación Final del Módulo 3</h2>**
 
-&#128203;Evaluación Final del Módulo:
+&#128203;Evaluación Final del Módulo 3:
 -[]()
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
@@ -186,40 +187,10 @@
 <!-- ---------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-**<h2 align="center">&#128204;MODULO 4</h2>**
+**<h2 align="center">&#128204;MÓDULO 4: DESARROLLO DE LA INTERFAZ DE USUARIO ANDROID</h2>**
 
 &#128203;Actividad 1:
 -[]()
-
-&#128203;Actividad 1:
--[]()
-
-&#128203;Actividad 1:
--[]()
-
-&#128203;Actividad 1:
--[]()
-
-&#128203;Actividad 1:
--[]()
-
-&#128203;Actividad 1:
--[]()
-
-<hr style="border: none; height: 2px; background-color: blue; width: 80%;">
-<!-- ---------------------------------------------------------------------------------------------- -->
-
-**<h2>Evaluación Final del Módulo</h2>**
-
-&#128203;Evaluación Final del Módulo:
--[]()
-
-<hr style="border: none; height: 2px; background-color: blue; width: 80%;">
-<!-- ---------------------------------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------------------------------- -->
-
-**<h2 align="center">&#128204;MODULO 5</h2>**
 
 &#128203;Actividad 1:
 -[]()
@@ -239,9 +210,39 @@
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-**<h2>Evaluación Final del Módulo</h2>**
+**<h2>Evaluación Final del Módulo 4</h2>**
 
-&#128203;Evaluación Final del Módulo:
+&#128203;Evaluación Final del Módulo 4:
+-[]()
+
+<hr style="border: none; height: 2px; background-color: blue; width: 80%;">
+<!-- ---------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+**<h2 align="center">&#128204;MÓDULO 5:ARQUITECTURA Y CICLO DE VIDA DE COMPONENTES ANDROID</h2>**
+
+&#128203;Actividad 1:
+-[]()
+
+&#128203;Actividad 1:
+-[]()
+
+&#128203;Actividad 1:
+-[]()
+
+&#128203;Actividad 1:
+-[]()
+
+&#128203;Actividad 1:
+-[]()
+
+<hr style="border: none; height: 2px; background-color: blue; width: 80%;">
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+**<h2>Evaluación Final del Módulo 5</h2>**
+
+&#128203;Evaluación Final del Módulo 5:
 -[]()
                                                                                  
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
@@ -249,7 +250,7 @@
 <!-- ---------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-**<h2 align="center">&#128204;MODULO 6</h2>**
+**<h2 align="center">&#128204;MÓDULO 6: DESARROLLO DE APLICACIONES EMPRESARIALES ANDROID</h2>**
 
 &#128203;Actividad 1:
 -[]()
@@ -272,9 +273,9 @@
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-**<h2>Evaluación Final del Módulo</h2>**
+**<h2>Evaluación Final del Módulo 6</h2>**
 
-&#128203;Evaluación Final del Módulo:
+&#128203;Evaluación Final del Módulo 6:
 -[]()
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
@@ -304,7 +305,10 @@
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 <!-- ---------------------------------------------------------------------------------------------- -->
-&#128203;Evaluación Final del Módulo:
+
+**<h2>Evaluación Final del Módulo 7</h2>**
+
+&#128203;Evaluación Final del Módulo 7:
 -[]()
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">

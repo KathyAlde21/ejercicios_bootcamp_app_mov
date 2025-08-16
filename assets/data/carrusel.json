@@ -1,0 +1,37 @@
+[
+  {
+    "img": "assets/img/carrusel/enviarMensajeWapp_paso_a_paso.jpg",
+    "titulo": "Mensaje WhatsApp",
+    "texto": "Código PSeInt paso a paso para enviar un mensaje por WhatsApp"
+  },
+  {
+    "img": "assets/img/carrusel/alumno_caso_universidad.jpg",
+    "titulo": "Promedio Notas",
+    "texto": "Código PSeInt para calcular notas y ver acceso a universidad"
+  },
+  {
+    "img": "assets/img/carrusel/menu_consola_menu_principal.java.jpg",
+    "titulo": "Menu Consola",
+    "texto": "Menu Preverncionistas desarrollado en Java revisado en consola"
+  },
+  {
+    "img": "assets/img/carrusel/gestion_libros_consola.jpg",
+    "titulo": "Biblioteca",
+    "texto": "Gestión de Libros en Java con Menú para ejecutar en consola"
+  },
+  {
+    "img": "assets/img/carrusel/test_operaciones_matematicas.jpg",
+    "titulo": "Operaciones Matemáticas",
+    "texto": "Test de operaciones matemáticas en Java ejecutado con JUnit"
+  },
+  {
+    "img": "assets/img/carrusel/eer_diagram_m4_abpro2_ae4_kagika.jpg",
+    "titulo": "Tablas Prevención MySQL",
+    "texto": "Proyecto MySQL 5 tablas Prevención de Riesgos"
+  },
+  {
+    "img": "assets/img/carrusel/eer_diagram_ventas_m4_abp_ae4-1.jpg",
+    "titulo": "Tablas Ventas MySQL",
+    "texto": "Proyecto MySQL 5 tablas Ventas"
+  }
+]
