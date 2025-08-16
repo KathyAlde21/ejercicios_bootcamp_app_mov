@@ -52,9 +52,9 @@ function renderCards(items) {
       <div class="card h-100">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title mb-1" id="titulo">${esc(titulo)}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Módulo ${modulo}</h6>
+          <h6 class="card-subtitle mb-2 text-muted" id="modulo">Módulo ${modulo}</h6>
           <p class="card-text flex-grow-1" id="descripcion">${esc(descripcion)}</p>
-          <a class="card-link mt-2" href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">Visitar</a>
+          <a class="card-link mt-2" id="link-repositorio"href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">Visitar</a>
         </div>
       </div>`;
     frag.appendChild(col);
@@ -174,7 +174,7 @@ function renderCarrusel(items) {
     const link = it.link ?? it.url ?? '';
 
     return `
-      <div class="carousel-item ${i === 0 ? 'active' : ''}">
+      <div class="carousel-item ${i === 0 ? 'active' : ''}" id="carrusel-css">
         <img
           src="${src}"
           alt="${alt}"
@@ -240,3 +240,89 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 });
+
+/* =======================
+   Fondo Matrix (canvas)
+======================= */
+(function(){
+  function startMatrixBackground({
+    canvasId = 'matrix-bg',
+    color = '#00ff88',   // verde Matrix (cámbialo a '#0d6efd' si quieres azul)
+    fontSize = 16,       // tamaño de carácter
+    fade = 0.08          // rastro (0.05 suave, 0.15 más barrido)
+  } = {}) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) { console.warn('[Matrix] No se encontró #' + canvasId); return; }
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    const CHARS = 'アイウエオｱｲｳｴｵ01ABCDEFGHJKLMNPQRSTUVWXYZ';
+
+    let width = 0, height = 0, cols = 0, drops = [], rafId = null;
+
+    function sizeCanvas() {
+      // Lee el tamaño CSS que ya tiene el canvas (100vw/100vh por tu CSS)
+      const w = canvas.clientWidth || window.innerWidth;
+      const h = canvas.clientHeight || window.innerHeight;
+
+      // Ajusta el buffer de dibujo para HiDPI
+      canvas.width  = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+
+      // Escala el contexto para que 1 unidad == 1 px CSS
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      width = w; 
+      height = h;
+      cols = Math.floor(width / fontSize);
+      drops = Array(cols).fill(0).map(() => Math.floor(Math.random() * height / fontSize));
+
+      // Fondo inicial oscuro para el rastro
+      ctx.fillStyle = 'rgba(0,0,0,1)';
+      ctx.fillRect(0, 0, width, height);
+      ctx.font = `${fontSize}px monospace`;
+    }
+
+    function tick() {
+      // capa semitransparente que genera el rastro
+      ctx.fillStyle = `rgba(0,0,0,${fade})`;
+      ctx.fillRect(0,0,width,height);
+
+      for (let i = 0; i < cols; i++) {
+        const ch = CHARS[Math.floor(Math.random() * CHARS.length)];
+        ctx.fillStyle = color;
+        ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > height && Math.random() > 0.975) drops[i] = 0;
+        else drops[i]++;
+      }
+      rafId = requestAnimationFrame(tick);
+    }
+
+    function start() {
+      cancelAnimationFrame(rafId);
+      sizeCanvas();
+      // respeta "reduce motion": dibuja 1 frame estático si el usuario lo pide
+      const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduce) {
+        // un frame “congelado”
+        for (let i = 0; i < cols; i++) {
+          const ch = CHARS[Math.floor(Math.random() * CHARS.length)];
+          ctx.fillStyle = color;
+          ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
+        }
+        return;
+      }
+      tick();
+    }
+
+    window.addEventListener('resize', sizeCanvas);
+    start();
+  }
+
+  // Garantiza que corra cuando el DOM ya existe
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => startMatrixBackground());
+  } else {
+    startMatrixBackground();
+  }
+})();

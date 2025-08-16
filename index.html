@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+    <canvas id="matrix-bg" aria-hidden="true"></canvas>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <!-- Izquierda -->
@@ -23,7 +24,7 @@
                         <a class="nav-link active" aria-current="#bienvenido" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#carrusel">Proyectos</a>
+                        <a class="nav-link" href="#proyectos-container">Proyectos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/KathyAlde21?tab=repositories">Repositorios GitHub</a>
@@ -35,24 +36,22 @@
     <div style="height: 56px;"></div> <!-- Espacio para navbar fija -->
     <main>
         <div class="container mt-4">
-            <hr>
             <h1 class="text-center" id="bienvenido">Bienvenido a Mis Proyectos</h1>
             <p class="text-center">Aquí encontrarás los links a los repositorios en GitHub  de mis proyectos y ejercicios realizados en el curso.</p>
             <p class="text-center">Puedes acceder a los repositorios haciendo clic en los enlaces correspondientes.</p>
-            <hr>
+        </div>
+        <div class="container mt-4">
+            <div class="container py-4">
+                <h2 class="text-center mb-4" id="proyectos-container">Mis Proyectos</h2>
+                <!-- Contenedor carrusel -->
+                <div id="carrusel"></div>
+                <div style="height: 56px;"></div> <!-- Espacio para navbar fija -->
+                <!-- Contenedor de cards -->
+                <div id="cards" class="row g-3"></div>
+            </div>
+        </div>
+
     </main>
-    <article>
-        </div>
-            <!-- crear tabla con modulos y trabajos + cards para imagenes -->
-        <div class="container py-4">
-            <h2 class="text-center mb-4" id="proyectos-container">Mis Proyectos</h2>
-            <!-- Contenedor carrusel -->
-            <div id="carrusel"></div>
-            <div style="height: 56px;"></div> <!-- Espacio para navbar fija -->
-            <!-- Contenedor de cards -->
-            <div id="cards" class="row g-3"></div>
-        </div>
-    </article>
 
     <footer class="bg-dark text-light fixed-bottom">
         <div class="container py-2">

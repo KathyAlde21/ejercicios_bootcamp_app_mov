@@ -1,12 +1,11 @@
-/* ===== Base ===== */
-body {
-  background-color: #6cceff3b;
+body p {
+  color: rgb(255, 255, 255);
 }
 
 /* Cards (tus proyectos) */
 .card {
-  background-color: rgba(0, 255, 255, 0.15);
-  border-radius: 1rem;
+  background-color: rgba(126, 227, 131, 0.338);
+  border-radius: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
@@ -29,12 +28,12 @@ body {
 
 /* Textos/secciones */
 #bienvenido {
-  color: rgb(5, 41, 170);
+  color: rgb(255, 255, 255);
   font-weight: bold;
 }
 
 #proyectos-container {
-  color: rgb(5, 60, 5);
+  color: rgb(255, 255, 255);
   border: solid green;
   background-color: rgba(0, 128, 0, 0.298);
   border-radius: 1rem;
@@ -43,12 +42,17 @@ body {
 }
 
 #titulo {
-  color: rgb(103, 5, 195);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+#link-repositorio {
+  color: rgb(0, 5, 93);
   font-weight: bold;
 }
 
 #descripcion {
-  color: rgba(169, 7, 115, 0.78);
+  color: rgba(1255, 255, 255);
 }
 /* =======================
    Carrusel
@@ -111,8 +115,8 @@ body {
   margin-bottom: .25rem;
 }
 
-/* === Flechas (prev/next) color azul === */
-/* Tamaño un poco mayor y sombra para contraste */
+/* === Flechas (prev/next) color verde === */
+/* === Flechas del carrusel en verde oscuro === */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   width: 2.25rem;
@@ -121,37 +125,58 @@ body {
   filter: drop-shadow(0 1px 2px rgba(0,0,0,.5));
 }
 
-/* Izquierda (chevron-left) */
+/* Izquierda */
 .carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230d6efd' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 8l4.647 4.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23022A02' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 8l4.647 4.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
 }
 
-/* Derecha (chevron-right) */
+/* Derecha */
 .carousel-control-next-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230d6efd' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23022A02' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
 }
 
-/* área clickeable con leve fondo en hover */
+/* Hover suave del área de flechas */
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  background: rgba(2, 47, 116, 0.08); /* azul muy suave */
+  background: rgba(2, 42, 2, .08);
 }
 
-/* === Indicadores (barras) azules === */
+/* === Indicadores (barras) en verde oscuro === */
 .carousel-indicators [data-bs-target] {
-  width: 30px;              /* barra (no punto) */
+  width: 30px;
   height: 4px;
   border-radius: 999px;
-  background-color: #0d6efd;  /* azul Bootstrap */
-  opacity: .45;               /* similar a default */
+  background-color: #022A02;
+  opacity: .45;
   margin: 0 4px;
-  border: 0;                  /* quita el borde heredado */
+  border: 0;
 }
 .carousel-indicators .active {
-  background-color: #0b5ed7;  /* azul un poco más oscuro */
+  background-color: #013d01; /* un pelín más oscuro para el activo */
   opacity: 1;
 }
-.carousel-indicators [data-bs-target]:focus {
-  outline: none;
-  box-shadow: 0 0 0 .2rem rgba(13,110,253,.35);
+
+/* === Caption del carrusel (antes del click) en verde; el modal queda blanco === */
+.carousel .carousel-caption .caption-box,
+.carousel .carousel-caption .caption-box h5,
+.carousel .carousel-caption .caption-box p,
+.carousel .carousel-caption .caption-box a {
+  color: #022A02 !important;
+}
+/* Canvas de fondo tipo Matrix */
+/* Asegura que el contenido quede por encima (solo si algo se oculta) */
+/* Canvas de fondo tipo Matrix, siempre detrás */
+#matrix-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;            /* capa inferior */
+  pointer-events: none;  /* no bloquea clics */
+}
+
+/* Asegura que tu contenido quede por encima del canvas */
+nav, main, footer {
+  position: relative;
+  z-index: 1;
 }
