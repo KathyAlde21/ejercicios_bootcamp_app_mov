@@ -5,10 +5,11 @@
 
 **<h2 align="center">&#128204;PÁGINA WEB DEL PROYECTO</h2>**
 
-<p>Puedes visitar la página en [GitHub Pages](https://kathyalde21.github.io/ejercicios_bootcamp_app_mov/).</p>
+Puedes visitar la página en [GitHub Pages](https://kathyalde21.github.io/ejercicios_bootcamp_app_mov/).
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 <!-- ---------------------------------------------------------------------------------------------- -->
+
 **<h2 align="center">&#128204;ESTRUCTURA DEL PROYECTO</h2>**
 
 ```
