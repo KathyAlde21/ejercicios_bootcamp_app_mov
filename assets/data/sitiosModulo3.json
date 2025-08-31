@@ -4,7 +4,6 @@
     "descripcion": "Tabla de Ventas MySQL, incluye creación, consultas y ejemplos de salida.",
     "url": "https://github.com/KathyAlde21/tabla_ventas_mysql"
   },
-
   {
     "nombre": "M3_AE1 ABPRO",
     "descripcion": "Tabla de Prevención de Riesgos MySQL, incluye creación, consultas y ejemplos de salida.",
@@ -67,8 +66,8 @@
   },
   {
     "nombre": "M3_AE5 ABP2",
-    "descripcion": "MySQL",
-    "url": "https://github.com"
+    "descripcion": "Base de datos MySQL relacionada con las ventas que contiene 5 tablas de forma inicial y se agregan 3 más",
+    "url": "hhttps://github.com/KathyAlde21/ventas_abp2_ae5"
   },
   {
     "nombre": "M3_AE5 ABPRO",

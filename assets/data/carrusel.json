@@ -33,5 +33,10 @@
     "img": "assets/img/carrusel/eer_diagram_ventas_m4_abp_ae4-1.jpg",
     "titulo": "Tablas Ventas MySQL",
     "texto": "Proyecto MySQL 5 tablas Ventas"
+  },
+  {
+    "img": "assets/img/carrusel/hola_mundo_android.jpg",
+    "titulo": "Hola Mundo Android",
+    "texto": "Proyecto desarrollado en Android Studio llamado Hola Mundo, muestra vistas de código y ejecución en emulador celular"
   }
 ]
