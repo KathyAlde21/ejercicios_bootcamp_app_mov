@@ -1,7 +1,37 @@
 [
   {
-    "nombre": "M5_AE1-ABP",
-    "descripcion": "Proyecto AE1-ABP",
+    "nombre": "M4_AE2-ABP",
+    "descripcion": "Proyecto Hola Mundo, creado para validar instalación de la aplicación y funcionamiento del emulador",
+    "url": "https://github.com/KathyAlde21/hola_mundo_app_mov_2025"
+  },
+  {
+    "nombre": "M4_AE2 ABPRO",
+    "descripcion": "Proyecto AE2-ABPRO",
     "url": "https://www.sitio1.com"
+  },
+  {
+    "nombre": "M4_AE3-ABP",
+    "descripcion": "Proyecto AE3-ABP",
+    "url": "https://www.sitio2.com"
+  },
+  {
+    "nombre": "M4_AE3-ABPRO",
+    "descripcion": "Proyecto AE3-ABPRO",
+    "url": "https://www.sitio3.com"
+  },
+  {
+    "nombre": "M4_AE4-ABP",
+    "descripcion": "Proyecto AE4-ABP",
+    "url": "https://www.sitio2.com"
+  },
+  {
+    "nombre": "M4_AE4-ABPRO",
+    "descripcion": "Proyecto AE4-ABPRO",
+    "url": "https://www.sitio3.com"
+  },
+  {
+    "nombre": "M4_AE5-ABP",
+    "descripcion": "Proyecto AE5-ABP",
+    "url": "https://www.sitio3.com"
   }
 ]

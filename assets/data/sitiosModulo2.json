@@ -1,122 +1,27 @@
 [
     {
-    "nombre": "M2_AE1 ABP1-P",
-    "descripcion": "Proyecto en PSeInt Instrucciones mensaje WhatsApp, paso a paso",
-    "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_1/enviarMensajeWapp.psc"
+        "nombre": "M1_AE1 ABP1-A",
+        "descripcion": "Proyecto en PSeInt (.psc)  Descuento en Compra del 10% según monto:",
+        "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_4/descuento10porciento.psc"
     },
     {
-    "nombre": "M2_AE1 ABP1-J",
-    "descripcion": "Proyecto en Java Instrucciones mensaje WhatsApp, paso a paso",
-    "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/mensajeWhatsApp"
-    },
-
-    {
-    "nombre": "M2_AE1 ABP2-P",
-    "descripcion": "Proyecto en PSeInt Conectar a Wifi casa, acceso correcto",
-    "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_2/ConectarWifiCasa.psc"
+        "nombre": "M1_AE1 ABP1-B",
+        "descripcion": "Proyecto en Java Descuento en Compra del 10% según monto:",
+        "url": "https://github.com/KathyAlde21/descuento_java"
     },
     {
-    "nombre": "M2_AE1 ABP2-J",
-    "descripcion": "Proyecto en Java Conectar a Wifi casa, acceso correcto",
-    "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/conectarWifiCasa"
+        "nombre": "M1_AE2 ABP2",
+        "descripcion": "Proyecto en Python Promedio de Notas para aprobar",
+        "url": "https://github.com/KathyAlde21/promedio_notas_python"
     },
     {
-    "nombre": "M2_AE2 ABP1-P",
-    "descripcion": "Proyecto en PSeInt Matricula Universitaria, ingreso de estudiantes",
-    "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_3/inscripcionUniversidad.psc"
+        "nombre": "M1_AE3 ABP3",
+        "descripcion": "Poyecto en Python y PSeInt Calculadora Interactiva:",
+        "url": "https://github.com/KathyAlde21/calculadora_interactiva_python_pseint"
     },
     {
-    "nombre": "M2_AE2 ABP1-J",
-    "descripcion": "Proyecto en Java Matricula Universitaria, ingreso de estudiantes",
-    "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/inscripcion_universidad"
-    },
-    {
-    "nombre": "M2_AE2 ABP2",
-    "descripcion": "Proyecto en Java Expresiones Lógicas, Booleanos",
-    "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/expresiones_logicas"
-    },
-    {
-    "nombre": "M2_AE2 ABP3",
-    "descripcion": "Proyecto en Java Promedio de Notas",
-    "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/promedio_notas"
-    },
-    {
-    "nombre": "M2_AE2 ABP4",
-    "descripcion": "Proyecto en Java Registro de donaciones",
-    "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/registro_donaciones"
-    },
-    {
-    "nombre": "M2_AE2 ABP5",
-    "descripcion": "Proyecto en Java Puntaje obtenido en competencia deportiva, orden invertido",
-    "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/puntajes_invertidos_estudiantes"
-    },
-    {"nombre": "M2_AE2 ABP6",
-    "descripcion": "Proyecto en Java Asientos en el Cine, matriz realizada con valores asignados",
-    "url": "https://github.com/KathyAlde21/asientos_cine_matriz_java"
-    },
-    {
-    "nombre": "M2_AE2 ABP7",
-    "descripcion": "Proyecto en Java Turnos Semanales, matriz de asignación de turnos",
-    "url": "https://github.com/KathyAlde21/turnos_trabajador"
-    },
-    {
-    "nombre": "M2_AE2 ABP8",
-    "descripcion": "Proyecto en Java Monitoreo del Cambio Climático, ingreso de temperatura y conversión a Farenheit, Kelvin y Celsius",
-    "url": "https://github.com/KathyAlde21/monitoreo_climatico"
-    },
-    {
-    "nombre": "M2_AE3 ABP",
-    "descripcion": "Proyecto en Java Gestion de Inventario, incorporando por Consola para realizar los calculos",
-    "url": "https://github.com/KathyAlde21/gestion_de_productos"
-    },
-    {
-    "nombre": "M2_AE3 ABPRO",
-    "descripcion": "Proyecto en Java Gestion de Notas, permite por consola crear estudiante, sus notas, calcular el promedio y determinar si aprobaron o no.",
-    "url": "https://github.com/KathyAlde21/gestion_de_notas"
-    },
-    {
-    "nombre": "M2_AE4 ABP",
-    "descripcion": "Proyecto en Java Gestion de Tareas, a traves de consola gestionar tareas pendientes agregando, eliminando, marcando y mostrando.",
-    "url": "https://github.com/KathyAlde21/gestion_de_tareas"
-    },
-    {
-    "nombre": "M2_AE4 ABP2",
-    "descripcion": "Proyecto en Java Convención y Estándares de Programación, utilizar las buenas prácticas en la creación de una nueva clase e implementar en consola",
-    "url": "https://github.com/KathyAlde21/clase_nueva_quijote"
-    },
-    {
-    "nombre": "M2_AE5 ABP",
-    "descripcion": "Proyecto en Java Biblioteca que se ejecuta en consola. Permite trabajar con Usuarios, Sucursales, Libros, Prestamos y generar reportes.",
-    "url": "https://github.com/KathyAlde21/biblioteca_gestion_libros_usuarios_sucursales_java"
-    },
-    {
-    "nombre": "M2_AE5 ABPRO1",
-    "descripcion": "Proyecto en Java Sistema Academico, que través de la consola permite registrar estudiantes, registrar docentes, crear curso, asignar evaluaciones, reportes e inscribir alumnos a un curso.",
-    "url": "https://github.com/KathyAlde21/sistema_academico_java"
-    },
-    {
-    "nombre": "M2_AE6 ABP5",
-    "descripcion": "Proyecto en Java Movilidad Urbana, incluye uso de diferentes medios de transporte, sus combustibles y estadísticas operativas",
-    "url": "https://github.com/KathyAlde21/movilidad_urbana_java"
-    },
-    {
-    "nombre": "M2_AE6 ABPRO5",
-    "descripcion": "Proyecto en Java Simulador de Distribucion, permite gestionar la flota de vehículos y simular entregas.",
-    "url": "https://github.com/KathyAlde21/simulador_de_distribucion_java"
-    },
-    {
-    "nombre": "M2_AE7 ABP 1 y 2",
-    "descripcion": "Proyecto en Java Pruebas Unitarias, implementando JUnit para validar el correcto funcionamiento del sistema de pedidos.",
-    "url": "https://github.com/KathyAlde21/pruebas_unitarias_mercaexpress_pedidos_java.git"
-    },
-    {
-    "nombre": "M2_AE7 ABP3",
-    "descripcion": "Proyecto en Java que realiza varias iteraciones de TDD, implementando operaciones como multiplicación y división.",
-    "url": "https://github.com/KathyAlde21/tdd_operaciones_matematicas_java"
-    },
-    {
-    "nombre": "M2_Evaluación Final",
-    "descripcion": "Proyecto en Java sobre Prevención de Riesgos Laborales, solicita datos, valida, elimina y genera listados.",
-    "url": "https://github.com/KathyAlde21/final_m2_prevencionistas_kagika"
+    "nombre": "M1_AE4 ABP4",
+    "descripcion": "Poyecto en Python llamado Buenas Prácticas, evalua promedio de notas para aprobar",
+    "url": "https://github.com/KathyAlde21/notas_apruebo_python"
     }
 ]

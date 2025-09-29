@@ -136,13 +136,17 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 
 - [Proyecto en Java Pruebas Unitarias, implementando JUnit para validar el correcto funcionamiento del sistema de pedidos.](https://github.com/KathyAlde21/pruebas_unitarias_mercaexpress_pedidos_java.git)
 
-&#128203;Actividad AE7 ABP3: -[Proyecto en Java que realiza varias iteraciones de TDD, implementando operaciones como multiplicación y división](https://github.com/KathyAlde21/tdd_operaciones_matematicas_java)
+&#128203;Actividad AE7 ABP3:
+
+-[Proyecto en Java que realiza varias iteraciones de TDD, implementando operaciones como multiplicación y división](https://github.com/KathyAlde21/tdd_operaciones_matematicas_java)
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 
 **<h2>Evaluación Final del Módulo 2</h2>**
 
-&#128203;Evaluación Final: -[Proyecto en Java sobre Prevención de Riesgos Laborales, solicita datos, valida, elimina y genera listados](https://github.com/KathyAlde21/final_m2_prevencionistas_kagika)
+&#128203;Evaluación Final:
+
+-[Proyecto en Java sobre Prevención de Riesgos Laborales, solicita datos, valida, elimina y genera listados](https://github.com/KathyAlde21/final_m2_prevencionistas_kagika)
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 <!-- ---------------------------------------------------------------------------------------------- -->
@@ -269,18 +273,23 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 <!-- **<h2 align="center">&#128204;MÓDULO 5:ARQUITECTURA Y CICLO DE VIDA DE COMPONENTES ANDROID</h2>**
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
@@ -289,24 +298,30 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 **<h2>Evaluación Final del Módulo 5</h2>**
 
 &#128203;Evaluación Final del Módulo 5:
+
 - []()
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 <!-- **<h2 align="center">&#128204;MÓDULO 6: DESARROLLO DE APLICACIONES EMPRESARIALES ANDROID</h2>**
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
@@ -315,6 +330,7 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 **<h2>Evaluación Final del Módulo 6</h2>**
 
 &#128203;Evaluación Final del Módulo 6:
+
 - []()
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;"> -->
@@ -324,18 +340,23 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 <!-- **<h2 align="center">&#128204;MODULO 7</h2>**
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 &#128203;Actividad 1:
+
 - []()
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
@@ -344,7 +365,33 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 **<h2>Evaluación Final del Módulo 7</h2>**
 
 &#128203;Evaluación Final del Módulo 7:
+
 - []()
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;"> -->
 <!-- ---------------------------------------------------------------------------------------------- -->
+
+**<h2 align="center">&#128204;PROYECTOS REALIZADOS EN CLASES</h2>**
+
+&#128203;Contador Android Java:
+
+- [App realizada con Android Studio que permite aumentar o disminuir al hacer click en el botón que corresponda](https://github.com/KathyAlde21/contador_android_java)
+
+&#128203;Calculadora de Propinas - Semáforo:
+
+- [App realizada con Android Studio que permite calcular la propina según los valores ingresados, utiliza caras con los colores de un semáforo para indicar si la propina es baja, media o alta](https://github.com/KathyAlde21/calculadora_propinas_android_java)
+
+&#128203;Login - Nombre de usuario y Contraseña:
+
+- [App realizada con Android Studio que permite ingresar datos para regustro de sesion. Incluye validaciones de campos vacios y formato de correo. Inicialmente el manejo de btn_tv fue con animacion y mensaje indicando que esta pendiente la configuración. En una segunda etapa se les dio funcionalidad.](https://github.com/KathyAlde21/login_android_java_kotlin)
+
+&#128203;Actividad 1:
+
+- []()
+
+&#128203;Actividad 1:
+
+- []()
+
+<hr style="border: none; height: 2px; background-color: blue; width: 80%;">
+----------------------------------------------------------------------------------------------

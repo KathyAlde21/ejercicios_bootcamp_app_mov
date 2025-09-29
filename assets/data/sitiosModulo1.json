@@ -1,27 +1,37 @@
 [
-    {
-        "nombre": "M1_AE1 ABP1-A",
-        "descripcion": "Proyecto en PSeInt (.psc)  Descuento en Compra del 10% según monto:",
-        "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_4/descuento10porciento.psc"
+   {
+        "nombre": "Contador Android Java",
+        "descripcion": "App realizada con Android Studio que permite aumentar o disminuir al hacer click en el botón que correspondar",
+        "url": "https://github.com/KathyAlde21/contador_android_java"
+    },
+   {
+        "nombre": "Calculadora de Propinas - Semáforo",
+        "descripcion": "App realizada con Android Studio que permite calcular la propina según los valores ingresados, utiliza caras con los colores de un semáforo para indicar si la propina es baja, media o alta",
+        "url": "https://github.com/KathyAlde21/calculadora_propinas_android_java"
     },
     {
-        "nombre": "M1_AE1 ABP1-B",
-        "descripcion": "Proyecto en Java Descuento en Compra del 10% según monto:",
-        "url": "https://github.com/KathyAlde21/descuento_java"
+        "nombre": "Login - Nombre de usuario y Contraseña",
+        "descripcion": "App realizada con Android Studio que permite ingresar datos para regustro de sesion. Incluye validaciones de campos vacios y formato de correo. Inicialmente el manejo de btn_tv fue con animacion y mensaje indicando que esta pendiente la configuración. En una segunda etapa se les dio funcionalidad.",
+        "url": "https://github.com/KathyAlde21/login_android_java_kotlin"
+    },
+   {
+        "nombre": "",
+        "descripcion": "r",
+        "url": ""
+    },
+   {
+        "nombre": "",
+        "descripcion": "r",
+        "url": ""
     },
     {
-        "nombre": "M1_AE2 ABP2",
-        "descripcion": "Proyecto en Python Promedio de Notas para aprobar",
-        "url": "https://github.com/KathyAlde21/promedio_notas_python"
+        "nombre": "",
+        "descripcion": "r",
+        "url": ""
     },
     {
-        "nombre": "M1_AE3 ABP3",
-        "descripcion": "Poyecto en Python y PSeInt Calculadora Interactiva:",
-        "url": "https://github.com/KathyAlde21/calculadora_interactiva_python_pseint"
-    },
-    {
-    "nombre": "M1_AE4 ABP4",
-    "descripcion": "Poyecto en Python llamado Buenas Prácticas, evalua promedio de notas para aprobar",
-    "url": "https://github.com/KathyAlde21/notas_apruebo_python"
+        "nombre": "",
+        "descripcion": "r",
+        "url": ""
     }
 ]
