@@ -213,56 +213,34 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 
 - [Tablas de la base de datos MySQL Asesorias en Prevención de Riesgos](https://github.com/KathyAlde21/tabla_asesorias_pr_abpro_ae4_kagika)
 
-&#128203;Actividad AE5 ABPRO2:
-
-- []()
-
-<hr style="border: none; height: 2px; background-color: blue; width: 80%;">
-
-**<h2>Evaluación Final del Módulo 3</h2>**
-
-&#128203;Evaluación Final del Módulo 3:
-
-- [](https://github.com/KathyAlde21/evaluacion_final_modulo_3)
-
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 <!-- ---------------------------------------------------------------------------------------------- -->
 
 **<h2 align="center">&#128204;MÓDULO 4: DESARROLLO DE LA INTERFAZ DE USUARIO ANDROID</h2>**
 
-&#128203;Actividad AE2-ABP:
+&#128203;Actividad AE2-ABP1:
 
 - [Proyecto Hola Mundo, creado para validar instalación de la aplicación y funcionamiento del emulador](https://github.com/KathyAlde21/hola_mundo_app_mov_2025)
 
-&#128203;Actividad AE2 ABPRO:
+&#128203;Actividad AE2 ABPRO1:
 
-- []()
+- [Proyecto realizado con Android Studio que incluye dos imágenes y frase AppMovil SpA](https://github.com/KathyAlde21/app_movil_spa)
 
-&#128203;Actividad AE3-ABP:
+&#128203;Actividad AE3-ABP1:
 
-- []()
+- [Proyecto que permite calcular la propina según los valores ingresados, aunque se diseño en clase sus requerimientos son los mismos de esta actividad](https://github.com/KathyAlde21/calculadora_propinas_android_java)
 
-&#128203;Actividad AE3-ABPRO:
+&#128203;Actividad AE3-ABPRO1:
 
-- []()
+- [Continuación Proyecto AppMovil SpA, se incorporo layout-land](https://github.com/KathyAlde21/app_movil_spa)
 
-&#128203;Actividad AE4-ABP:
 
-- []()
-
-&#128203;Actividad AE4-ABPRO:
-
-- []()
-
-&#128203;Actividad AE5-ABP:
-
-- []()
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 
-**<h2>Evaluación Final del Módulo 4</h2>**
+<!-- **<h2>Evaluación Final del Módulo 4</h2>** -->
 
-&#128203;Evaluación Final del Módulo 4:
+<!--  &#128203;Evaluación Final del Módulo 4:
 
 - []()
 
@@ -271,18 +249,6 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 <!-- ---------------------------------------------------------------------------------------------- -->
 
 <!-- **<h2 align="center">&#128204;MÓDULO 5:ARQUITECTURA Y CICLO DE VIDA DE COMPONENTES ANDROID</h2>**
-
-&#128203;Actividad 1:
-
-- []()
-
-&#128203;Actividad 1:
-
-- []()
-
-&#128203;Actividad 1:
-
-- []()
 
 &#128203;Actividad 1:
 
@@ -302,19 +268,10 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 - []()
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
 <!-- **<h2 align="center">&#128204;MÓDULO 6: DESARROLLO DE APLICACIONES EMPRESARIALES ANDROID</h2>**
-
-&#128203;Actividad 1:
-
-- []()
-
-&#128203;Actividad 1:
-
-- []()
-
-&#128203;Actividad 1:
-
-- []()
 
 &#128203;Actividad 1:
 
@@ -338,18 +295,6 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 <!-- ---------------------------------------------------------------------------------------------- -->
 
 <!-- **<h2 align="center">&#128204;MODULO 7</h2>**
-
-&#128203;Actividad 1:
-
-- []()
-
-&#128203;Actividad 1:
-
-- []()
-
-&#128203;Actividad 1:
-
-- []()
 
 &#128203;Actividad 1:
 
@@ -383,7 +328,7 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 
 &#128203;Login - Nombre de usuario y Contraseña:
 
-- [App realizada con Android Studio que permite ingresar datos para regustro de sesion. Incluye validaciones de campos vacios y formato de correo. Inicialmente el manejo de btn_tv fue con animacion y mensaje indicando que esta pendiente la configuración. En una segunda etapa se les dio funcionalidad.](https://github.com/KathyAlde21/login_android_java_kotlin)
+- [App realizada con Android Studio que permite ingresar datos para registro de sesion. Incluye validaciones de campos vacios y formato de correo. Inicialmente el manejo de btn_tv fue con animacion y mensaje indicando que esta pendiente la configuración. En una segunda etapa se les dio funcionalidad.](https://github.com/KathyAlde21/login_android_java_kotlin)
 
 &#128203;Actividad 1:
 

@@ -1,27 +1,7 @@
 [
     {
-        "nombre": "Video 1",
-        "descripcion": "de que se trata",
-        "url": "link.video"
-    },
-    {
-        "nombre": "Video 1",
-        "descripcion": "de que se trata",
-        "url": "link.video"
-    },
-    {
-        "nombre": "Video 1",
-        "descripcion": "de que se trata",
-        "url": "link.video"
-    },
-    {
-        "nombre": "Video 1",
-        "descripcion": "de que se trata",
-        "url": "link.video"
-    },
-    {
-        "nombre": "Video 1",
-        "descripcion": "de que se trata",
-        "url": "link.video"
+        "nombre": "Calculadora de Propinas - Semáforo",
+        "descripcion": "App que permite calcular la propina según los valores ingresados",
+        "url": "https://www.youtube.com/watch?v=6VQe9vkByBM"
     }
 ]

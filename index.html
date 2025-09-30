@@ -21,10 +21,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="#bienvenido" href="#">Inicio</a>
+                        <a class="nav-link active" aria-current="#bienvenido" href="./index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#proyectos-container">Proyectos</a>
+                        <a class="nav-link" href="#proyectos">Imágenes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos-clases">Proyectos en clase</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos-plataforma">Proyectos plataforma</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/KathyAlde21?tab=repositories">Repositorios GitHub</a>
@@ -42,34 +51,41 @@
         </div>
 
         <!-- Carrusel con imágenes de diferentes proyectos tanto de clases como de trabajos para la plataforma -->
-        <div class="container mt-4">
+        <div class="container mt-4" id="proyectos">
             <div class="container py-4">
-                <h2 class="text-center mb-4" id="proyectos-container">Mis Proyectos</h2>
+                <h2 class="text-center mb-4">Mis Proyectos</h2>
                 <!-- Contenedor carrusel -->
                 <div id="carrusel"></div>
-                <div style="height: 56px;"></div> <!-- Espacio para navbar fija -->
         </div>
 
         <!-- Cards autocompletadas con los links a videos de Youtube sobre los proyectos -->
         <!-- Videos linkeados a Youtube de ejecución de código para proyectos Android -->
-        <div class="container mt-4">
+        <div class="container mt-4" id="videos">
             <div class="container py-4">
-                <h2 class="text-center mb-4" id="videos-container">Links a videos que muestran la ejecución de parte de mis proyectos</h2>                
+                <h2 class="text-center mb-4">Links a videos que muestran la ejecución de parte de mis proyectos</h2>                
                 <!-- Contenedor de cards -->
                 <div id="cards_youtube" class="row g-3"></div>
             </div>
         </div>
 
-        <!-- Cards autocompletadas con Json con los links a los repositorios de los proyectos -->
-        <div class="container mt-4">
+        <!-- Card autocompletada a proyectos desarrollados en clases -->
+        <div class="container mt-4" id="proyectos-clases">
             <div class="container py-4">
-                <h2 class="text-center mb-4" id="proyectos-container">Links a los repositorios de mis proyectos</h2>                
+                <h2 class="text-center mb-4">Links a ejercicios de clases</h2>
+                <div id="cards_clases" class="row g-3"></div>
+            </div>
+        </div>
+
+        <!-- Cards autocompletadas con Json con los links a los repositorios de los proyectos -->
+        <div class="container mt-4"id="proyectos-plataforma">
+            <div class="container py-4">
+                <h2 class="text-center mb-4">Links a los repositorios de mis proyectos</h2>                
                 <!-- Contenedor de cards -->
                 <div id="cards" class="row g-3"></div>
             </div>
         </div>
     </main>
-    
+    <div style="height: 56px;"></div> <!-- Espacio -->
     <!-- Footer -->
     <footer class="bg-dark text-light fixed-bottom">
         <div class="container py-2">

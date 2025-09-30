@@ -3,10 +3,12 @@
 /* =======================
    Config general
 ======================= */
-const MODULOS = [1, 2, 3, 4, 5, 6, 7];
+const MODULOS = [1, 2, 3, 4, 5, 6];
 const RUTA_MOD = (n) => `assets/data/sitiosModulo${n}.json`;
 const CARRUSEL_JSON = 'assets/data/carrusel.json';
 const CARRUSEL_PLACEHOLDER = 'assets/img/placeholder.png'; // opcional
+const SITIOS_CLASES_JSON = 'assets/data/sitiosClases.json';
+const VIDEOS_JSON = 'assets/data/videos.json';
 
 /* =======================
    Utils
@@ -32,8 +34,11 @@ async function cargarModulo(n) {
   }));
 }
 
-function renderCards(items) {
-  const $cards = document.getElementById('cards');
+//Render comun a todas las cards => modulos y clases
+function renderCardsTo(containerSelector, items) {
+  const $cards = typeof containerSelector === 'string'
+    ? document.querySelector(containerSelector)
+    : containerSelector;
   if (!$cards) return;
 
   if (!items.length) {
@@ -52,17 +57,129 @@ function renderCards(items) {
       <div class="card h-100">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title mb-1" id="titulo">${esc(titulo)}</h5>
-          <h6 class="card-subtitle mb-2 text-muted" id="modulo">Módulo ${modulo}</h6>
+          ${modulo != null ? `<h6 class="card-subtitle mb-2 text-muted" id="modulo">Módulo ${modulo}</h6>` : ''}
           <p class="card-text flex-grow-1" id="descripcion">${esc(descripcion)}</p>
-          <a class="card-link mt-2" id="link-repositorio"href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">Visitar</a>
+          ${link ? `<a class="card-link mt-2" id="link-repositorio" href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">Visitar</a>` : ''}
         </div>
       </div>`;
     frag.appendChild(col);
   });
 
-  $cards.innerHTML = '';
-  $cards.appendChild(frag);
+  $cards.replaceChildren(frag);
 }
+
+ // $cards.innerHTML = '';
+ // $cards.appendChild(frag);
+//}
+
+// Wrapper para mantener compatibilidad con tu flujo actual (módulos -> #cards)
+function renderCards(items) {
+  renderCardsTo('#cards', items);
+}
+
+/* =======================
+   Card de Clases
+======================= */
+async function cargarClases() {
+  const res = await fetch(SITIOS_CLASES_JSON);
+  if (!res.ok) throw new Error(`HTTP ${res.status} en sitiosClases.json`);
+  const data = await res.json();
+  return (Array.isArray(data) ? data : []).map(item => ({
+    titulo: item.nombre ?? item.titulo ?? 'Sin título',
+    descripcion: item.descripcion ?? item.descripcionCorta ?? 'Sin descripción',
+    link: item.link ?? item.url ?? '#',
+    modulo: null
+  }));
+}
+
+/* =======================
+    Card de Videos
+======================= */
+function youtubeId(link = '') {
+  try {
+    const u = new URL(link);
+    if (u.hostname.includes('youtu.be')) return u.pathname.slice(1);
+    if (u.hostname.includes('youtube.com')) return u.searchParams.get('v') ?? '';
+  } catch {}
+  return '';
+}
+
+async function cargarVideos() {
+  const res = await fetch(VIDEOS_JSON);
+  if (!res.ok) throw new Error(`HTTP ${res.status} en videos.json`);
+  const data = await res.json();
+  return Array.isArray(data) ? data : [];
+}
+
+function renderVideoCards(items = []) {
+  const $host = document.getElementById('cards_youtube');
+  if (!$host) return;
+
+  if (!items.length) {
+    $host.innerHTML = `<div class="col-12"><div class="alert alert-secondary mb-0">No hay videos para mostrar.</div></div>`;
+    return;
+  }
+
+  const frag = document.createDocumentFragment();
+  items.forEach(({ nombre, titulo, descripcion, url, link }) => {
+    const t = (titulo ?? nombre ?? 'Video');
+    const href = (link ?? url ?? '#');
+
+    // extrae ID de YouTube
+    const id = (() => {
+      try {
+        const u = new URL(href);
+        if (u.hostname.includes('youtu.be')) return u.pathname.slice(1);
+        if (u.hostname.includes('youtube.com')) return u.searchParams.get('v') ?? '';
+      } catch {}
+      return '';
+    })();
+
+    const thumb = id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : null;
+
+    const col = document.createElement('div');
+    col.className = 'col-12 col-md-4'; // 3 por fila en desktop
+    col.innerHTML = `
+      <div class="video-tile">
+        ${id ? `
+          <div class="ratio ratio-16x9 position-relative js-yt" data-id="${escAttr(id)}" aria-label="Reproducir ${escAttr(t)}">
+            <img class="video-thumb" src="${thumb}" alt="${esc(t)}" loading="lazy">
+            <button type="button" class="video-play js-play">▶</button>
+          </div>
+        ` : `
+          <!-- fallback si no es YouTube -->
+          <div class="ratio ratio-16x9 d-flex align-items-center justify-content-center bg-dark text-light">
+            <a href="${escAttr(href)}" target="_blank" rel="noopener" class="video-link">Ver en la fuente</a>
+          </div>
+        `}
+        <div class="video-meta">
+          <span class="video-title" title="${escAttr(t)}">${esc(t)}</span>
+          ${href ? `<a class="video-link" href="${escAttr(href)}" target="_blank" rel="noopener">YouTube ↗</a>` : ''}
+        </div>
+      </div>`;
+    frag.appendChild(col);
+  });
+  $host.replaceChildren(frag);
+}
+
+
+// Delegación: al hacer click en “Reproducir” reemplaza la miniatura por un iframe con autoplay
+document.addEventListener('click', (ev) => {
+  const btn = ev.target.closest('.js-play');
+  if (!btn) return;
+  const wrap = btn.closest('.js-yt');
+  if (!wrap) return;
+  const id = wrap.dataset.id;
+  wrap.innerHTML = `
+    <iframe
+      class="w-100 h-100"
+      src="https://www.youtube.com/embed/${escAttr(id)}?autoplay=1&rel=0"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>`;
+});
 
 /* =======================
    Carrusel (independiente de sitios)
@@ -238,6 +355,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     if ($carrusel) {
       $carrusel.innerHTML = `<div class="alert alert-danger">No se pudo construir el carrusel.</div>`;
     }
+  }
+
+    // === VIDEOS ===
+  try {
+    const vids = await cargarVideos();
+    renderVideoCards(vids);
+  } catch (e) {
+    console.error('videos error', e);
+    const $v = document.getElementById('cards_youtube');
+    if ($v) $v.innerHTML = `<div class="col-12"><div class="alert alert-danger">No se pudieron cargar los videos.</div></div>`;
+  }
+
+  // === CLASES ===
+  try {
+    const clasesItems = await cargarClases();
+    renderCardsTo('#cards_clases', clasesItems);
+  } catch (e) {
+    console.error('clases error', e);
+    const $c = document.getElementById('cards_clases');
+    if ($c) $c.innerHTML = `<div class="col-12"><div class="alert alert-danger">No se pudieron cargar los links de clases.</div></div>`;
   }
 });
 

@@ -1,0 +1,17 @@
+[
+   {
+        "nombre": "Contador Android Java",
+        "descripcion": "App realizada con Android Studio que permite aumentar o disminuir al hacer click en el botón que correspondar",
+        "url": "https://github.com/KathyAlde21/contador_android_java"
+    },
+   {
+        "nombre": "Calculadora de Propinas - Semáforo",
+        "descripcion": "App que permite calcular la propina y con el resultado va una cara con los colores de un semáforo",
+        "url": "https://github.com/KathyAlde21/calculadora_propinas_android_java"
+    },
+    {
+        "nombre": "Login - Nombre de usuario y Contraseña",
+        "descripcion": "App realizada con Android Studio que permite ingresar datos para registro de sesion.",
+        "url": "https://github.com/KathyAlde21/login_android_java_kotlin"
+    }
+]
