@@ -234,17 +234,35 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 
 - [Continuación Proyecto AppMovil SpA, se incorporo layout-land](https://github.com/KathyAlde21/app_movil_spa)
 
+&#128203;Actividad AE4-ABP1:
 
+- [Proyecto con una imagen que debe mostrarse de forma responsiva en diferentes dispositivos](https://github.com/KathyAlde21/mi_super_imagen_android)
+
+&#128203;Actividad AE4-ABPRO1:
+
+- [Continuación Proyecto AppMovil SpA, incluye implementación de 3 componentes de Material Design](https://github.com/KathyAlde21/app_movil_spa)
+
+&#128203;Actividad AE5-ABP1:
+
+- [Proyecto que crea un Fragment llamado HomeFragment.java con su respectivo layout basado en el proyecto anterior Mi Super Imagen](https://github.com/KathyAlde21/mi_primer_fragment_app)
+
+&#128203;Actividad AE5-ABPRO1:
+
+- [Continuación Proyecto AppMovil SpA, incluye desarrollo de la experiencia del usuario con implementacion en los inputs, manejo de eventos, entre otros](https://github.com/KathyAlde21/app_movil_spa_con_fragment)
+
+&#128203;Actividad AE6-ABP1:
+
+- [Repositorio de ejemplo para descripción de carga de proyectos en GitHub](https://github.com/KathyAlde21/proyecto_github_ae6_abp1)
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 
-<!-- **<h2>Evaluación Final del Módulo 4</h2>** -->
+**<h2>Evaluación Final del Módulo 4</h2>**
 
-<!--  &#128203;Evaluación Final del Módulo 4:
+&#128203;Evaluación Final del Módulo 4:
 
-- []()
+- [Aplicación Biblioteca, permite mostrar libros preingresados y seleccionar para enviar a carro de compras](https://github.com/KathyAlde21/app_libreria_android)
 
-<hr style="border: none; height: 2px; background-color: blue; width: 80%;"> -->
+<hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 
 <!-- ---------------------------------------------------------------------------------------------- -->
 

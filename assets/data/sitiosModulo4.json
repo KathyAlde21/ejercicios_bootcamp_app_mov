@@ -18,5 +18,35 @@
     "nombre": "M4_AE3-ABPRO1",
     "descripcion": "Continuación Proyecto AppMovil SpA que incorpora layout-land",
     "url": "https://github.com/KathyAlde21/app_movil_spa"
+  },
+  {
+    "nombre": "M4_AE4-ABP1",
+    "descripcion": "Proyecto con una imagen que debe mostrarse de forma responsiva en diferentes dispositivos",
+    "url": "https://github.com/KathyAlde21/mi_super_imagen_android"
+  },
+  {
+    "nombre": "M4_AE4-ABPRO1",
+    "descripcion": "Continuación Proyecto AppMovil SpA, incluye implementación de 3 componentes de Material Design",
+    "url": "https://github.com/KathyAlde21/app_movil_spa"
+  },
+    {
+    "nombre": "M4_AE5-ABP1",
+    "descripcion": "Proyecto que crea un Fragment con su respectivo layout basado en el proyecto anterior Mi Super Imagen",
+    "url": "https://github.com/KathyAlde21/mi_primer_fragment_app"
+  },
+  {
+    "nombre": "M4_AE5-ABPRO1",
+    "descripcion": "Continuación Proyecto AppMovil SpA, incluye desarrollo de la experiencia del usuario",
+    "url": "hhttps://github.com/KathyAlde21/app_movil_spa_con_fragment"
+  },
+  {
+    "nombre": "M4_AE6-ABP1",
+    "descripcion": "Repositorio de ejemplo para descripción de carga de proyectos en GitHub",
+    "url": "https://www.sitio1.comhttps://github.com/KathyAlde21/proyecto_github_ae6_abp1"
+  },
+  {
+    "nombre": "Evaluación Final del Módulo 4",
+    "descripcion": "Aplicación Biblioteca, permite mostrar libros preingresados",
+    "url": "https://github.com/KathyAlde21/app_libreria_android"
   }
 ]
