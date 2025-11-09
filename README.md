@@ -348,13 +348,13 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 
 - [App realizada con Android Studio que permite ingresar datos para registro de sesion. Incluye validaciones de campos vacios y formato de correo. Inicialmente el manejo de btn_tv fue con animacion y mensaje indicando que esta pendiente la configuración. En una segunda etapa se les dio funcionalidad.](https://github.com/KathyAlde21/login_android_java_kotlin)
 
-&#128203;Actividad 1:
+<!-- &#128203;Actividad 1:
 
 - []()
 
 &#128203;Actividad 1:
 
-- []()
+- []() -->
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 ----------------------------------------------------------------------------------------------
