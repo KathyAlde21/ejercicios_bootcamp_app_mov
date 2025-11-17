@@ -1,0 +1,22 @@
+[
+  {
+    "nombre": "M7_AE1-ABP",
+    "descripcion": "App. de Seguridad con Alerta Vecinal, sección denominada Etapa 1 del proyecto",
+    "url": "https://github.com/KathyAlde21/app_seg_vec_nvp"
+  },
+  {
+    "nombre": "M7_AE2-ABP",
+    "descripcion": "App. de Seguridad con Alerta Vecinal, sección denominada Etapa 2 del proyecto",
+    "url": "https://github.com/KathyAlde21/app_seg_vec_nvp"
+  },
+  {
+    "nombre": "M7_AE3-ABP",
+    "descripcion": "App. de Seguridad con Alerta Vecinal, sección denominada Etapa 3 del proyecto",
+    "url": "https://github.com/KathyAlde21/app_seg_vec_nvp"
+  }, 
+  {
+    "nombre": "M7_Evaluación Final",
+    "descripcion": "App. de Seguridad con Alerta Vecinal, proyecto completado que permite enviar alerta con gelocalización",
+    "url": "https://github.com/KathyAlde21/app_seg_vec_nvp"
+  }
+]

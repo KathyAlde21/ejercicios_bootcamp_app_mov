@@ -38,5 +38,15 @@
     "img": "assets/img/carrusel/hola_mundo_android.jpg",
     "titulo": "Hola Mundo Android",
     "texto": "Proyecto desarrollado en Android Studio llamado Hola Mundo, muestra vistas de código y ejecución en emulador celular"
+  },
+  {
+    "img": "assets/img/carrusel/semaforo_propinas_codigo.jpg",
+    "titulo": "Semaforo Contador de Propinas",
+    "texto": "App realizada con Android Studio que permite asignar una cara con los colores de un semáforo, según la propina calculada"
+  },
+  {
+    "img": "assets/img/carrusel/aplicacion_libreria.jpg",
+    "titulo": "App Librería",
+    "texto": "Libreria con datos preingresados con boton que agrega al carro de compras"
   }
 ]

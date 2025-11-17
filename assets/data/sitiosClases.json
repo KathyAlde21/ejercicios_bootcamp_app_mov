@@ -13,5 +13,15 @@
         "nombre": "Login - Nombre de usuario y Contraseña",
         "descripcion": "App realizada con Android Studio que permite ingresar datos para registro de sesion.",
         "url": "https://github.com/KathyAlde21/login_android_java_kotlin"
+    },
+    {
+        "nombre": "Contactos - Nombre y Teléfono",
+        "descripcion": "Código en Kotlin desarrollado en Android Studio para ver contactos usando compose. Muestra nombre y teléfono",
+        "url": "https://github.com/KathyAlde21/contactos_compose_kotlin.git"
+    },
+    {
+        "nombre": "A",
+        "descripcion": "A",
+        "url": "web"
     }
 ]

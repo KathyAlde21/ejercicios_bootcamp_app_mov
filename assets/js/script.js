@@ -3,7 +3,7 @@
 /* =======================
    Config general
 ======================= */
-const MODULOS = [1, 2, 3, 4, 5, 6];
+const MODULOS = [1, 2, 3, 4, 5, 6, 7];
 const RUTA_MOD = (n) => `assets/data/sitiosModulo${n}.json`;
 const CARRUSEL_JSON = 'assets/data/carrusel.json';
 const CARRUSEL_PLACEHOLDER = 'assets/img/placeholder.png'; // opcional

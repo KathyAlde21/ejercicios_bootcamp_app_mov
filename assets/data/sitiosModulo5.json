@@ -1,7 +1,12 @@
 [
   {
     "nombre": "M5_AE1-ABP1",
-    "descripcion": "Proyecto AE1-ABP",
-    "url": "https://www.sitio1.com"
+    "descripcion": "Aplicacion que muestra el uso de Kotlin para una Startup Aplicaciones Moviles",
+    "url": "https://github.com/KathyAlde21/app_startup_aplicacion_movil"
+  },
+  {
+    "nombre": "M5_AE1-ABPRO1",
+    "descripcion": "App formato Agenda Personal que permite ingresar eventos con título, fecha y descripción",
+    "url": "https://github.com/KathyAlde21/app_agenda_personal_usuario"
   }
 ]

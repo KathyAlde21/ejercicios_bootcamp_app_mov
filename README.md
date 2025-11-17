@@ -266,38 +266,113 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-<!-- **<h2 align="center">&#128204;MÓDULO 5:ARQUITECTURA Y CICLO DE VIDA DE COMPONENTES ANDROID</h2>**
+**<h2 align="center">&#128204;MÓDULO 5:ARQUITECTURA Y CICLO DE VIDA DE COMPONENTES ANDROID</h2>**
 
-&#128203;Actividad 1:
+&#128203;Actividad AE1-ABP1:
+
+- [Aplicacion que muestra el uso de Kotlin para una Startup Aplicaciones Moviles](https://github.com/KathyAlde21/app_startup_aplicacion_movil)
+
+&#128203;Actividad AE1-ABPRO1:
+
+- [Aplicación formato Agenda Personal que permite ingresar eventos con título, fecha y descripción](https://github.com/KathyAlde21/app_agenda_personal_usuario)
+
+<!-- &#128203;Actividad AE2-ABP1:
+
+- []() -->
+
+<!-- &#128203;Actividad AE2-ABPRO1:
 
 - []()
 
-&#128203;Actividad 1:
+<!-- &#128203;Actividad AE3-ABP1:
 
-- []()
+- []() -->
+
+<!-- &#128203;Actividad AE3-ABPRO1:
+
+- []() -->
+
+<!-- <!-- &#128203;Actividad AE4-ABP1:
+
+- []() -->
+
+<!-- &#128203;Actividad AE4-ABPRO1:
+
+- []() -->
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 
 
-**<h2>Evaluación Final del Módulo 5</h2>**
+<!-- **<h2>Evaluación Final del Módulo 5</h2>**
 
 &#128203;Evaluación Final del Módulo 5:
 
 - []()
 
-<hr style="border: none; height: 2px; background-color: blue; width: 80%;">
+<hr style="border: none; height: 2px; background-color: blue; width: 80%;"> -->
 
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-<!-- **<h2 align="center">&#128204;MÓDULO 6: DESARROLLO DE APLICACIONES EMPRESARIALES ANDROID</h2>**
+<!-- **<h2 align="center">&#128204;MÓDULO 6: DESARROLLO DE APLICACIONES EMPRESARIALES ANDROID</h2>** -->
 
-&#128203;Actividad 1:
+<!-- &#128203;Actividad AE1-ABP1:
+
+- []() -->
+
+<!-- &#128203;Actividad AE1-ABPRO1:
+
+- []() -->
+
+<!-- &#128203;Actividad AE2-ABP1:
+
+- []() -->
+
+<!-- &#128203;Actividad AE2-ABPRO1:
+
+- []() -->
+
+<!-- &#128203;Actividad AE3-ABP1:
+
+- []() -->
+
+<!-- &#128203;Actividad AE3-ABPRO1:
+
+- []() -->
+
+<!-- &#128203;Actividad AE4-ABP1:
+
+- []() -->
+
+<!-- &#128203;Actividad AE4-ABPRO1:
+
+- []() -->
+
+<hr style="border: none; height: 2px; background-color: blue; width: 80%;">
+
+
+<!-- **<h2>Evaluación Final del Módulo 7</h2>**
+
+&#128203;Evaluación Final del Módulo 7:
 
 - []()
 
-&#128203;Actividad 1:
+<hr style="border: none; height: 2px; background-color: blue; width: 80%;"> -->
 
-- []()
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+**<h2 align="center">&#128204;MODULO 7: DESARROLLO DE PORTAFOLIO DE UN PRODUCTO DIGITAL</h2>**
+
+&#128203;Actividad AE1-ABP1:
+
+- [App. de Seguridad con Alerta Vecinal, este repositorio corresponde contedrá todo el proyecto, esta sección esta denominada Etapa 1 del proyecto](https://github.com/KathyAlde21/app_seg_vec_nvp)
+
+&#128203;Actividad AE2-ABP1:
+
+- [App. de Seguridad con Alerta Vecinal, se implementaron nuevas funcionalidades, esta sección esta denominada Etapa 2 del proyecto](https://github.com/KathyAlde21/app_seg_vec_nvp)
+
+&#128203;Actividad AE3-ABP1:
+
+- [App. de Seguridad con Alerta Vecinal, se continua con la implementaron. Esta sección esta denominada Etapa 3 del proyecto](https://github.com/KathyAlde21/app_seg_vec_nvp)
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 
@@ -306,32 +381,11 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 
 &#128203;Evaluación Final del Módulo 6:
 
-- []()
-
-<hr style="border: none; height: 2px; background-color: blue; width: 80%;"> -->
-
-<!-- ---------------------------------------------------------------------------------------------- -->
-
-<!-- **<h2 align="center">&#128204;MODULO 7</h2>**
-
-&#128203;Actividad 1:
-
-- []()
-
-&#128203;Actividad 1:
-
-- []()
+- [App. de Seguridad con Alerta Vecinal, proyecto completado que permite enviar alerta con gelocalización](https://github.com/KathyAlde21/app_seg_vec_nvp)
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 
 
-**<h2>Evaluación Final del Módulo 7</h2>**
-
-&#128203;Evaluación Final del Módulo 7:
-
-- []()
-
-<hr style="border: none; height: 2px; background-color: blue; width: 80%;"> -->
 <!-- ---------------------------------------------------------------------------------------------- -->
 
 **<h2 align="center">&#128204;PROYECTOS REALIZADOS EN CLASES</h2>**
@@ -348,11 +402,19 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 
 - [App realizada con Android Studio que permite ingresar datos para registro de sesion. Incluye validaciones de campos vacios y formato de correo. Inicialmente el manejo de btn_tv fue con animacion y mensaje indicando que esta pendiente la configuración. En una segunda etapa se les dio funcionalidad.](https://github.com/KathyAlde21/login_android_java_kotlin)
 
+&#128203;Contactos - Nombre y Teléfono:
+
+- [Código en Kotlin desarrollado en Android Studio para ver contactos usando compose. Muestra nombre y teléfono](https://github.com/KathyAlde21/contactos_compose_kotlin.git)
+
 <!-- &#128203;Actividad 1:
 
-- []()
+- []() -->
 
-&#128203;Actividad 1:
+<!-- &#128203;Actividad 1:
+
+- []() -->
+
+<!-- &#128203;Actividad 1:
 
 - []() -->
 
