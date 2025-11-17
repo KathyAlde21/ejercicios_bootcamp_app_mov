@@ -1,22 +1,42 @@
 'use strict';
 
 /* =======================
-   Config general
+   Config
 ======================= */
-const MODULOS = [1, 2, 3, 4, 5, 6, 7];
+const MODULOS = [1,2,3,4,5,6,7];
+
 const RUTA_MOD = (n) => `assets/data/sitiosModulo${n}.json`;
-const CARRUSEL_JSON = 'assets/data/carrusel.json';
-const CARRUSEL_PLACEHOLDER = 'assets/img/placeholder.png'; // opcional
+
 const SITIOS_CLASES_JSON = 'assets/data/sitiosClases.json';
-const VIDEOS_JSON = 'assets/data/videos.json';
+
+const VIDEOS_SOURCES = ['assets/data/videos.json'];
+
+const CARRUSEL_JSON = 'assets/data/carrusel.json';
+
+const CARRUSEL_PLACEHOLDER = 'assets/img/placeholder.png';
 
 /* =======================
    Utils
 ======================= */
-const esc = (t) =>
+const esc = (t='') =>
   String(t).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
-const escAttr = (t) =>
-  String(t).replaceAll('"','&quot;').replaceAll("'", '&#39;');
+
+const escAttr = (t='') =>
+  String(t).replaceAll('"','&quot;').replaceAll("'",'&#39;');
+
+function youtubeId(link='') {
+  try {
+    const u = new URL(link);
+    const host = u.hostname.replace(/^www\./,'');
+    if (host === 'youtu.be') return u.pathname.slice(1);
+    if (host === 'youtube.com' || host === 'm.youtube.com') {
+      if (u.pathname === '/watch') return u.searchParams.get('v') ?? '';
+      const m = u.pathname.match(/\/(?:shorts|embed)\/([^/?#]+)/);
+      if (m) return m[1];
+    }
+  } catch {}
+  return '';
+}
 
 /* =======================
    Cards (sitios)
@@ -25,7 +45,6 @@ async function cargarModulo(n) {
   const res = await fetch(RUTA_MOD(n));
   if (!res.ok) throw new Error(`HTTP ${res.status} en módulo ${n}`);
   const data = await res.json();
-
   return (Array.isArray(data) ? data : []).map(item => ({
     titulo: item.nombre ?? item.titulo ?? 'Sin título',
     descripcion: item.descripcion ?? item.descripcionCorta ?? 'Sin descripción',
@@ -34,14 +53,14 @@ async function cargarModulo(n) {
   }));
 }
 
-//Render comun a todas las cards => modulos y clases
+// Render genérico reutilizable
 function renderCardsTo(containerSelector, items) {
   const $cards = typeof containerSelector === 'string'
     ? document.querySelector(containerSelector)
     : containerSelector;
   if (!$cards) return;
 
-  if (!items.length) {
+  if (!items?.length) {
     $cards.innerHTML = `
       <div class="col-12">
         <div class="alert alert-warning mb-0">No hay proyectos para mostrar.</div>
@@ -52,14 +71,15 @@ function renderCardsTo(containerSelector, items) {
   const frag = document.createDocumentFragment();
   items.forEach(({ titulo, descripcion, link, modulo }) => {
     const col = document.createElement('div');
+    // Si quieres 3 por fila en desktop, usa col-12 col-md-4
     col.className = 'col-12 col-sm-6 col-md-4 col-lg-3';
     col.innerHTML = `
       <div class="card h-100">
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-1" id="titulo">${esc(titulo)}</h5>
-          ${modulo != null ? `<h6 class="card-subtitle mb-2 text-muted" id="modulo">Módulo ${modulo}</h6>` : ''}
-          <p class="card-text flex-grow-1" id="descripcion">${esc(descripcion)}</p>
-          ${link ? `<a class="card-link mt-2" id="link-repositorio" href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">Visitar</a>` : ''}
+          <h5 class="card-title mb-1">${esc(titulo)}</h5>
+          ${modulo != null ? `<h6 class="card-subtitle mb-2 text-muted">Módulo ${modulo}</h6>` : ''}
+          <p class="card-text flex-grow-1">${esc(descripcion)}</p>
+          ${link ? `<a class="card-link mt-2" href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">Visitar</a>` : ''}
         </div>
       </div>`;
     frag.appendChild(col);
@@ -68,17 +88,13 @@ function renderCardsTo(containerSelector, items) {
   $cards.replaceChildren(frag);
 }
 
- // $cards.innerHTML = '';
- // $cards.appendChild(frag);
-//}
-
-// Wrapper para mantener compatibilidad con tu flujo actual (módulos -> #cards)
+// Wrapper para módulos -> #cards
 function renderCards(items) {
   renderCardsTo('#cards', items);
 }
 
 /* =======================
-   Card de Clases
+   Clases
 ======================= */
 async function cargarClases() {
   const res = await fetch(SITIOS_CLASES_JSON);
@@ -93,20 +109,11 @@ async function cargarClases() {
 }
 
 /* =======================
-    Card de Videos
+   Videos (YouTube)
 ======================= */
-function youtubeId(link = '') {
-  try {
-    const u = new URL(link);
-    if (u.hostname.includes('youtu.be')) return u.pathname.slice(1);
-    if (u.hostname.includes('youtube.com')) return u.searchParams.get('v') ?? '';
-  } catch {}
-  return '';
-}
-
-async function cargarVideos() {
-  const res = await fetch(VIDEOS_JSON);
-  if (!res.ok) throw new Error(`HTTP ${res.status} en videos.json`);
+async function cargarVideosDesde(archivo) {
+  const res = await fetch(archivo);
+  if (!res.ok) throw new Error(`HTTP ${res.status} en ${archivo}`);
   const data = await res.json();
   return Array.isArray(data) ? data : [];
 }
@@ -123,38 +130,28 @@ function renderVideoCards(items = []) {
   const frag = document.createDocumentFragment();
   items.forEach(({ nombre, titulo, descripcion, url, link }) => {
     const t = (titulo ?? nombre ?? 'Video');
+    const d = (descripcion ?? '');
     const href = (link ?? url ?? '#');
 
-    // extrae ID de YouTube
-    const id = (() => {
-      try {
-        const u = new URL(href);
-        if (u.hostname.includes('youtu.be')) return u.pathname.slice(1);
-        if (u.hostname.includes('youtube.com')) return u.searchParams.get('v') ?? '';
-      } catch {}
-      return '';
-    })();
+    const id = youtubeId(href);
+    if (!id) return; // sólo YouTube
 
-    const thumb = id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : null;
+    const thumb = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 
     const col = document.createElement('div');
     col.className = 'col-12 col-md-4'; // 3 por fila en desktop
     col.innerHTML = `
       <div class="video-tile">
-        ${id ? `
-          <div class="ratio ratio-16x9 position-relative js-yt" data-id="${escAttr(id)}" aria-label="Reproducir ${escAttr(t)}">
-            <img class="video-thumb" src="${thumb}" alt="${esc(t)}" loading="lazy">
-            <button type="button" class="video-play js-play">▶</button>
+        <div class="ratio ratio-16x9 position-relative js-yt" data-id="${escAttr(id)}" aria-label="Reproducir ${escAttr(t)}">
+          <img class="video-thumb" src="${thumb}" alt="${esc(t)}" loading="lazy">
+          <button type="button" class="video-play js-play" aria-label="Reproducir ${escAttr(t)}">▶</button>
+        </div>
+        <div class="video-text">
+          <div class="video-meta">
+            <span class="video-title" title="${escAttr(t)}">${esc(t)}</span>
+            <a class="video-link" href="${escAttr(href)}" target="_blank" rel="noopener">YouTube ↗</a>
           </div>
-        ` : `
-          <!-- fallback si no es YouTube -->
-          <div class="ratio ratio-16x9 d-flex align-items-center justify-content-center bg-dark text-light">
-            <a href="${escAttr(href)}" target="_blank" rel="noopener" class="video-link">Ver en la fuente</a>
-          </div>
-        `}
-        <div class="video-meta">
-          <span class="video-title" title="${escAttr(t)}">${esc(t)}</span>
-          ${href ? `<a class="video-link" href="${escAttr(href)}" target="_blank" rel="noopener">YouTube ↗</a>` : ''}
+          ${d ? `<p class="video-desc" title="${escAttr(d)}">${esc(d)}</p>` : ''}
         </div>
       </div>`;
     frag.appendChild(col);
@@ -162,8 +159,7 @@ function renderVideoCards(items = []) {
   $host.replaceChildren(frag);
 }
 
-
-// Delegación: al hacer click en “Reproducir” reemplaza la miniatura por un iframe con autoplay
+// Reproducción inline
 document.addEventListener('click', (ev) => {
   const btn = ev.target.closest('.js-play');
   if (!btn) return;
@@ -173,23 +169,23 @@ document.addEventListener('click', (ev) => {
   wrap.innerHTML = `
     <iframe
       class="w-100 h-100"
-      src="https://www.youtube.com/embed/${escAttr(id)}?autoplay=1&rel=0"
+      src="https://www.youtube.com/embed/${escAttr(id)}?autoplay=1&rel=0&modestbranding=1"
       title="YouTube video player"
+      loading="lazy"
       frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen>
     </iframe>`;
 });
 
 /* =======================
-   Carrusel (independiente de sitios)
+   Carrusel
 ======================= */
 async function cargarCarruselData() {
   const res = await fetch(CARRUSEL_JSON);
   if (!res.ok) throw new Error(`HTTP ${res.status} en carrusel.json`);
   const data = await res.json();
-
-  // normaliza claves: img/imagen/image, titulo, texto/caption/descripcion, link/url
   return (Array.isArray(data) ? data : []).map(item => ({
     src: item.img ?? item.imagen ?? item.image ?? CARRUSEL_PLACEHOLDER,
     alt: item.titulo ?? item.alt ?? 'Imagen',
@@ -198,16 +194,6 @@ async function cargarCarruselData() {
   }));
 }
 
-// Helpers para armar slides de a 3
-const ITEMS_POR_SLIDE = 3;
-const chunk = (arr, size) => {
-  const out = [];
-  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
-  return out;
-};
-
-
-// === Modal: insertar una sola vez en <body> ===
 function createModalOnce() {
   if (document.getElementById('imgPreviewModal')) return;
   const modalHTML = `
@@ -231,7 +217,6 @@ function createModalOnce() {
   document.body.insertAdjacentHTML('beforeend', modalHTML);
 }
 
-// === Vincular clic en imagen del carrusel para abrir modal ===
 function attachModalEvents() {
   const imgs = document.querySelectorAll('.js-carrusel-img');
   const modalEl = document.getElementById('imgPreviewModal');
@@ -255,19 +240,14 @@ function attachModalEvents() {
       $title.textContent = alt;
       $cap.textContent = caption;
 
-      if (link) {
-        $link.href = link;
-        $link.classList.remove('d-none');
-      } else {
-        $link.classList.add('d-none');
-      }
+      if (link) { $link.href = link; $link.classList.remove('d-none'); }
+      else { $link.classList.add('d-none'); }
 
       bsModal.show();
     });
   });
 }
 
-// === Carrusel (3 por slide). Click en imagen abre modal ===
 function renderCarrusel(items) {
   const $carrusel = document.getElementById('carrusel');
   if (!$carrusel) return;
@@ -281,17 +261,17 @@ function renderCarrusel(items) {
 
   const indicators = items.map((_, i) =>
     `<button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${i}"
-      ${i === 0 ? 'class="active" aria-current="true"' : ''} aria-label="Slide ${i + 1}"></button>`
+      ${i===0?'class="active" aria-current="true"':''} aria-label="Slide ${i+1}"></button>`
   ).join('');
 
   const inner = items.map((it, i) => {
-    const src = escAttr(it.src ?? it.img ?? it.imagen ?? it.image ?? CARRUSEL_PLACEHOLDER);
-    const alt = esc(it.alt ?? it.titulo ?? 'Imagen');
-    const caption = esc(it.caption ?? it.texto ?? it.descripcion ?? '');
-    const link = it.link ?? it.url ?? '';
+    const src = escAttr(it.src ?? CARRUSEL_PLACEHOLDER);
+    const alt = esc(it.alt ?? 'Imagen');
+    const caption = esc(it.caption ?? '');
+    const link = it.link ?? '';
 
     return `
-      <div class="carousel-item ${i === 0 ? 'active' : ''}" id="carrusel-css">
+      <div class="carousel-item ${i===0 ? 'active' : ''}">
         <img
           src="${src}"
           alt="${alt}"
@@ -299,8 +279,7 @@ function renderCarrusel(items) {
           data-src="${src}"
           data-alt="${alt}"
           data-caption="${caption}"
-          data-link="${link ? escAttr(link) : ''}"
-        >
+          data-link="${link ? escAttr(link) : ''}">
         ${(alt || caption) ? `
         <div class="carousel-caption d-none d-sm-block">
           ${alt ? `<h5 class="mb-1">${alt}</h5>` : ''}
@@ -319,55 +298,61 @@ function renderCarrusel(items) {
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
+        <span class="visualmente-hidden">Siguiente</span>
       </button>
-    </div>
-  `;
+    </div>`;
 
-  // prepara el modal (una sola vez) y conecta eventos de clic
   createModalOnce();
   attachModalEvents();
-};
+}
 
 /* =======================
    Init
 ======================= */
 document.addEventListener('DOMContentLoaded', async () => {
+  // MÓDULOS (tolerante a faltantes)
   try {
-    const packs = await Promise.all(MODULOS.map(cargarModulo));
-    const todos = packs.flat();
+    const packs = await Promise.allSettled(MODULOS.map(cargarModulo));
+    const todos = packs
+      .filter(p => p.status === 'fulfilled')
+      .flatMap(p => p.value);
     renderCards(todos);
-
-    const carruselItems = await cargarCarruselData();
-    renderCarrusel(carruselItems);
-  } catch (error) { // 👈 usa una variable aquí
-    console.error('Error en init:', error); // 👈 y úsala aquí
-
+  } catch (error) {
+    console.error('Error en módulos:', error);
     const $cards = document.getElementById('cards');
     if ($cards) {
       $cards.innerHTML = `
         <div class="col-12">
-          <div class="alert alert-danger">Error cargando datos: ${esc(error?.message || String(error))}</div>
+          <div class="alert alert-danger">Error cargando módulos: ${esc(error?.message || String(error))}</div>
         </div>`;
-    }
-
-    const $carrusel = document.getElementById('carrusel');
-    if ($carrusel) {
-      $carrusel.innerHTML = `<div class="alert alert-danger">No se pudo construir el carrusel.</div>`;
     }
   }
 
-    // === VIDEOS ===
+  // CARRUSEL
   try {
-    const vids = await cargarVideos();
-    renderVideoCards(vids);
+    const carruselItems = await cargarCarruselData();
+    renderCarrusel(carruselItems);
+  } catch (e) {
+    console.error('carrusel error', e);
+    const $carrusel = document.getElementById('carrusel');
+    if ($carrusel) $carrusel.innerHTML = `<div class="alert alert-danger">No se pudo construir el carrusel.</div>`;
+  }
+
+  // VIDEOS (normaliza VIDEOS_SOURCES para aceptar string o array)
+  try {
+    const VIDEO_FILES = Array.isArray(VIDEOS_SOURCES) ? VIDEOS_SOURCES : [VIDEOS_SOURCES];
+const sets = await Promise.allSettled(VIDEO_FILES.map(cargarVideosDesde));
+const vids = sets
+  .filter(p => p.status === 'fulfilled')
+  .flatMap(p => p.value);
+renderVideoCards(vids);
   } catch (e) {
     console.error('videos error', e);
     const $v = document.getElementById('cards_youtube');
     if ($v) $v.innerHTML = `<div class="col-12"><div class="alert alert-danger">No se pudieron cargar los videos.</div></div>`;
   }
 
-  // === CLASES ===
+  // CLASES
   try {
     const clasesItems = await cargarClases();
     renderCardsTo('#cards_clases', clasesItems);
@@ -379,14 +364,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 /* =======================
-   Fondo Matrix (canvas)
+   Fondo Matrix
 ======================= */
 (function(){
   function startMatrixBackground({
     canvasId = 'matrix-bg',
-    color = '#00ff88',   // verde Matrix (cámbialo a '#0d6efd' si quieres azul)
-    fontSize = 16,       // tamaño de carácter
-    fade = 0.08          // rastro (0.05 suave, 0.15 más barrido)
+    color = '#00ff88',
+    fontSize = 16,
+    fade = 0.08
   } = {}) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) { console.warn('[Matrix] No se encontró #' + canvasId); return; }
@@ -397,30 +382,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     let width = 0, height = 0, cols = 0, drops = [], rafId = null;
 
     function sizeCanvas() {
-      // Lee el tamaño CSS que ya tiene el canvas (100vw/100vh por tu CSS)
       const w = canvas.clientWidth || window.innerWidth;
       const h = canvas.clientHeight || window.innerHeight;
-
-      // Ajusta el buffer de dibujo para HiDPI
       canvas.width  = Math.floor(w * dpr);
       canvas.height = Math.floor(h * dpr);
-
-      // Escala el contexto para que 1 unidad == 1 px CSS
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      width = w; 
-      height = h;
+      width = w; height = h;
       cols = Math.floor(width / fontSize);
       drops = Array(cols).fill(0).map(() => Math.floor(Math.random() * height / fontSize));
 
-      // Fondo inicial oscuro para el rastro
       ctx.fillStyle = 'rgba(0,0,0,1)';
       ctx.fillRect(0, 0, width, height);
       ctx.font = `${fontSize}px monospace`;
     }
 
     function tick() {
-      // capa semitransparente que genera el rastro
       ctx.fillStyle = `rgba(0,0,0,${fade})`;
       ctx.fillRect(0,0,width,height);
 
@@ -438,17 +415,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     function start() {
       cancelAnimationFrame(rafId);
       sizeCanvas();
-      // respeta "reduce motion": dibuja 1 frame estático si el usuario lo pide
       const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReduce) {
-        // un frame “congelado”
-        for (let i = 0; i < cols; i++) {
-          const ch = CHARS[Math.floor(Math.random() * CHARS.length)];
-          ctx.fillStyle = color;
-          ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
-        }
-        return;
-      }
+      if (prefersReduce) return;
       tick();
     }
 
@@ -456,7 +424,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     start();
   }
 
-  // Garantiza que corra cuando el DOM ya existe
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => startMatrixBackground());
   } else {
