@@ -1,7 +1,17 @@
 [
   {
     "nombre": "M6_AE1-ABP",
-    "descripcion": "Proyecto AE1-ABP",
-    "url": "https://www.sitio1.com"
+    "descripcion": "Aplicacion para tomar Notas. desarrollada usando Room, ViewModel y Jetpack Compose para crear NotesContentPreview",
+    "url": "https://github.com/KathyAlde21/app_de_notas_con_notescontentpreview"
+  },
+  {
+    "nombre": "M6_AE1-ABPRO",
+    "descripcion": "Aplicación con temporizador para ser utilizado al hacer ejercicio, cuenta con vista previa",
+    "url": "https://github.com/KathyAlde21/app_temporizador_circuitos_de_ejercicio"
+  },
+  {
+    "nombre": "M6_AE2-ABP",
+    "descripcion": "App de Noticias consumiento json con Retrofit, datos de json cargados con link raw desde otro repositorio",
+    "url": "https://github.com/KathyAlde21/app_noticias_con_noticias.json.git"
   }
 ]

@@ -8,5 +8,40 @@
     "nombre": "M5_AE1-ABPRO1",
     "descripcion": "App formato Agenda Personal que permite ingresar eventos con título, fecha y descripción",
     "url": "https://github.com/KathyAlde21/app_agenda_personal_usuario"
+  },
+    {
+    "nombre": "M5_AE2-ABP1",
+    "descripcion": "Aplicacion que muestra cards con nombres Plantas Nativas Sur de Chile usando Jetpack Compose",
+    "url": "https://github.com/KathyAlde21/plantas_nativas_sur_de_chile_app"
+  },
+  {
+    "nombre": "M5_AE2-ABPRO1",
+    "descripcion": "Segunda parte Aplicacion Plantas Nativas Sur de Chile que incorpora segunda pantalla con evento onclick",
+    "url": "https://github.com/KathyAlde21/plantas_nativas_sur_de_chile_app"
+  },
+  {
+    "nombre": "M5_AE3-ABP1",
+    "descripcion": "Aplicacion de Lista de tareas, permite ingresar, eliminar y marcar como completadas",
+    "url": "https://github.com/KathyAlde21/app_lista_de_tareas"
+  },
+  {
+    "nombre": "M5_AE3-ABPRO1",
+    "descripcion": "Aplicacion gastos personales, permite ingresar gastos con datos y monto",
+    "url": "https://github.com/KathyAlde21/app_gastos_personales"
+    },
+    {
+    "nombre": "M5_AE4-ABP1",
+    "descripcion": "Aplicación que muestra el Clima con datos fake, simula llamado a API, async / await y uso de corutinas",
+    "url": "https://github.com/KathyAlde21/app_clima_fake"
+    },
+      {
+    "nombre": "M5_AE4-ABPRO1",
+    "descripcion": "Aplicación que busca libros según autor y titulo con datos pre-ingresados",
+    "url": "https://github.com/KathyAlde21/app_biblioteca_publica.git"
+    },
+    {
+    "nombre": "M5_Evaluación Final",
+    "descripcion": "Aplicación que permite al usuario ingresar sus actividades diarias, con fecha, hora y descripción",
+    "url": "https://github.com/KathyAlde21/app_registro_actividades_diarias"
   }
 ]

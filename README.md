@@ -276,56 +276,56 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 
 - [Aplicación formato Agenda Personal que permite ingresar eventos con título, fecha y descripción](https://github.com/KathyAlde21/app_agenda_personal_usuario)
 
-<!-- &#128203;Actividad AE2-ABP1:
+&#128203;Actividad AE2-ABP1:
 
-- []() -->
+- [Aplicacion que muestra cards con nombres Plantas Nativas Sur de Chile usando Jetpack Compose](https://github.com/KathyAlde21/plantas_nativas_sur_de_chile_app)
 
-<!-- &#128203;Actividad AE2-ABPRO1:
+&#128203;Actividad AE2-ABPRO1:
 
-- []()
+- [Segunda parte Aplicacion Plantas Nativas Sur de Chile que incorpora segunda pantalla con evento onclick](https://github.com/KathyAlde21/plantas_nativas_sur_de_chile_app)
 
-<!-- &#128203;Actividad AE3-ABP1:
+&#128203;Actividad AE3-ABP1:
 
-- []() -->
+- [Aplicacion de Lista de tareas, permite ingresar, eliminar y marcar como completadas](https://github.com/KathyAlde21/app_lista_de_tareas)
 
-<!-- &#128203;Actividad AE3-ABPRO1:
+&#128203;Actividad AE3-ABPRO1:
 
-- []() -->
+- [Aplicacion gastos personales, permite ingresar gastos con datos y monto](https://github.com/KathyAlde21/app_gastos_personales)
 
-<!-- <!-- &#128203;Actividad AE4-ABP1:
+&#128203;Actividad AE4-ABP1:
 
-- []() -->
+- [Aplicación que muestra el Clima con datos fake, simula llamado a API, async / await y uso de corutinas](https://github.com/KathyAlde21/app_clima_fake)
 
-<!-- &#128203;Actividad AE4-ABPRO1:
+&#128203;Actividad AE4-ABPRO1:
 
-- []() -->
+- [Aplicación que busca libros según autor y titulo con datos pre-ingresados](https://github.com/KathyAlde21/app_biblioteca_publica.git)
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 
 
-<!-- **<h2>Evaluación Final del Módulo 5</h2>**
+**<h2>Evaluación Final del Módulo 5</h2>**
 
 &#128203;Evaluación Final del Módulo 5:
 
-- []()
+- [Aplicación que permite al usuario ingresar sus actividades diarias, con fecha, hora y descripción](https://github.com/KathyAlde21/app_registro_actividades_diarias)
 
-<hr style="border: none; height: 2px; background-color: blue; width: 80%;"> -->
+<hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-<!-- **<h2 align="center">&#128204;MÓDULO 6: DESARROLLO DE APLICACIONES EMPRESARIALES ANDROID</h2>** -->
+**<h2 align="center">&#128204;MÓDULO 6: DESARROLLO DE APLICACIONES EMPRESARIALES ANDROID</h2>**
 
-<!-- &#128203;Actividad AE1-ABP1:
+&#128203;Actividad AE1-ABP1:
 
-- []() -->
+- [Aplicacion para tomar Notas. desarrollada usando Room, ViewModel y Jetpack Compose para crear NotesContentPreview](https://github.com/KathyAlde21/app_de_notas_con_notescontentpreview)
 
-<!-- &#128203;Actividad AE1-ABPRO1:
+&#128203;Actividad AE1-ABPRO1:
 
-- []() -->
+- [Aplicación con temporizador para ser utilizado al hacer ejercicio, cuenta con vista previa](https://github.com/KathyAlde21/app_temporizador_circuitos_de_ejercicio)
 
-<!-- &#128203;Actividad AE2-ABP1:
+&#128203;Actividad AE2-ABP1:
 
-- []() -->
+- [App de Noticias consumiento json con Retrofit, datos de json cargados con link raw desde otro repositorio](https://github.com/KathyAlde21/app_noticias_con_noticias.json.git)
 
 <!-- &#128203;Actividad AE2-ABPRO1:
 
