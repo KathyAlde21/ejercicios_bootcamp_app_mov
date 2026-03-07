@@ -22,7 +22,11 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
     ├── 📁data
     │   ├── 🟩sitiosModulo1.json
     │   ├── 🟩sitiosModulo2.json
-    │   └── 🟩sitiosModulo3.json
+    │   ├── 🟩sitiosModulo3.json
+    │   ├── 🟩sitiosModulo4.json
+    │   ├── 🟩sitiosModulo5.json
+    │   ├── 🟩sitiosModulo6.json
+    │   └── 🟩sitiosModulo7.json
     ├── 📁img
     │   └── 🖼️github.png
     └── 📁js
@@ -327,36 +331,13 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 
 - [App de Noticias consumiento json con Retrofit, datos de json cargados con link raw desde otro repositorio](https://github.com/KathyAlde21/app_noticias_con_noticias.json.git)
 
-<!-- &#128203;Actividad AE2-ABPRO1:
+&#128203;Actividad AE2-ABPRO1:
 
-- []() -->
+- [App que muestra los datos de una red de usuarios, consumiendo json con Retrofit desde raw de otro repositorio](https://github.com/KathyAlde21/app_red_usuarios_con_usuarios.json.git)
 
-<!-- &#128203;Actividad AE3-ABP1:
-
-- []() -->
-
-<!-- &#128203;Actividad AE3-ABPRO1:
-
-- []() -->
-
-<!-- &#128203;Actividad AE4-ABP1:
-
-- []() -->
-
-<!-- &#128203;Actividad AE4-ABPRO1:
-
-- []() -->
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 
-
-<!-- **<h2>Evaluación Final del Módulo 7</h2>**
-
-&#128203;Evaluación Final del Módulo 7:
-
-- []()
-
-<hr style="border: none; height: 2px; background-color: blue; width: 80%;"> -->
 
 <!-- ---------------------------------------------------------------------------------------------- -->
 
@@ -377,9 +358,9 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 
 
-**<h2>Evaluación Final del Módulo 6</h2>**
+**<h2>Evaluación Final del Módulo 7</h2>**
 
-&#128203;Evaluación Final del Módulo 6:
+&#128203;Evaluación Final del Módulo 7:
 
 - [App. de Seguridad con Alerta Vecinal, proyecto completado que permite enviar alerta con gelocalización](https://github.com/KathyAlde21/app_seg_vec_nvp)
 
@@ -405,18 +386,6 @@ Puedes visitar la página en [GitHub Pages - Proyectos Bootcamp Desarrollo Aplic
 &#128203;Contactos - Nombre y Teléfono:
 
 - [Código en Kotlin desarrollado en Android Studio para ver contactos usando compose. Muestra nombre y teléfono](https://github.com/KathyAlde21/contactos_compose_kotlin.git)
-
-<!-- &#128203;Actividad 1:
-
-- []() -->
-
-<!-- &#128203;Actividad 1:
-
-- []() -->
-
-<!-- &#128203;Actividad 1:
-
-- []() -->
 
 <hr style="border: none; height: 2px; background-color: blue; width: 80%;">
 ----------------------------------------------------------------------------------------------

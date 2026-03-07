@@ -1,432 +1,634 @@
 'use strict';
 
-/* =======================
-   Config
-======================= */
-const MODULOS = [1,2,3,4,5,6,7];
-
-const RUTA_MOD = (n) => `assets/data/sitiosModulo${n}.json`;
+/* ==========================================================
+   Configuración
+========================================================== */
+const MODULOS = [1, 2, 3, 4, 5, 6, 7];
 
 const SITIOS_CLASES_JSON = 'assets/data/sitiosClases.json';
+const CARRUSEL_DATA = 'assets/data/carrusel.json';
+const VIDEOS_SOURCES = 'assets/data/videos.json';
+const CARRUSEL_PLACEHOLDER = 'https://placehold.co/1200x675?text=Proyecto';
 
-const VIDEOS_SOURCES = ['assets/data/videos.json'];
+const MODULOS_INFO = {
+  1: {
+    etiqueta: 'Módulo 1',
+    titulo: 'Orientación al perfil y metodología del curso',
+    subtitulo: 'Actividades introductorias y primeros acercamientos al bootcamp.'
+  },
+  2: {
+    etiqueta: 'Módulo 2',
+    titulo: 'Fundamentos de programación en Java',
+    subtitulo: 'Ejercicios base, lógica y estructuras para comenzar a programar.'
+  },
+  3: {
+    etiqueta: 'Módulo 3',
+    titulo: 'Fundamentos de bases de datos relacionales',
+    subtitulo: 'Modelado, consultas y trabajo inicial con bases de datos.'
+  },
+  4: {
+    etiqueta: 'Módulo 4',
+    titulo: 'Desarrollo de la interfaz de usuario Android',
+    subtitulo: 'Primeras pantallas, vistas y estructura visual de aplicaciones.'
+  },
+  5: {
+    etiqueta: 'Módulo 5',
+    titulo: 'Arquitectura y ciclo de vida de componentes Android',
+    subtitulo: 'Navegación, componentes y organización interna de la app.'
+  },
+  6: {
+    etiqueta: 'Módulo 6',
+    titulo: 'Desarrollo de aplicaciones empresariales Android',
+    subtitulo: 'Proyectos con mayor integración y lógica aplicada.'
+  },
+  7: {
+    etiqueta: 'Módulo 7',
+    titulo: 'Desarrollo de portafolio de un producto digital',
+    subtitulo: 'Cierre del proceso con trabajos más completos y presentables.'
+  }
+};
 
-const CARRUSEL_JSON = 'assets/data/carrusel.json';
-
-const CARRUSEL_PLACEHOLDER = 'assets/img/placeholder.png';
-
-/* =======================
-   Utils
-======================= */
-const esc = (t='') =>
-  String(t).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
-
-const escAttr = (t='') =>
-  String(t).replaceAll('"','&quot;').replaceAll("'",'&#39;');
-
-function youtubeId(link='') {
-  try {
-    const u = new URL(link);
-    const host = u.hostname.replace(/^www\./,'');
-    if (host === 'youtu.be') return u.pathname.slice(1);
-    if (host === 'youtube.com' || host === 'm.youtube.com') {
-      if (u.pathname === '/watch') return u.searchParams.get('v') ?? '';
-      const m = u.pathname.match(/\/(?:shorts|embed)\/([^/?#]+)/);
-      if (m) return m[1];
-    }
-  } catch {}
-  return '';
+/* ==========================================================
+   Utilidades
+========================================================== */
+function esc(value = '') {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
 }
 
-/* =======================
-   Cards (sitios)
-======================= */
+function escAttr(value = '') {
+  return esc(value);
+}
+
+function asArray(data) {
+  return Array.isArray(data) ? data : [];
+}
+
+function normalizarTexto(value, fallback = '') {
+  const txt = String(value ?? '').trim();
+  return txt || fallback;
+}
+
+function getJsonPathModulo(n) {
+  return `assets/data/sitiosModulo${n}.json`;
+}
+
+function getModulosHost() {
+  return document.getElementById('modulos-container') || document.getElementById('cards');
+}
+
+function prepararHostModulos() {
+  const host = getModulosHost();
+  if (!host) return null;
+
+  host.classList.remove('row', 'g-3');
+  host.innerHTML = '';
+  return host;
+}
+
+function youtubeId(url = '') {
+  const raw = String(url).trim();
+  if (!raw) return null;
+
+  try {
+    const parsed = new URL(raw);
+
+    if (parsed.hostname.includes('youtu.be')) {
+      return parsed.pathname.replace('/', '').trim() || null;
+    }
+
+    if (parsed.hostname.includes('youtube.com')) {
+      const v = parsed.searchParams.get('v');
+      if (v) return v.trim();
+
+      const parts = parsed.pathname.split('/').filter(Boolean);
+      const embedIdx = parts.indexOf('embed');
+      if (embedIdx >= 0 && parts[embedIdx + 1]) return parts[embedIdx + 1];
+
+      const shortsIdx = parts.indexOf('shorts');
+      if (shortsIdx >= 0 && parts[shortsIdx + 1]) return parts[shortsIdx + 1];
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}
+
+function thumbYoutube(videoId) {
+  return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+}
+
+/* ==========================================================
+   Carga de datos
+========================================================== */
+async function cargarJson(path) {
+  const res = await fetch(path);
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} en ${path}`);
+  }
+  return res.json();
+}
+
 async function cargarModulo(n) {
-  const res = await fetch(RUTA_MOD(n));
-  if (!res.ok) throw new Error(`HTTP ${res.status} en módulo ${n}`);
-  const data = await res.json();
-  return (Array.isArray(data) ? data : []).map(item => ({
-    titulo: item.nombre ?? item.titulo ?? 'Sin título',
-    descripcion: item.descripcion ?? item.descripcionCorta ?? 'Sin descripción',
-    link: item.link ?? item.url ?? '#',
+  const data = await cargarJson(getJsonPathModulo(n));
+  return asArray(data).map((item) => ({
+    titulo: normalizarTexto(item.nombre ?? item.titulo, 'Sin título'),
+    descripcion: normalizarTexto(item.descripcion ?? item.descripcionCorta, 'Sin descripción'),
+    link: normalizarTexto(item.link ?? item.url, '#'),
     modulo: n
   }));
 }
 
-// Render genérico reutilizable
-function renderCardsTo(containerSelector, items) {
-  const $cards = typeof containerSelector === 'string'
+async function cargarClases() {
+  const data = await cargarJson(SITIOS_CLASES_JSON);
+  return asArray(data).map((item) => ({
+    titulo: normalizarTexto(item.nombre ?? item.titulo, 'Sin título'),
+    descripcion: normalizarTexto(item.descripcion ?? item.descripcionCorta, 'Sin descripción'),
+    link: normalizarTexto(item.link ?? item.url, '#'),
+    modulo: null
+  }));
+}
+
+async function cargarCarruselData() {
+  const data = await cargarJson(CARRUSEL_DATA);
+  return asArray(data).map((item) => ({
+    src: normalizarTexto(item.src ?? item.img, CARRUSEL_PLACEHOLDER),
+    alt: normalizarTexto(item.alt ?? item.titulo, 'Imagen'),
+    caption: normalizarTexto(item.caption ?? item.texto, ''),
+    link: normalizarTexto(item.link ?? item.url, '')
+  }));
+}
+
+async function cargarVideosDesde(path) {
+  const data = await cargarJson(path);
+  return asArray(data).map((item) => ({
+    titulo: normalizarTexto(item.titulo ?? item.nombre, 'Video'),
+    descripcion: normalizarTexto(item.descripcion ?? item.texto, ''),
+    link: normalizarTexto(item.link ?? item.url, '#')
+  }));
+}
+
+/* ==========================================================
+   Render genérico para cards Bootstrap
+========================================================== */
+function renderCardsTo(containerSelector, items = []) {
+  const host = typeof containerSelector === 'string'
     ? document.querySelector(containerSelector)
     : containerSelector;
-  if (!$cards) return;
 
-  if (!items?.length) {
-    $cards.innerHTML = `
+  if (!host) return;
+
+  if (!items.length) {
+    host.innerHTML = `
       <div class="col-12">
         <div class="alert alert-warning mb-0">No hay proyectos para mostrar.</div>
       </div>`;
     return;
   }
 
-  const frag = document.createDocumentFragment();
-  items.forEach(({ titulo, descripcion, link, modulo }) => {
-    const col = document.createElement('div');
-    // Si quieres 3 por fila en desktop, usa col-12 col-md-4
-    col.className = 'col-12 col-sm-6 col-md-4 col-lg-3';
-    col.innerHTML = `
+  const html = items.map(({ titulo, descripcion, link, modulo }) => `
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="card h-100">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title mb-1">${esc(titulo)}</h5>
           ${modulo != null ? `<h6 class="card-subtitle mb-2 text-muted">Módulo ${modulo}</h6>` : ''}
           <p class="card-text flex-grow-1">${esc(descripcion)}</p>
-          ${link ? `<a class="card-link mt-2" href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">Visitar</a>` : ''}
-        </div>
-      </div>`;
-    frag.appendChild(col);
-  });
-
-  $cards.replaceChildren(frag);
-}
-
-// Wrapper para módulos -> #cards
-function renderCards(items) {
-  renderCardsTo('#cards', items);
-}
-
-/* =======================
-   Clases
-======================= */
-async function cargarClases() {
-  const res = await fetch(SITIOS_CLASES_JSON);
-  if (!res.ok) throw new Error(`HTTP ${res.status} en sitiosClases.json`);
-  const data = await res.json();
-  return (Array.isArray(data) ? data : []).map(item => ({
-    titulo: item.nombre ?? item.titulo ?? 'Sin título',
-    descripcion: item.descripcion ?? item.descripcionCorta ?? 'Sin descripción',
-    link: item.link ?? item.url ?? '#',
-    modulo: null
-  }));
-}
-
-/* =======================
-   Videos (YouTube)
-======================= */
-async function cargarVideosDesde(archivo) {
-  const res = await fetch(archivo);
-  if (!res.ok) throw new Error(`HTTP ${res.status} en ${archivo}`);
-  const data = await res.json();
-  return Array.isArray(data) ? data : [];
-}
-
-function renderVideoCards(items = []) {
-  const $host = document.getElementById('cards_youtube');
-  if (!$host) return;
-
-  if (!items.length) {
-    $host.innerHTML = `<div class="col-12"><div class="alert alert-secondary mb-0">No hay videos para mostrar.</div></div>`;
-    return;
-  }
-
-  const frag = document.createDocumentFragment();
-  items.forEach(({ nombre, titulo, descripcion, url, link }) => {
-    const t = (titulo ?? nombre ?? 'Video');
-    const d = (descripcion ?? '');
-    const href = (link ?? url ?? '#');
-
-    const id = youtubeId(href);
-    if (!id) return; // sólo YouTube
-
-    const thumb = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
-
-    const col = document.createElement('div');
-    col.className = 'col-12 col-md-4'; // 3 por fila en desktop
-    col.innerHTML = `
-      <div class="video-tile">
-        <div class="ratio ratio-16x9 position-relative js-yt" data-id="${escAttr(id)}" aria-label="Reproducir ${escAttr(t)}">
-          <img class="video-thumb" src="${thumb}" alt="${esc(t)}" loading="lazy">
-          <button type="button" class="video-play js-play" aria-label="Reproducir ${escAttr(t)}">▶</button>
-        </div>
-        <div class="video-text">
-          <div class="video-meta">
-            <span class="video-title" title="${escAttr(t)}">${esc(t)}</span>
-            <a class="video-link" href="${escAttr(href)}" target="_blank" rel="noopener">YouTube ↗</a>
-          </div>
-          ${d ? `<p class="video-desc" title="${escAttr(d)}">${esc(d)}</p>` : ''}
-        </div>
-      </div>`;
-    frag.appendChild(col);
-  });
-  $host.replaceChildren(frag);
-}
-
-// Reproducción inline
-document.addEventListener('click', (ev) => {
-  const btn = ev.target.closest('.js-play');
-  if (!btn) return;
-  const wrap = btn.closest('.js-yt');
-  if (!wrap) return;
-  const id = wrap.dataset.id;
-  wrap.innerHTML = `
-    <iframe
-      class="w-100 h-100"
-      src="https://www.youtube.com/embed/${escAttr(id)}?autoplay=1&rel=0&modestbranding=1"
-      title="YouTube video player"
-      loading="lazy"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-    </iframe>`;
-});
-
-/* =======================
-   Carrusel
-======================= */
-async function cargarCarruselData() {
-  const res = await fetch(CARRUSEL_JSON);
-  if (!res.ok) throw new Error(`HTTP ${res.status} en carrusel.json`);
-  const data = await res.json();
-  return (Array.isArray(data) ? data : []).map(item => ({
-    src: item.img ?? item.imagen ?? item.image ?? CARRUSEL_PLACEHOLDER,
-    alt: item.titulo ?? item.alt ?? 'Imagen',
-    caption: item.texto ?? item.caption ?? item.descripcion ?? '',
-    link: item.link ?? item.url ?? null
-  }));
-}
-
-function createModalOnce() {
-  if (document.getElementById('imgPreviewModal')) return;
-  const modalHTML = `
-  <div class="modal fade" id="imgPreviewModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content bg-dark text-light">
-        <div class="modal-header border-0">
-          <h5 class="modal-title" id="imgPreviewTitle"></h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body p-0">
-          <img id="imgPreviewTag" src="" alt="" class="w-100" style="max-height:75vh;object-fit:contain">
-        </div>
-        <div class="modal-footer border-0 d-flex justify-content-between">
-          <p id="imgPreviewCaption" class="mb-0 small text-secondary"></p>
-          <a id="imgPreviewLink" href="#" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm d-none">Visitar</a>
+          ${link && link !== '#'
+            ? `<a class="card-link mt-2" href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">Visitar</a>`
+            : ''
+          }
         </div>
       </div>
     </div>
-  </div>`;
-  document.body.insertAdjacentHTML('beforeend', modalHTML);
+  `).join('');
+
+  host.innerHTML = html;
+}
+
+/* ==========================================================
+   Render módulos separados con scroll horizontal
+========================================================== */
+function crearCardModulo(item) {
+  return `
+    <article class="module-card">
+      <div class="module-card-body">
+        <h5 class="module-card-title">${esc(item.titulo)}</h5>
+        <p class="module-card-text">${esc(item.descripcion)}</p>
+        ${item.link && item.link !== '#'
+          ? `<a class="module-card-link mt-2" href="${escAttr(item.link)}" target="_blank" rel="noopener noreferrer">Visitar repositorio</a>`
+          : ''
+        }
+      </div>
+    </article>
+  `;
+}
+
+function renderModulosSeparados(modulosData = []) {
+  const host = prepararHostModulos();
+  if (!host) return;
+
+  if (!modulosData.length) {
+    host.innerHTML = `<div class="alert alert-warning mb-0">No hay proyectos para mostrar.</div>`;
+    return;
+  }
+
+  host.innerHTML = modulosData.map(({ modulo, items }) => {
+    const info = MODULOS_INFO[modulo] ?? {
+      etiqueta: `Módulo ${modulo}`,
+      titulo: `Trabajos del módulo ${modulo}`,
+      subtitulo: 'Proyectos y ejercicios asociados a este módulo.'
+    };
+
+    return `
+      <section class="module-section mb-5">
+        <div class="module-heading mb-3">
+          <p class="module-kicker mb-1">${esc(info.etiqueta)}</p>
+          <h3 class="module-title mb-1">${esc(info.titulo)}</h3>
+          <p class="module-subtitle mb-0">${esc(info.subtitulo)}</p>
+        </div>
+
+        <div class="module-row">
+          ${items.map(crearCardModulo).join('')}
+        </div>
+      </section>
+    `;
+  }).join('');
+}
+
+/* ==========================================================
+   Modal imagen carrusel
+========================================================== */
+function createModalOnce() {
+  if (document.getElementById('imgPreviewModal')) return;
+
+  const modalHtml = `
+    <div class="modal fade" id="imgPreviewModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="imgPreviewTitle">Vista previa</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <img id="imgPreviewImage" src="" alt="" class="img-fluid rounded mb-3 d-block mx-auto">
+            <p id="imgPreviewCaption" class="mb-0"></p>
+          </div>
+          <div class="modal-footer border-secondary">
+            <a id="imgPreviewLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light d-none">Abrir enlace</a>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.insertAdjacentHTML('beforeend', modalHtml);
 }
 
 function attachModalEvents() {
-  const imgs = document.querySelectorAll('.js-carrusel-img');
   const modalEl = document.getElementById('imgPreviewModal');
-  if (!imgs.length || !modalEl) return;
+  if (!modalEl || typeof bootstrap === 'undefined') return;
 
-  const bsModal = new bootstrap.Modal(modalEl);
-  const $img = document.getElementById('imgPreviewTag');
-  const $title = document.getElementById('imgPreviewTitle');
-  const $cap = document.getElementById('imgPreviewCaption');
-  const $link = document.getElementById('imgPreviewLink');
+  const bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+  const imgs = document.querySelectorAll('.js-carrusel-img');
 
-  imgs.forEach(img => {
-    img.addEventListener('click', () => {
-      const src = img.dataset.src || img.getAttribute('src');
-      const alt = img.dataset.alt || img.getAttribute('alt') || 'Imagen';
-      const caption = img.dataset.caption || '';
-      const link = img.dataset.link || '';
+  const img = document.getElementById('imgPreviewImage');
+  const title = document.getElementById('imgPreviewTitle');
+  const cap = document.getElementById('imgPreviewCaption');
+  const link = document.getElementById('imgPreviewLink');
 
-      $img.src = src;
-      $img.alt = alt;
-      $title.textContent = alt;
-      $cap.textContent = caption;
+  imgs.forEach((node) => {
+    node.addEventListener('click', () => {
+      const src = node.dataset.src || node.getAttribute('src') || '';
+      const alt = node.dataset.alt || node.getAttribute('alt') || 'Imagen';
+      const caption = node.dataset.caption || '';
+      const href = node.dataset.link || '';
 
-      if (link) { $link.href = link; $link.classList.remove('d-none'); }
-      else { $link.classList.add('d-none'); }
+      img.src = src;
+      img.alt = alt;
+      title.textContent = alt;
+      cap.textContent = caption;
+
+      if (href) {
+        link.href = href;
+        link.classList.remove('d-none');
+      } else {
+        link.classList.add('d-none');
+      }
 
       bsModal.show();
     });
   });
 }
 
-function renderCarrusel(items) {
-  const $carrusel = document.getElementById('carrusel');
-  if (!$carrusel) return;
+/* ==========================================================
+   Carrusel
+========================================================== */
+function renderCarrusel(items = []) {
+  const host = document.getElementById('carrusel');
+  if (!host) return;
 
   if (!items.length) {
-    $carrusel.innerHTML = `<div class="alert alert-secondary mb-0">No hay elementos para el carrusel.</div>`;
+    host.innerHTML = `<div class="alert alert-secondary mb-0">No hay elementos para el carrusel.</div>`;
     return;
   }
 
   const carouselId = 'carouselIndependiente';
 
-  const indicators = items.map((_, i) =>
-    `<button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${i}"
-      ${i===0?'class="active" aria-current="true"':''} aria-label="Slide ${i+1}"></button>`
-  ).join('');
+  const indicators = items.map((_, i) => `
+    <button
+      type="button"
+      data-bs-target="#${carouselId}"
+      data-bs-slide-to="${i}"
+      ${i === 0 ? 'class="active" aria-current="true"' : ''}
+      aria-label="Slide ${i + 1}">
+    </button>
+  `).join('');
 
-  const inner = items.map((it, i) => {
-    const src = escAttr(it.src ?? CARRUSEL_PLACEHOLDER);
-    const alt = esc(it.alt ?? 'Imagen');
-    const caption = esc(it.caption ?? '');
-    const link = it.link ?? '';
-
-    return `
-      <div class="carousel-item ${i===0 ? 'active' : ''}">
-        <img
-          src="${src}"
-          alt="${alt}"
-          class="d-block w-100 carrusel-img js-carrusel-img"
-          data-src="${src}"
-          data-alt="${alt}"
-          data-caption="${caption}"
-          data-link="${link ? escAttr(link) : ''}">
-        ${(alt || caption) ? `
+  const inner = items.map((it, i) => `
+    <div class="carousel-item ${i === 0 ? 'active' : ''}">
+      <img
+        src="${escAttr(it.src || CARRUSEL_PLACEHOLDER)}"
+        alt="${esc(it.alt || 'Imagen')}"
+        class="d-block w-100 carrusel-img js-carrusel-img"
+        data-src="${escAttr(it.src || CARRUSEL_PLACEHOLDER)}"
+        data-alt="${esc(it.alt || 'Imagen')}"
+        data-caption="${esc(it.caption || '')}"
+        data-link="${escAttr(it.link || '')}">
+      ${(it.alt || it.caption) ? `
         <div class="carousel-caption d-none d-sm-block">
-          ${alt ? `<h5 class="mb-1">${alt}</h5>` : ''}
-          ${caption ? `<p class="mb-0">${caption}</p>` : ''}
-        </div>` : ''}
-      </div>`;
-  }).join('');
+          <div class="caption-box">
+            ${it.alt ? `<h5 class="mb-1">${esc(it.alt)}</h5>` : ''}
+            ${it.caption ? `<p class="mb-0">${esc(it.caption)}</p>` : ''}
+          </div>
+        </div>` : ''
+      }
+    </div>
+  `).join('');
 
-  $carrusel.innerHTML = `
+  host.innerHTML = `
     <div id="${carouselId}" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">${indicators}</div>
       <div class="carousel-inner">${inner}</div>
+
       <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Anterior</span>
       </button>
+
       <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visualmente-hidden">Siguiente</span>
+        <span class="visually-hidden">Siguiente</span>
       </button>
-    </div>`;
+    </div>
+  `;
 
   createModalOnce();
   attachModalEvents();
 }
 
-/* =======================
-   Init
-======================= */
-document.addEventListener('DOMContentLoaded', async () => {
-  // MÓDULOS (tolerante a faltantes)
-  try {
-    const packs = await Promise.allSettled(MODULOS.map(cargarModulo));
-    const todos = packs
-      .filter(p => p.status === 'fulfilled')
-      .flatMap(p => p.value);
-    renderCards(todos);
-  } catch (error) {
-    console.error('Error en módulos:', error);
-    const $cards = document.getElementById('cards');
-    if ($cards) {
-      $cards.innerHTML = `
-        <div class="col-12">
-          <div class="alert alert-danger">Error cargando módulos: ${esc(error?.message || String(error))}</div>
-        </div>`;
-    }
+/* ==========================================================
+   Videos YouTube
+========================================================== */
+function renderVideoCards(items = []) {
+  const host = document.getElementById('cards_youtube');
+  if (!host) return;
+
+  if (!items.length) {
+    host.innerHTML = `<div class="col-12"><div class="alert alert-secondary mb-0">No hay videos para mostrar.</div></div>`;
+    return;
   }
 
-  // CARRUSEL
-  try {
-    const carruselItems = await cargarCarruselData();
-    renderCarrusel(carruselItems);
-  } catch (e) {
-    console.error('carrusel error', e);
-    const $carrusel = document.getElementById('carrusel');
-    if ($carrusel) $carrusel.innerHTML = `<div class="alert alert-danger">No se pudo construir el carrusel.</div>`;
-  }
+  const html = items.map((item) => {
+    const titulo = item.titulo || 'Video';
+    const descripcion = item.descripcion || '';
+    const href = item.link || '#';
+    const id = youtubeId(href);
+    const thumb = id ? thumbYoutube(id) : 'https://placehold.co/640x360?text=Video';
+    const embed = id ? `https://www.youtube.com/embed/${id}` : '';
 
-  // VIDEOS (normaliza VIDEOS_SOURCES para aceptar string o array)
-  try {
-    const VIDEO_FILES = Array.isArray(VIDEOS_SOURCES) ? VIDEOS_SOURCES : [VIDEOS_SOURCES];
-const sets = await Promise.allSettled(VIDEO_FILES.map(cargarVideosDesde));
-const vids = sets
-  .filter(p => p.status === 'fulfilled')
-  .flatMap(p => p.value);
-renderVideoCards(vids);
-  } catch (e) {
-    console.error('videos error', e);
-    const $v = document.getElementById('cards_youtube');
-    if ($v) $v.innerHTML = `<div class="col-12"><div class="alert alert-danger">No se pudieron cargar los videos.</div></div>`;
-  }
+    return `
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="video-tile">
+          <div class="ratio ratio-16x9">
+            ${embed
+              ? `<iframe
+                  src="${escAttr(embed)}"
+                  title="${escAttr(titulo)}"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  loading="lazy"></iframe>`
+              : `<img class="video-thumb" src="${escAttr(thumb)}" alt="${escAttr(titulo)}" loading="lazy">`
+            }
+          </div>
 
-  // CLASES
-  try {
-    const clasesItems = await cargarClases();
-    renderCardsTo('#cards_clases', clasesItems);
-  } catch (e) {
-    console.error('clases error', e);
-    const $c = document.getElementById('cards_clases');
-    if ($c) $c.innerHTML = `<div class="col-12"><div class="alert alert-danger">No se pudieron cargar los links de clases.</div></div>`;
-  }
-});
+          <div class="video-text">
+            <div class="video-meta">
+              <strong class="video-title">${esc(titulo)}</strong>
+              ${href && href !== '#'
+                ? `<a class="video-link" href="${escAttr(href)}" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>`
+                : ''
+              }
+            </div>
 
-/* =======================
+            ${descripcion ? `<p class="video-desc">${esc(descripcion)}</p>` : ''}
+          </div>
+        </article>
+      </div>
+    `;
+  }).join('');
+
+  host.innerHTML = html;
+}
+
+/* ==========================================================
    Fondo Matrix
-======================= */
-(function(){
+========================================================== */
+(function () {
   function startMatrixBackground({
     canvasId = 'matrix-bg',
-    color = '#00ff88',
+    color = '#00ff8860',
     fontSize = 16,
-    fade = 0.08
+    fade = 0.05,
+    speed = 0.35
   } = {}) {
     const canvas = document.getElementById(canvasId);
-    if (!canvas) { console.warn('[Matrix] No se encontró #' + canvasId); return; }
+    if (!canvas) return;
+
     const ctx = canvas.getContext('2d');
     const dpr = Math.max(1, window.devicePixelRatio || 1);
-    const CHARS = 'アイウエオｱｲｳｴｵ01ABCDEFGHJKLMNPQRSTUVWXYZ';
+    const chars = 'アイウエオｱｲｳｴｵ01ABCDEFGHJKLMNPQRSTUVWXYZ';
 
-    let width = 0, height = 0, cols = 0, drops = [], rafId = null;
+    let width = 0;
+    let height = 0;
+    let cols = 0;
+    let drops = [];
+    let rafId = null;
+    let lastTime = 0;
+    let acc = 0;
 
     function sizeCanvas() {
-      const w = canvas.clientWidth || window.innerWidth;
-      const h = canvas.clientHeight || window.innerHeight;
-      canvas.width  = Math.floor(w * dpr);
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+
+      canvas.width = Math.floor(w * dpr);
       canvas.height = Math.floor(h * dpr);
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      width = w; height = h;
-      cols = Math.floor(width / fontSize);
-      drops = Array(cols).fill(0).map(() => Math.floor(Math.random() * height / fontSize));
+      width = w;
+      height = h;
+      cols = Math.max(1, Math.floor(width / fontSize));
+      drops = Array(cols).fill(0).map(() => Math.floor(Math.random() * (height / fontSize)));
 
       ctx.fillStyle = 'rgba(0,0,0,1)';
       ctx.fillRect(0, 0, width, height);
-      ctx.font = `${fontSize}px monospace`;
     }
 
-    function tick() {
-      ctx.fillStyle = `rgba(0,0,0,${fade})`;
-      ctx.fillRect(0,0,width,height);
+    function drawFrame() {
+      ctx.fillStyle = `rgba(0, 0, 0, ${fade})`;
+      ctx.fillRect(0, 0, width, height);
 
-      for (let i = 0; i < cols; i++) {
-        const ch = CHARS[Math.floor(Math.random() * CHARS.length)];
-        ctx.fillStyle = color;
-        ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
+      ctx.fillStyle = color;
+      ctx.font = `${fontSize}px monospace`;
 
-        if (drops[i] * fontSize > height && Math.random() > 0.975) drops[i] = 0;
-        else drops[i]++;
+      for (let i = 0; i < drops.length; i += 1) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        const x = i * fontSize;
+        const y = drops[i] * fontSize;
+
+        ctx.fillText(text, x, y);
+
+        if (y > height && Math.random() > 0.975) {
+          drops[i] = 0;
+        } else {
+          drops[i] += 1;
+        }
       }
+    }
+
+    function tick(ts) {
+      if (!lastTime) lastTime = ts;
+      const delta = ts - lastTime;
+      lastTime = ts;
+      acc += delta;
+
+      const interval = 1000 / (30 * speed);
+
+      if (acc >= interval) {
+        drawFrame();
+        acc = 0;
+      }
+
       rafId = requestAnimationFrame(tick);
     }
 
-    function start() {
-      cancelAnimationFrame(rafId);
-      sizeCanvas();
-      const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReduce) return;
-      tick();
-    }
-
+    sizeCanvas();
     window.addEventListener('resize', sizeCanvas);
-    start();
+    rafId = requestAnimationFrame(tick);
+
+    return () => {
+      window.removeEventListener('resize', sizeCanvas);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => startMatrixBackground());
-  } else {
-    startMatrixBackground();
-  }
+  window.startMatrixBackground = startMatrixBackground;
 })();
+
+/* ==========================================================
+   Init
+========================================================== */
+document.addEventListener('DOMContentLoaded', async () => {
+  /* ************* */
+  // MÓDULOS
+  /* ************* */
+  try {
+    const packs = await Promise.allSettled(
+      MODULOS.map(async (n) => ({
+        modulo: n,
+        items: await cargarModulo(n)
+      }))
+    );
+
+    const modulosOk = packs
+      .filter((p) => p.status === 'fulfilled')
+      .map((p) => p.value)
+      .filter(({ items }) => items.length);
+
+    renderModulosSeparados(modulosOk);
+  } catch (error) {
+    console.error('Error en módulos:', error);
+    const host = getModulosHost();
+    if (host) {
+      host.innerHTML = `<div class="alert alert-danger">Error cargando módulos: ${esc(error?.message || String(error))}</div>`;
+    }
+  }
+
+  /* ************* */
+  // CARRUSEL
+  /* ************* */
+  try {
+    const carruselItems = await cargarCarruselData();
+    renderCarrusel(carruselItems);
+  } catch (error) {
+    console.error('Error en carrusel:', error);
+    const host = document.getElementById('carrusel');
+    if (host) {
+      host.innerHTML = `<div class="alert alert-danger">No se pudo construir el carrusel.</div>`;
+    }
+  }
+
+  /* ************* */
+  // VIDEOS
+  /* ************* */
+  try {
+    const archivos = Array.isArray(VIDEOS_SOURCES) ? VIDEOS_SOURCES : [VIDEOS_SOURCES];
+    const sets = await Promise.allSettled(archivos.map(cargarVideosDesde));
+    const videos = sets
+      .filter((p) => p.status === 'fulfilled')
+      .flatMap((p) => p.value);
+
+    renderVideoCards(videos);
+  } catch (error) {
+    console.error('Error en videos:', error);
+    const host = document.getElementById('cards_youtube');
+    if (host) {
+      host.innerHTML = `<div class="col-12"><div class="alert alert-danger">No se pudieron cargar los videos.</div></div>`;
+    }
+  }
+
+  /* ************* */
+  // CLASES
+  /* ************* */
+  try {
+    const clasesItems = await cargarClases();
+    renderCardsTo('#cards_clases', clasesItems);
+  } catch (error) {
+    console.error('Error en clases:', error);
+    const host = document.getElementById('cards_clases');
+    if (host) {
+      host.innerHTML = `<div class="col-12"><div class="alert alert-danger">No se pudieron cargar los links de clases.</div></div>`;
+    }
+  }
+
+  /* ************* */
+  // MATRIX
+  /* ************* */
+  if (typeof window.startMatrixBackground === 'function') {
+    window.startMatrixBackground({
+      canvasId: 'matrix-bg',
+      color: '#00ff8860',
+      fontSize: 16,
+      fade: 0.05,
+      speed: 0.35
+    });
+  }
+});

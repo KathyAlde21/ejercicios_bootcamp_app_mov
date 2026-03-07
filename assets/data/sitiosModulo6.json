@@ -13,5 +13,10 @@
     "nombre": "M6_AE2-ABP",
     "descripcion": "App de Noticias consumiento json con Retrofit, datos de json cargados con link raw desde otro repositorio",
     "url": "https://github.com/KathyAlde21/app_noticias_con_noticias.json.git"
+  },
+  {
+    "nombre": "M6_AE2-ABPRO",
+    "descripcion": "App que muestra los datos de una red de usuarios, consumiendo json con Retrofit desde raw de otro repositorio",
+    "url": "https://github.com/KathyAlde21/app_red_usuarios_con_usuarios.json.git"
   }
 ]
