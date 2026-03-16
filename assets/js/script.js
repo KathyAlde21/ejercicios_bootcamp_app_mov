@@ -6,9 +6,9 @@
 const MODULOS = [1, 2, 3, 4, 5, 6, 7];
 
 const SITIOS_CLASES_JSON = 'assets/data/sitiosClases.json';
-const CARRUSEL_DATA = 'assets/data/carrusel.json';
+const IMAGENES_SOURCES = 'assets/data/imagenes.json';
 const VIDEOS_SOURCES = 'assets/data/videos.json';
-const CARRUSEL_PLACEHOLDER = 'https://placehold.co/1200x675?text=Proyecto';
+const IMAGENES_PLACEHOLDER = 'https://placehold.co/1200x675?text=Proyecto';
 
 const MODULOS_INFO = {
   1: {
@@ -154,14 +154,13 @@ async function cargarClases() {
   }));
 }
 
-async function cargarCarruselData() {
-  const data = await cargarJson(CARRUSEL_DATA);
-  return asArray(data).map((item) => ({
-    src: normalizarTexto(item.src ?? item.img, CARRUSEL_PLACEHOLDER),
-    alt: normalizarTexto(item.alt ?? item.titulo, 'Imagen'),
-    caption: normalizarTexto(item.caption ?? item.texto, ''),
-    link: normalizarTexto(item.link ?? item.url, '')
-  }));
+async function cargarImagenesData() {
+  const response = await fetch(IMAGENES_SOURCES);
+  if (!response.ok) {
+    throw new Error(`Error al cargar imágenes: ${response.status}`);
+  }
+  const data = await response.json();
+  return Array.isArray(data) ? data : [];
 }
 
 async function cargarVideosDesde(path) {
@@ -261,135 +260,90 @@ function renderModulosSeparados(modulosData = []) {
 }
 
 /* ==========================================================
-   Modal imagen carrusel
+   Imágenes representativas con scroll horizontal + modal
 ========================================================== */
-function createModalOnce() {
-  if (document.getElementById('imgPreviewModal')) return;
-
-  const modalHtml = `
-    <div class="modal fade" id="imgPreviewModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content bg-dark text-light">
-          <div class="modal-header border-secondary">
-            <h5 class="modal-title" id="imgPreviewTitle">Vista previa</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-          </div>
-          <div class="modal-body">
-            <img id="imgPreviewImage" src="" alt="" class="img-fluid rounded mb-3 d-block mx-auto">
-            <p id="imgPreviewCaption" class="mb-0"></p>
-          </div>
-          <div class="modal-footer border-secondary">
-            <a id="imgPreviewLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light d-none">Abrir enlace</a>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-
-  document.body.insertAdjacentHTML('beforeend', modalHtml);
+function getImagenesHost() {
+  return document.getElementById('cards_imagenes');
 }
 
-function attachModalEvents() {
-  const modalEl = document.getElementById('imgPreviewModal');
+function prepararHostImagenes() {
+  const host = getImagenesHost();
+  if (!host) return null;
+
+  host.classList.remove('row', 'g-3');
+  host.classList.add('image-gallery-row');
+  host.innerHTML = '';
+  return host;
+}
+
+function crearCardImagen(item, index) {
+  const src = normalizarTexto(item.img, IMAGENES_PLACEHOLDER);
+  const titulo = normalizarTexto(item.titulo, `Proyecto ${index + 1}`);
+  const alt = titulo;
+  const texto = normalizarTexto(item.texto, 'Imagen representativa del bootcamp.');
+
+  return `
+    <article class="image-card">
+      <button
+        type="button"
+        class="image-card-trigger js-open-image"
+        data-img="${escAttr(src)}"
+        data-alt="${escAttr(alt)}"
+        data-caption="${escAttr(texto)}"
+        aria-label="Ampliar imagen: ${escAttr(titulo)}">
+        <img class="image-card-img" src="${escAttr(src)}" alt="${escAttr(alt)}" loading="lazy">
+      </button>
+
+      <div class="image-card-body">
+        <h4 class="image-card-title">${esc(titulo)}</h4>
+        <p class="image-card-text">${esc(texto)}</p>
+      </div>
+    </article>
+  `;
+}
+
+function activarModalImagenes() {
+  const modalEl = document.getElementById('imageModal');
   if (!modalEl || typeof bootstrap === 'undefined') return;
 
-  const bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
-  const imgs = document.querySelectorAll('.js-carrusel-img');
+  const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+  const modalTitle = document.getElementById('imageModalLabel');
+  const modalImage = document.getElementById('modalImage');
+  const modalCaption = document.getElementById('modalImageCaption');
 
-  const img = document.getElementById('imgPreviewImage');
-  const title = document.getElementById('imgPreviewTitle');
-  const cap = document.getElementById('imgPreviewCaption');
-  const link = document.getElementById('imgPreviewLink');
+  document.querySelectorAll('.js-open-image').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const src = btn.dataset.img || IMAGENES_PLACEHOLDER;
+      const alt = btn.dataset.alt || 'Imagen ampliada';
+      const caption = btn.dataset.caption || '';
 
-  imgs.forEach((node) => {
-    node.addEventListener('click', () => {
-      const src = node.dataset.src || node.getAttribute('src') || '';
-      const alt = node.dataset.alt || node.getAttribute('alt') || 'Imagen';
-      const caption = node.dataset.caption || '';
-      const href = node.dataset.link || '';
+      modalTitle.textContent = alt;
+      modalImage.src = src;
+      modalImage.alt = alt;
+      modalCaption.textContent = caption;
 
-      img.src = src;
-      img.alt = alt;
-      title.textContent = alt;
-      cap.textContent = caption;
-
-      if (href) {
-        link.href = href;
-        link.classList.remove('d-none');
-      } else {
-        link.classList.add('d-none');
-      }
-
-      bsModal.show();
+      modal.show();
     });
+  });
+
+  modalEl.addEventListener('hidden.bs.modal', () => {
+    modalImage.src = '';
+    modalImage.alt = '';
+    modalCaption.textContent = '';
   });
 }
 
-/* ==========================================================
-   Carrusel
-========================================================== */
-function renderCarrusel(items = []) {
-  const host = document.getElementById('carrusel');
+function renderImagenes(imagenesData = []) {
+  const host = prepararHostImagenes();
   if (!host) return;
 
-  if (!items.length) {
-    host.innerHTML = `<div class="alert alert-secondary mb-0">No hay elementos para el carrusel.</div>`;
+  if (!imagenesData.length) {
+    host.innerHTML = `<div class="alert alert-warning mb-0">No hay imágenes para mostrar.</div>`;
     return;
   }
 
-  const carouselId = 'carouselIndependiente';
-
-  const indicators = items.map((_, i) => `
-    <button
-      type="button"
-      data-bs-target="#${carouselId}"
-      data-bs-slide-to="${i}"
-      ${i === 0 ? 'class="active" aria-current="true"' : ''}
-      aria-label="Slide ${i + 1}">
-    </button>
-  `).join('');
-
-  const inner = items.map((it, i) => `
-    <div class="carousel-item ${i === 0 ? 'active' : ''}">
-      <img
-        src="${escAttr(it.src || CARRUSEL_PLACEHOLDER)}"
-        alt="${esc(it.alt || 'Imagen')}"
-        class="d-block w-100 carrusel-img js-carrusel-img"
-        data-src="${escAttr(it.src || CARRUSEL_PLACEHOLDER)}"
-        data-alt="${esc(it.alt || 'Imagen')}"
-        data-caption="${esc(it.caption || '')}"
-        data-link="${escAttr(it.link || '')}">
-      ${(it.alt || it.caption) ? `
-        <div class="carousel-caption d-none d-sm-block">
-          <div class="caption-box">
-            ${it.alt ? `<h5 class="mb-1">${esc(it.alt)}</h5>` : ''}
-            ${it.caption ? `<p class="mb-0">${esc(it.caption)}</p>` : ''}
-          </div>
-        </div>` : ''
-      }
-    </div>
-  `).join('');
-
-  host.innerHTML = `
-    <div id="${carouselId}" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">${indicators}</div>
-      <div class="carousel-inner">${inner}</div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-
-      <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-      </button>
-    </div>
-  `;
-
-  createModalOnce();
-  attachModalEvents();
+  host.innerHTML = imagenesData.map(crearCardImagen).join('');
+  activarModalImagenes();
 }
 
 /* ==========================================================
@@ -554,18 +508,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     const packs = await Promise.allSettled(
       MODULOS.map(async (n) => ({
         modulo: n,
-        items: await cargarModulo(n)
-      }))
+        items: await cargarModulo(n),
+      })),
     );
 
     const modulosOk = packs
-      .filter((p) => p.status === 'fulfilled')
+      .filter((p) => p.status === "fulfilled")
       .map((p) => p.value)
       .filter(({ items }) => items.length);
 
     renderModulosSeparados(modulosOk);
   } catch (error) {
-    console.error('Error en módulos:', error);
+    console.error("Error en módulos:", error);
     const host = getModulosHost();
     if (host) {
       host.innerHTML = `<div class="alert alert-danger">Error cargando módulos: ${esc(error?.message || String(error))}</div>`;
@@ -573,33 +527,35 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   /* ************* */
-  // CARRUSEL
+  // IMAGENES
   /* ************* */
   try {
-    const carruselItems = await cargarCarruselData();
-    renderCarrusel(carruselItems);
+    const imagenesItems = await cargarImagenesData();
+    renderImagenes(imagenesItems);
   } catch (error) {
-    console.error('Error en carrusel:', error);
-    const host = document.getElementById('carrusel');
+    console.error('Error en imágenes:', error);
+    const host = document.getElementById('cards_imagenes');
     if (host) {
-      host.innerHTML = `<div class="alert alert-danger">No se pudo construir el carrusel.</div>`;
+      host.innerHTML = `<div class="alert alert-danger">No se pudieron cargar las imágenes.</div>`;
     }
   }
-
+  
   /* ************* */
   // VIDEOS
   /* ************* */
   try {
-    const archivos = Array.isArray(VIDEOS_SOURCES) ? VIDEOS_SOURCES : [VIDEOS_SOURCES];
+    const archivos = Array.isArray(VIDEOS_SOURCES)
+      ? VIDEOS_SOURCES
+      : [VIDEOS_SOURCES];
     const sets = await Promise.allSettled(archivos.map(cargarVideosDesde));
     const videos = sets
-      .filter((p) => p.status === 'fulfilled')
+      .filter((p) => p.status === "fulfilled")
       .flatMap((p) => p.value);
 
     renderVideoCards(videos);
   } catch (error) {
-    console.error('Error en videos:', error);
-    const host = document.getElementById('cards_youtube');
+    console.error("Error en videos:", error);
+    const host = document.getElementById("cards_youtube");
     if (host) {
       host.innerHTML = `<div class="col-12"><div class="alert alert-danger">No se pudieron cargar los videos.</div></div>`;
     }
@@ -610,10 +566,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   /* ************* */
   try {
     const clasesItems = await cargarClases();
-    renderCardsTo('#cards_clases', clasesItems);
+    renderCardsTo("#cards_clases", clasesItems);
   } catch (error) {
-    console.error('Error en clases:', error);
-    const host = document.getElementById('cards_clases');
+    console.error("Error en clases:", error);
+    const host = document.getElementById("cards_clases");
     if (host) {
       host.innerHTML = `<div class="col-12"><div class="alert alert-danger">No se pudieron cargar los links de clases.</div></div>`;
     }
@@ -622,13 +578,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   /* ************* */
   // MATRIX
   /* ************* */
-  if (typeof window.startMatrixBackground === 'function') {
+  if (typeof window.startMatrixBackground === "function") {
     window.startMatrixBackground({
-      canvasId: 'matrix-bg',
-      color: '#00ff8860',
+      canvasId: "matrix-bg",
+      color: "#00ff8860",
       fontSize: 16,
       fade: 0.05,
-      speed: 0.35
+      speed: 0.35,
     });
   }
 });

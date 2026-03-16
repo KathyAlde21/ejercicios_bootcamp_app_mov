@@ -1,27 +1,32 @@
 [
     {
-        "nombre": "M1_AE1 ABP1-A",
+        "nombre": "M1_AE4 ABP1-A",
         "descripcion": "Proyecto en PSeInt (.psc)  Descuento en Compra del 10% según monto:",
-        "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_4/descuento10porciento.psc"
+        "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_4/descuento10porciento.psc",
+        "img": "../img/modulo1/descuento_pseint.jpg"
     },
     {
-        "nombre": "M1_AE1 ABP1-B",
+        "nombre": "M1_AE4 ABP1-B",
         "descripcion": "Proyecto en Java Descuento en Compra del 10% según monto:",
-        "url": "https://github.com/KathyAlde21/descuento_java"
+        "url": "https://github.com/KathyAlde21/descuento_java",
+        "img": "../img/modulo1/descuento_java.jpg"
     },
     {
-        "nombre": "M1_AE2 ABP2",
+        "nombre": "M1_AE4 ABP2",
         "descripcion": "Proyecto en Python Promedio de Notas para aprobar",
-        "url": "https://github.com/KathyAlde21/promedio_notas_python"
+        "url": "https://github.com/KathyAlde21/promedio_notas_python",
+        "img": "../img/modulo1/promedio_notas_python_replit.com.png"
     },
     {
-        "nombre": "M1_AE3 ABP3",
-        "descripcion": "Poyecto en Python y PSeInt Calculadora Interactiva:",
-        "url": "https://github.com/KathyAlde21/calculadora_interactiva_python_pseint"
+        "nombre": "M1_AE4 ABP3",
+        "descripcion": "Proyecto en Python y PSeInt Calculadora Interactiva:",
+        "url": "https://github.com/KathyAlde21/calculadora_interactiva_python_pseint",
+        "img": "../img/modulo1/calculadora_interactiva_replit.png"
     },
     {
-    "nombre": "M1_AE4 ABP4",
-    "descripcion": "Poyecto en Python llamado Buenas Prácticas, evalua promedio de notas para aprobar",
-    "url": "https://github.com/KathyAlde21/notas_apruebo_python"
+        "nombre": "M1_AE4 ABP4",
+        "descripcion": "Proyecto en Python llamado Buenas Prácticas, evalua promedio de notas para aprobar",
+        "url": "https://github.com/KathyAlde21/notas_apruebo_python",
+        "img": "../img/modulo1/notas_apruebo_replit.png"
     }
 ]

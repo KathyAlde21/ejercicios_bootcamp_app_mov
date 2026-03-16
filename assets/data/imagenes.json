@@ -1,0 +1,22 @@
+[
+  {
+    "img": "assets/img/imagenes_proyectos/enviarMensajeWapp_paso_a_paso.jpg",
+    "titulo": "Lógica inicial en PSeInt",
+    "texto": "Ejercicio orientado al desarrollo de pensamiento lógico y resolución paso a paso."
+  },
+  {
+    "img": "assets/img/imagenes_proyectos/eer_diagram_ventas_m4_abp_ae4-1.jpg",
+    "titulo": "Modelado de base de datos",
+    "texto": "Diseño de tablas y relaciones para resolver necesidades de almacenamiento y consulta."
+  },
+  {
+    "img": "assets/img/imagenes_proyectos/menu_consola_menu_principal.java.jpg",
+    "titulo": "Aplicación de consola en Java",
+    "texto": "Proyecto enfocado en estructuras de control, menús y organización básica del código."
+  },
+  {
+    "img": "assets/img/imagenes_proyectos/hola_mundo_android.jpg",
+    "titulo": "Primeros pasos en Android Studio",
+    "texto": "Inicio del trabajo con interfaces, ejecución en emulador y estructura de proyecto móvil."
+  }
+]
