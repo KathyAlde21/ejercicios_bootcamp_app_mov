@@ -9,7 +9,6 @@
 <hr style="border: none; height: 0.06px; background-color: grey; width: 100%">
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-
 &#128203;App. de Seguridad con Alerta Vecinal:
 
 - Proyecto desarrollado en 4 etapas incrementando las funcionalidades.

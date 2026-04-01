@@ -2,21 +2,25 @@
   {
     "nombre": "M6_AE1-ABP",
     "descripcion": "Aplicacion para tomar Notas. desarrollada usando Room, ViewModel y Jetpack Compose para crear NotesContentPreview",
-    "url": "https://github.com/KathyAlde21/app_de_notas_con_notescontentpreview"
+    "url": "https://github.com/KathyAlde21/app_de_notas_con_notescontentpreview",
+    "img": "../assets/img/modulo6/app_de_notas.jpg"
   },
   {
     "nombre": "M6_AE1-ABPRO",
     "descripcion": "Aplicación con temporizador para ser utilizado al hacer ejercicio, cuenta con vista previa",
-    "url": "https://github.com/KathyAlde21/app_temporizador_circuitos_de_ejercicio"
+    "url": "https://github.com/KathyAlde21/app_temporizador_circuitos_de_ejercicio",
+    "img": "../assets/img/modulo6/circuitos_ejercicio.jpg"
   },
   {
     "nombre": "M6_AE2-ABP",
     "descripcion": "App de Noticias consumiento json con Retrofit, datos de json cargados con link raw desde otro repositorio",
-    "url": "https://github.com/KathyAlde21/app_noticias_con_noticias.json.git"
+    "url": "https://github.com/KathyAlde21/app_noticias_con_noticias.json.git",
+    "img": "../assets/img/modulo6/noticias.jpg"
   },
   {
     "nombre": "M6_AE2-ABPRO",
     "descripcion": "App que muestra los datos de una red de usuarios, consumiendo json con Retrofit desde raw de otro repositorio",
-    "url": "https://github.com/KathyAlde21/app_red_usuarios_con_usuarios.json.git"
+    "url": "https://github.com/KathyAlde21/app_red_usuarios_con_usuarios.json.git",
+    "img": "../assets/img/modulo6/app_red_usuarios_1.jpg"
   }
 ]

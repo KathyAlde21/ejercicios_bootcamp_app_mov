@@ -2,9 +2,9 @@
 
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-**<h2 align="center">&#128204; Módulo 2 - Fundamentos de Programación en Java</h2>**
+**<h2 align="center">&#128204; Módulo 1 - Orientación al Perfil y Metodología del Curso</h2>**
 
-[GitHub Pages - Proyectos Módulo 2 - Bootcamp Desarrollo Aplicaciones Móviles](https://kathyalde21.github.io/ejercicios_bootcamp_app_mov/sitiosModulo2.html)
+[GitHub Pages - Proyectos Módulo 1 - Bootcamp Desarrollo Aplicaciones Móviles](https://kathyalde21.github.io/ejercicios_bootcamp_app_mov/sitiosModulo1.html)
 
 <hr style="border: none; height: 0.06px; background-color: grey; width: 100%">
 <!-- ---------------------------------------------------------------------------------------------- -->

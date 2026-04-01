@@ -89,7 +89,7 @@
 
 <!-- AE5 ABP: -->
 
-- Tabla Clinica San Patras [MySQL, construida en base a modelo entidad relacion](https://github.com/KathyAlde21/clinica_san_patrás_mysql)
+- Tabla Clinica San Patras [MySQL, construida en base a modelo entidad relacion](https://github.com/KathyAlde21/clinica_san_patras_mysql)
 
 <br>
 <hr style="border: none; height: 0.06px; background-color: grey; width: 100%">
@@ -99,7 +99,7 @@
 
 <!-- AE5 ABP2: -->
 
-- Tabla de Ventas [MySQL, inicia con 5 tabalas y se suman 3 más segun requerimiento](https://github.com/KathyAlde21/ventas_abp2_ae5)
+- Tabla de Ventas [MySQL, inicia con 5 tablas y se suman 3 más segun requerimiento](https://github.com/KathyAlde21/ventas_abp2_ae5)
 
 <br>
 <hr style="border: none; height: 0.06px; background-color: grey; width: 100%">

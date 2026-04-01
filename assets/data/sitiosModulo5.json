@@ -2,46 +2,55 @@
   {
     "nombre": "M5_AE1-ABP1",
     "descripcion": "Aplicacion que muestra el uso de Kotlin para una Startup Aplicaciones Moviles",
-    "url": "https://github.com/KathyAlde21/app_startup_aplicacion_movil"
+    "url": "https://github.com/KathyAlde21/app_startup_aplicacion_movil",
+    "img": "../assets/img/modulo5/codigo_proyecto.jpg"
   },
   {
     "nombre": "M5_AE1-ABPRO1",
     "descripcion": "App formato Agenda Personal que permite ingresar eventos con título, fecha y descripción",
-    "url": "https://github.com/KathyAlde21/app_agenda_personal_usuario"
+    "url": "https://github.com/KathyAlde21/app_agenda_personal_usuario",
+    "img": "../assets/img/modulo5/codigo_agenda.jpg"
   },
-    {
+  {
     "nombre": "M5_AE2-ABP1",
     "descripcion": "Aplicacion que muestra cards con nombres Plantas Nativas Sur de Chile usando Jetpack Compose",
-    "url": "https://github.com/KathyAlde21/plantas_nativas_sur_de_chile_app"
+    "url": "https://github.com/KathyAlde21/plantas_nativas_sur_de_chile_app",
+    "img": "../assets/img/modulo5/app_plantas_nativas_abp_2.jpg"
   },
   {
     "nombre": "M5_AE2-ABPRO1",
     "descripcion": "Segunda parte Aplicacion Plantas Nativas Sur de Chile que incorpora segunda pantalla con evento onclick",
-    "url": "https://github.com/KathyAlde21/plantas_nativas_sur_de_chile_app"
+    "url": "https://github.com/KathyAlde21/plantas_nativas_sur_de_chile_app",
+    "img": "../assets/img/modulo5/app_plantas_nativas_abpro_2.jpg"
   },
   {
     "nombre": "M5_AE3-ABP1",
     "descripcion": "Aplicacion de Lista de tareas, permite ingresar, eliminar y marcar como completadas",
-    "url": "https://github.com/KathyAlde21/app_lista_de_tareas"
+    "url": "https://github.com/KathyAlde21/app_lista_de_tareas",
+    "img": "../assets/img/modulo5/app_lista_de_tareas_3.jpg"
   },
   {
     "nombre": "M5_AE3-ABPRO1",
     "descripcion": "Aplicacion gastos personales, permite ingresar gastos con datos y monto",
-    "url": "https://github.com/KathyAlde21/app_gastos_personales"
-    },
-    {
+    "url": "https://github.com/KathyAlde21/app_gastos_personales",
+    "img": "../assets/img/modulo5/gastos_personales_3.jpg"
+  },
+  {
     "nombre": "M5_AE4-ABP1",
     "descripcion": "Aplicación que muestra el Clima con datos fake, simula llamado a API, async / await y uso de corutinas",
-    "url": "https://github.com/KathyAlde21/app_clima_fake"
-    },
-      {
+    "url": "https://github.com/KathyAlde21/app_clima_fake",
+    "img": "../assets/img/modulo5/app_clima_compilando_3.jpg"
+  },
+  {
     "nombre": "M5_AE4-ABPRO1",
     "descripcion": "Aplicación que busca libros según autor y titulo con datos pre-ingresados",
-    "url": "https://github.com/KathyAlde21/app_biblioteca_publica.git"
-    },
-    {
+    "url": "https://github.com/KathyAlde21/app_biblioteca_publica.git",
+    "img": "../assets/img/modulo5/biblioteca_publica_4.jpg"
+  },
+  {
     "nombre": "M5_Evaluación Final",
     "descripcion": "Aplicación que permite al usuario ingresar sus actividades diarias, con fecha, hora y descripción",
-    "url": "https://github.com/KathyAlde21/app_registro_actividades_diarias"
+    "url": "https://github.com/KathyAlde21/app_registro_actividades_diarias",
+    "img": "../assets/img/modulo5/registro_actividades_diarias_4.jpg"
   }
 ]
