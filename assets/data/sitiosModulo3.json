@@ -1,92 +1,91 @@
 [
   {
-    "nombre": "M3_AE1 ABP",
-    "descripcion": "Tabla de Ventas MySQL, incluye creación, consultas y ejemplos de salida.",
+    "nombre": "Sistema de ventas — Parte 1",
+    "descripcion": "Proyecto en MySQL para almacenar las ventas de un negocio. Incluye creación de tablas, consultas y ejemplos de salida.",
     "url": "https://github.com/KathyAlde21/tabla_ventas_mysql",
-    "img": "../assets/img/modulo3/tabla-ventas-ae1-ae2-ae3-ae4-abp/tabla_ventas_eer_diagram_p1.jpg"
-  },
-  {
-    "nombre": "M3_AE1 ABPRO",
-    "descripcion": "Tabla de Prevención de Riesgos MySQL, incluye creación, consultas y ejemplos de salida.",
-    "url": "https://github.com/KathyAlde21/tabla_prevencion_de_riesgos_mysql",
-    "img": "../assets/img/modulo3/prevencion-riesgos-ae2-ae3-abpro/tabla_capacitacion_eer_diagram_p1.jpg"
-  },
-  {
-    "nombre": "M3_AE2 ABP",
-    "descripcion": "Tabla de Ventas MySQL segunda parte, se incorpora la tabla clientes con datos especificos. Incluye cinco consultas.",
-    "url": "https://github.com/KathyAlde21/tablas_ventas_clientes_mysql.git",
     "img": "../assets/img/modulo3/tabla-ventas-ae1-ae2-ae3-ae4-abp/tabla_ventas_eer_diagram_p1-ae2abp1.jpg"
   },
   {
-    "nombre": "M3_AE2 ABPRO",
-    "descripcion": "Tabla de Prevención de Riesgos MySQL segunda parte, incluye creación, consultas y ejemplos de salida.",
+    "nombre": "Sistema de prevención de riesgos — Parte 1",
+    "descripcion": "Proyecto en MySQL para administrar procesos de una empresa de asesorías en prevención de riesgos. Incluye creación de tablas, consultas y ejemplos de salida.",
+    "url": "https://github.com/KathyAlde21/tabla_prevencion_de_riesgos_mysql",
+    "img": "../assets/img/modulo3/prevencion-riesgos-ae2-ae3-abpro/tabla_capacitacion_eer_diagram_p1-ae2abpro1.jpg"
+  },
+  {
+    "nombre": "Sistema de ventas — Parte 2",
+    "descripcion": "Segunda parte del proyecto de ventas en MySQL. Incorpora la tabla de clientes y nuevas consultas utilizando relaciones entre tablas.",
+    "url": "https://github.com/KathyAlde21/tablas_ventas_clientes_mysql.git",
+    "img": "../assets/img/modulo3/tabla-ventas-ae1-ae2-ae3-ae4-abp/tabla_ventas_eer_diagram_p2-ae2abp2.jpg"
+  },
+  {
+    "nombre": "Sistema de prevención de riesgos — Parte 2",
+    "descripcion": "Segunda parte del proyecto de prevención de riesgos en MySQL. Amplía la estructura inicial e incorpora nuevas consultas y salidas.",
     "url": "https://github.com/KathyAlde21/tabla_prevencion_de_riesgos_mysql_2",
     "img": "../assets/img/modulo3/prevencion-riesgos-ae2-ae3-abpro/tabla_capacitacion_eer_diagram_p2-ae2abpro2.jpg"
   },
   {
-    "nombre": "M3_AE3 ABP",
-    "descripcion": "Tabla de Ventas MySQL parte tres, incluye creación, consultas y ejemplos de salida.",
+    "nombre": "Sistema de ventas — Parte 3",
+    "descripcion": "Tercera parte del proyecto de ventas en MySQL. Incluye inserción de datos, modificaciones y nuevas consultas.",
     "url": "https://github.com/KathyAlde21/ventas_negocio_parte_3",
     "img": "../assets/img/modulo3/tabla-ventas-ae1-ae2-ae3-ae4-abp/tabla_ventas_p3_consulta_uno-ae3abp1.jpg"
   },
   {
-    "nombre": "M3_AE3 ABP2",
-    "descripcion": "Tabla de Ventas MySQL parte cuatro, incluye creación tablas y contenido, consultas y ejemplos de salida.",
+    "nombre": "Sistema de ventas — Parte 4",
+    "descripcion": "Cuarta parte del proyecto de ventas en MySQL. Considera nuevas tablas, contenido, consultas y ejemplos de salida.",
     "url": "https://github.com/KathyAlde21/ventas_negocio_parte_4",
     "img": "../assets/img/modulo3/tabla-ventas-ae1-ae2-ae3-ae4-abp/tabla_ventas_p4_consulta_2_ejecutada-ae3abp2.jpg"
   },
-
   {
-    "nombre": "M3_AE3 ABPRO",
-    "descripcion": "Tabla de Prevención de Riesgos MySQL parte tres, incluye creación, consultas y ejemplos de salida.",
+    "nombre": "Sistema de prevención de riesgos — Parte 3",
+    "descripcion": "Tercera parte del proyecto de prevención de riesgos en MySQL. Incluye inserción de datos, modificaciones y consultas.",
     "url": "https://github.com/KathyAlde21/tabla_prevencion_de_riesgos_mysql_3",
     "img": "../assets/img/modulo3/prevencion-riesgos-ae2-ae3-abpro/tabla_capacitacion_p3_consulta_1_ejecutada-ae3apro1.jpg"
   },
   {
-    "nombre": "M3_AE3 ABPRO2",
-    "descripcion": "Tabla de Prevención de Riesgos MySQL parte cuatro, incluye creación, consultas y ejemplos de salida.",
+    "nombre": "Sistema de prevención de riesgos — Parte 4",
+    "descripcion": "Cuarta parte del proyecto de prevención de riesgos en MySQL, centrada en consultas y resultados sobre tablas previamente construidas.",
     "url": "https://github.com/KathyAlde21/tabla_prevencion_de_riesgos_mysql_4",
     "img": "../assets/img/modulo3/prevencion-riesgos-ae2-ae3-abpro/tabla_capacitacion_p4_consulta_cuatro-ae3.jpg"
   },
   {
-    "nombre": "M3_AE4 ABP",
-    "descripcion": "Tabla de Ventas MySQL compuesta por 4 tablas, incluye creación, consultas y ejemplos de salida.",
+    "nombre": "Sistema de ventas — Parte 5",
+    "descripcion": "Proyecto de ventas en MySQL compuesto por cuatro tablas, con creación, consultas y ejemplos de salida.",
     "url": "https://github.com/KathyAlde21/ventas_negocio_abp_ae4",
     "img": "../assets/img/modulo3/tabla-ventas-ae1-ae2-ae3-ae4-abp/tabla_ventas_eer_diagram_p5-ae4abp.jpg"
   },
   {
-    "nombre": "M3_AE4 ABP2",
-    "descripcion": "Tabla de Ventas MySQL con 4 tablas se modifica con instrucciones pero sin eliminar nada y quedo con 5 tablas.",
+    "nombre": "Sistema de ventas — Parte 6",
+    "descripcion": "Continuación del proyecto de ventas en MySQL. Se modifica la base sin eliminar tablas, agregando y relacionando una nueva tabla de categorías.",
     "url": "https://github.com/KathyAlde21/ventas_negocio_abp2_ae4",
     "img": "../assets/img/modulo3/tabla-ventas-ae1-ae2-ae3-ae4-abp/tabla_ventas_eer_diagram_p6-ae4abp2.jpg"
   },
   {
-    "nombre": "M3_AE4 ABPRO",
-    "descripcion": "Tablas de la base de datos MySQL Asesorias en Prevención de Riesgos.",
+    "nombre": "Asesorías en prevención de riesgos — Modelo 1",
+    "descripcion": "Diseño de base de datos en MySQL para una empresa de asesorías en prevención de riesgos, planteado desde un modelo entidad-relación.",
     "url": "https://github.com/KathyAlde21/tabla_asesorias_pr_abpro_ae4_kagika",
     "img": "../assets/img/modulo3/prevencion-riesgos-ae4-abpro-abpro2-entidad-relacion/prevencion_riesgo_ae4_abpro_p1_eer_diagram.jpg"
   },
   {
-    "nombre": "M3_AE4 ABPRO2",
-    "descripcion": "Tabla de Asesorias MySQL de empresa Prevención de Riesgos, compuesta inicialmente por 4 tablas, se modifico mediante instrucciones sin eliminar tablas.",
+    "nombre": "Asesorías en prevención de riesgos — Modelo 2",
+    "descripcion": "Evolución del modelo de asesorías en prevención de riesgos, inicialmente compuesto por cuatro tablas y luego modificado sin eliminar su estructura previa.",
     "url": "https://github.com/KathyAlde21/asesorias_prev_riesgos_m4_abpro2_ae4",
     "img": "../assets/img/modulo3/prevencion-riesgos-ae4-abpro-abpro2-entidad-relacion/prevencion_riesgo_ae4_abpro_p2_eer_diagram.jpg"
   },
   {
-    "nombre": "M3_AE5 ABP",
-    "descripcion": "Tabla Clinica San Patras MySQL, construida en base a modelo entidad relacion",
+    "nombre": "Clínica San Patras",
+    "descripcion": "Base de datos en MySQL construida a partir de un modelo entidad-relación para una clínica.",
     "url": "https://github.com/KathyAlde21/clinica_san_patrás_mysql",
     "img": "../assets/img/modulo3/prevencion-riesgos-ae5-abp-san-patras/clinica_sa_patras_eer_diagram.jpg"
   },
   {
-    "nombre": "M3_AE5 ABP2",
-    "descripcion": "Base de datos MySQL relacionada con las ventas que contiene 5 tablas de forma inicial y se agregan 3 más",
+    "nombre": "Sistema de ventas ampliado",
+    "descripcion": "Base de datos en MySQL orientada a ventas, que comienza con cinco tablas y luego incorpora tres tablas adicionales según requerimientos.",
     "url": "https://github.com/KathyAlde21/ventas_abp2_ae5",
     "img": "../assets/img/modulo3/prevencion-riesgos-ae5-abp2/prevencion_riesgo_ae5_abp2_eer_diagram.jpg"
   },
   {
-    "nombre": "M3_AE5 ABPRO",
-    "descripcion": "Tablas de la base de datos MySQL Asesorias en Prevención de Riesgos.",
+    "nombre": "Asesorías en prevención de riesgos — Modelo 3",
+    "descripcion": "Nuevo modelo entidad-relación en MySQL para asesorías en prevención de riesgos, distinto a las versiones anteriores.",
     "url": "https://github.com/KathyAlde21/tabla_asesorias_pr_abpro_ae4_kagika",
     "img": "../assets/img/modulo3/prevencion-riesgos-ae5-abpro/prevencion_riesgo_ae5_abpro_eer_diagram.jpg"
   }

@@ -7,12 +7,38 @@
 [GitHub Pages - Proyectos Módulo 7 - Bootcamp Desarrollo Aplicaciones Móviles](https://kathyalde21.github.io/ejercicios_bootcamp_app_mov/sitiosModulo7.html)
 
 <hr style="border: none; height: 0.06px; background-color: grey; width: 100%">
-<!-- ---------------------------------------------------------------------------------------------- -->
 
-&#128203;App. de Seguridad con Alerta Vecinal:
+<p>
+En este módulo el trabajo se concentró en el desarrollo del proyecto final de todo el curso, abordado como un NVP (producto mínimo viable) con una base funcional clara y posibilidad de crecimiento.
+</p>
 
-- Proyecto desarrollado en 4 etapas incrementando las funcionalidades.
-- Aplicación con botones de alerta de salud y seguridad.
-- [Link repositorio](https://github.com/KathyAlde21/app_seg_vec_nvp)
+<p>
+La propuesta fue una app de seguridad con alerta vecinal, pensada para responder a una necesidad real y reunir aprendizajes trabajados durante el bootcamp, integrando interfaz, interacción del usuario y funcionalidades propias de una aplicación móvil.
+</p>
 
-<img src="../assets/img/modulo7/emulador_etapa_1_img2.jpg" alt="Actividad M1AE1 - ABP1" width="100%"><br><br>
+<p>
+Desde su planteamiento, la aplicación fue concebida como una solución escalable, con la idea de incorporar nuevas funcionalidades a futuro hasta evolucionar hacia un prototipo final que pueda probarse.
+</p>
+
+<hr style="border: none; height: 0.06px; background-color: grey; width: 100%">
+
+<table>
+    <tr>
+        <td align="center" width="50%">
+            <img src="../assets/img/modulo7/emulador_etapa_1_img2.jpg" alt="Captura de una etapa inicial de la app de seguridad con alerta vecinal" width="100%" height="160"><br><br>
+        </td>
+        <td align="center" width="50%">
+            <img src="../assets/img/modulo7/emulador_etapa_1_img1.jpg" alt="Captura de la versión final desarrollada para la app de seguridad con alerta vecinal" width="100%" height="160"><br><br>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" colspan="2">
+            <strong>NVP de app de seguridad con alerta vecinal</strong><br>
+            <p>Proyecto final del curso desarrollado como NVP, pensado para escalar con nuevas funcionalidades hasta convertirse en un prototipo final testeable. Incorpora alertas de salud y seguridad junto con envío de alerta con geolocalización.</p>
+            | <a class="readme-link" href="https://github.com/KathyAlde21/app_seg_vec_nvp">
+            Proyecto Android</a> |
+        </td>
+    </tr>
+</table>
+
+<hr style="border: none; height: 0.06px; background-color: grey; width: 100%">

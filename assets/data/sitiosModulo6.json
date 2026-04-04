@@ -1,25 +1,25 @@
 [
   {
-    "nombre": "M6_AE1-ABP",
-    "descripcion": "Aplicacion para tomar Notas. desarrollada usando Room, ViewModel y Jetpack Compose para crear NotesContentPreview",
+    "nombre": "Aplicación de notas",
+    "descripcion": "Aplicacion para tomar Notas. desarrollada usando Room, ViewModel y Jetpack Compose para crear NotesContentPreview.",
     "url": "https://github.com/KathyAlde21/app_de_notas_con_notescontentpreview",
     "img": "../assets/img/modulo6/app_de_notas.jpg"
   },
   {
-    "nombre": "M6_AE1-ABPRO",
-    "descripcion": "Aplicación con temporizador para ser utilizado al hacer ejercicio, cuenta con vista previa",
+    "nombre": "Temporizador para ejercicio",
+    "descripcion": "Aplicación Android con temporizador orientado a circuitos de ejercicio, incluyendo vista previa de la interfaz.",
     "url": "https://github.com/KathyAlde21/app_temporizador_circuitos_de_ejercicio",
     "img": "../assets/img/modulo6/circuitos_ejercicio.jpg"
   },
   {
-    "nombre": "M6_AE2-ABP",
-    "descripcion": "App de Noticias consumiento json con Retrofit, datos de json cargados con link raw desde otro repositorio",
+    "nombre": "App de noticias",
+    "descripcion": "Aplicación Android que consume datos JSON con Retrofit, utilizando un enlace raw alojado en otro repositorio.",
     "url": "https://github.com/KathyAlde21/app_noticias_con_noticias.json.git",
     "img": "../assets/img/modulo6/noticias.jpg"
   },
   {
-    "nombre": "M6_AE2-ABPRO",
-    "descripcion": "App que muestra los datos de una red de usuarios, consumiendo json con Retrofit desde raw de otro repositorio",
+    "nombre": "Datos de usuarios en red",
+    "descripcion": "Aplicación Android que muestra datos de usuarios consumiendo un archivo JSON con Retrofit desde un recurso raw externo.",
     "url": "https://github.com/KathyAlde21/app_red_usuarios_con_usuarios.json.git",
     "img": "../assets/img/modulo6/app_red_usuarios_1.jpg"
   }

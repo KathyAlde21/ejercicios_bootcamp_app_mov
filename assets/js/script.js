@@ -5,7 +5,6 @@
 ========================================================== */
 const MODULOS = [1, 2, 3, 4, 5, 6, 7];
 
-const SITIOS_CLASES_JSON = "assets/data/proyectosClases.json";
 const IMAGENES_SOURCES = "assets/data/imagenes.json";
 const VIDEOS_SOURCES = "assets/data/videos.json";
 const IMAGENES_PLACEHOLDER = "https://placehold.co/1200x675?text=Proyecto";
@@ -16,38 +15,45 @@ const MODULOS_INFO = {
     titulo: "Orientación al perfil y metodología del curso",
     subtitulo:
       "Actividades introductorias y primeros acercamientos al bootcamp.",
+    pagina: "../pages/sitiosModulo1.html",
   },
   2: {
     etiqueta: "Módulo 2",
     titulo: "Fundamentos de programación en Java",
     subtitulo:
       "Ejercicios base, lógica y estructuras para comenzar a programar.",
+    pagina: "../pages/sitiosModulo2.html",
   },
   3: {
     etiqueta: "Módulo 3",
     titulo: "Fundamentos de bases de datos relacionales",
     subtitulo: "Modelado, consultas y trabajo inicial con bases de datos.",
+    pagina: "../pages/sitiosModulo3.html",
   },
   4: {
     etiqueta: "Módulo 4",
     titulo: "Desarrollo de la interfaz de usuario Android",
     subtitulo:
       "Primeras pantallas, vistas y estructura visual de aplicaciones.",
+    pagina: "../pages/sitiosModulo4.html",
   },
   5: {
     etiqueta: "Módulo 5",
     titulo: "Arquitectura y ciclo de vida de componentes Android",
     subtitulo: "Navegación, componentes y organización interna de la app.",
+    pagina: "../pages/sitiosModulo5.html",
   },
   6: {
     etiqueta: "Módulo 6",
     titulo: "Desarrollo de aplicaciones empresariales Android",
     subtitulo: "Proyectos con mayor integración y lógica aplicada.",
+    pagina: "../pages/sitiosModulo6.html",
   },
   7: {
     etiqueta: "Módulo 7",
     titulo: "Desarrollo de portafolio de un producto digital",
     subtitulo: "Cierre del proceso con trabajos más completos y presentables.",
+    pagina: "../pages/sitiosModulo7.html",
   },
 };
 
@@ -76,8 +82,36 @@ function normalizarTexto(value, fallback = "") {
   return txt || fallback;
 }
 
+function getModuloActualDesdePagina() {
+  const section = document.querySelector(".module-detail-page[data-modulo]");
+  if (!section) return null;
+
+  const modulo = Number(section.dataset.modulo);
+  return Number.isInteger(modulo) ? modulo : null;
+}
+
+function esPaginaClases() {
+  const path = window.location.pathname.toLowerCase();
+  return (
+    path.includes("proyectosclases") ||
+    !!document.querySelector('.classes-detail-page[data-page="clases"]')
+  );
+}
+
 function getJsonPathModulo(n) {
-  return `assets/data/sitiosModulo${n}.json`;
+  const esPaginaModulo = !!document.querySelector(
+    ".module-detail-page[data-modulo]",
+  );
+
+  return esPaginaModulo
+    ? `../assets/data/sitiosModulo${n}.json`
+    : `assets/data/sitiosModulo${n}.json`;
+}
+
+function getJsonPathClases() {
+  return esPaginaClases()
+    ? "../assets/data/proyectosClases.json"
+    : "assets/data/proyectosClases.json";
 }
 
 function getModulosHost() {
@@ -140,8 +174,6 @@ async function cargarJson(path) {
   return res.json();
 }
 
-/* para cargar en cada web los datos que correspondan se crean dos funciones */
-/* 1. función para cargar los datos de un módulo específico */
 async function cargarModulo(n) {
   const data = await cargarJson(getJsonPathModulo(n));
   return asArray(data).map((item) => ({
@@ -155,7 +187,42 @@ async function cargarModulo(n) {
     modulo: n,
   }));
 }
-/* 2.función nueva para renderizar cards de una página individual */
+
+async function cargarClases() {
+  const data = await cargarJson(getJsonPathClases());
+  return asArray(data).map((item) => ({
+    titulo: normalizarTexto(item.nombre ?? item.titulo, "Sin título"),
+    descripcion: normalizarTexto(
+      item.descripcion ?? item.descripcionCorta,
+      "Sin descripción",
+    ),
+    link: normalizarTexto(item.link ?? item.url, "#"),
+    img: normalizarTexto(item.img, IMAGENES_PLACEHOLDER),
+    modulo: null,
+  }));
+}
+
+async function cargarImagenesData() {
+  const response = await fetch(IMAGENES_SOURCES);
+  if (!response.ok) {
+    throw new Error(`Error al cargar imágenes: ${response.status}`);
+  }
+  const data = await response.json();
+  return Array.isArray(data) ? data : [];
+}
+
+async function cargarVideosDesde(path) {
+  const data = await cargarJson(path);
+  return asArray(data).map((item) => ({
+    titulo: normalizarTexto(item.titulo ?? item.nombre, "Video"),
+    descripcion: normalizarTexto(item.descripcion ?? item.texto, ""),
+    link: normalizarTexto(item.link ?? item.url, "#"),
+  }));
+}
+
+/* ==========================================================
+   Render de cards para páginas detalle
+========================================================== */
 function renderCardsModuloDetalle(containerSelector, items = []) {
   const host =
     typeof containerSelector === "string"
@@ -177,12 +244,22 @@ function renderCardsModuloDetalle(containerSelector, items = []) {
       ({ titulo, descripcion, link, img }) => `
     <div class="col-12 col-sm-6 col-lg-4">
       <div class="card h-100">
-        <img
-          src="${escAttr(img || IMAGENES_PLACEHOLDER)}"
-          class="card-img-top"
-          alt="${escAttr(titulo)}"
-          loading="lazy"
+        <button
+          type="button"
+          class="module-card-image-trigger js-open-image"
+          data-img="${escAttr(img || IMAGENES_PLACEHOLDER)}"
+          data-alt="${escAttr(titulo)}"
+          data-caption="${escAttr(descripcion)}"
+          aria-label="Ampliar imagen: ${escAttr(titulo)}"
         >
+          <img
+            src="${escAttr(img || IMAGENES_PLACEHOLDER)}"
+            class="card-img-top"
+            alt="${escAttr(titulo)}"
+            loading="lazy"
+          >
+        </button>
+
         <div class="card-body d-flex flex-column">
           <h5 class="card-title mb-2">${esc(titulo)}</h5>
           <p class="card-text flex-grow-1">${esc(descripcion)}</p>
@@ -197,47 +274,9 @@ function renderCardsModuloDetalle(containerSelector, items = []) {
   `,
     )
     .join("");
+
   host.innerHTML = html;
-}
-/* 3.función para detectar si estás en una página de módulo */
-function getModuloActualDesdePagina() {
-  const section = document.querySelector(".module-detail-page[data-modulo]");
-  if (!section) return null;
-
-  const modulo = Number(section.dataset.modulo);
-  return Number.isInteger(modulo) ? modulo : null;
-}
-/* fin carga cards webs */
-
-async function cargarClases() {
-  const data = await cargarJson(SITIOS_CLASES_JSON);
-  return asArray(data).map((item) => ({
-    titulo: normalizarTexto(item.nombre ?? item.titulo, "Sin título"),
-    descripcion: normalizarTexto(
-      item.descripcion ?? item.descripcionCorta,
-      "Sin descripción",
-    ),
-    link: normalizarTexto(item.link ?? item.url, "#"),
-    modulo: null,
-  }));
-}
-
-async function cargarImagenesData() {
-  const response = await fetch(IMAGENES_SOURCES);
-  if (!response.ok) {
-    throw new Error(`Error al cargar imágenes: ${response.status}`);
-  }
-  const data = await response.json();
-  return Array.isArray(data) ? data : [];
-}
-
-async function cargarVideosDesde(path) {
-  const data = await cargarJson(path);
-  return asArray(data).map((item) => ({
-    titulo: normalizarTexto(item.titulo ?? item.nombre, "Video"),
-    descripcion: normalizarTexto(item.descripcion ?? item.texto, ""),
-    link: normalizarTexto(item.link ?? item.url, "#"),
-  }));
+  activarModalImagenes();
 }
 
 /* ==========================================================
@@ -324,9 +363,15 @@ function renderModulosSeparados(modulosData = []) {
         <div class="module-heading mb-3">
           <p class="module-kicker mb-1">${esc(info.etiqueta)}</p>
           <h3 class="module-title mb-1">${esc(info.titulo)}</h3>
-          <p class="module-subtitle mb-0">${esc(info.subtitulo)}</p>
+          <p class="module-subtitle mb-2">${esc(info.subtitulo)}</p>
+          ${
+            info.pagina
+              ? `<div class="module-actions">
+                  <a class="module-section-link" href="${escAttr(info.pagina)}">Ver página del módulo</a>
+                </div>`
+              : ""
+          }
         </div>
-
         <div class="module-row">
           ${items.map(crearCardModulo).join("")}
         </div>
@@ -489,33 +534,29 @@ function renderVideoCards(items = []) {
 /* ==========================================================
    Init
 ========================================================== */
+function esHome() {
+  const path = window.location.pathname.toLowerCase();
+  return (
+    document.body.dataset.page === "home" ||
+    path.endsWith("/") ||
+    path.endsWith("/index.html") ||
+    path.includes("ejercicios_bootcamp_app_mov")
+  );
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
-  /* ************* */
-  // MÓDULOS
-  /* ************* */
   const moduloActual = getModuloActualDesdePagina();
-  const esIndex = !!document.getElementById("modulos-container");
+  const paginaClases = esPaginaClases();
+  const home = esHome();
 
   try {
     if (moduloActual) {
       const items = await cargarModulo(moduloActual);
       renderCardsModuloDetalle("#cards_modulo", items);
-    } else if (esIndex) {
-      const packs = await Promise.allSettled(
-        MODULOS.map(async (n) => ({
-          modulo: n,
-          items: await cargarModulo(n),
-        })),
-      );
-      const modulosOk = packs
-        .filter((p) => p.status === "fulfilled")
-        .map((p) => p.value)
-        .filter(({ items }) => items.length);
-      renderModulosSeparados(modulosOk);
-
-      /* ************* */
-      // IMAGENES
-      /* ************* */
+    } else if (paginaClases) {
+      const clasesItems = await cargarClases();
+      renderCardsModuloDetalle("#cards_clases", clasesItems);
+    } else if (home) {
       try {
         const imagenesItems = await cargarImagenesData();
         renderImagenes(imagenesItems);
@@ -527,9 +568,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       }
 
-      /* ************* */
-      // VIDEOS
-      /* ************* */
       try {
         const archivos = Array.isArray(VIDEOS_SOURCES)
           ? VIDEOS_SOURCES
@@ -544,20 +582,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         const host = document.getElementById("cards_youtube");
         if (host) {
           host.innerHTML = `<div class="col-12"><div class="alert alert-danger">No se pudieron cargar los videos.</div></div>`;
-        }
-      }
-
-      /* ************* */
-      // CLASES
-      /* ************* */
-      try {
-        const clasesItems = await cargarClases();
-        renderCardsTo("#cards_clases", clasesItems);
-      } catch (error) {
-        console.error("Error en clases:", error);
-        const host = document.getElementById("cards_clases");
-        if (host) {
-          host.innerHTML = `<div class="col-12"><div class="alert alert-danger">No se pudieron cargar los links de clases.</div></div>`;
         }
       }
     }

@@ -1,32 +1,32 @@
 [
-    {
-        "nombre": "M1_AE4 ABP1-A",
-        "descripcion": "Proyecto en PSeInt (.psc)  Descuento en Compra del 10% según monto:",
-        "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_4/descuento10porciento.psc",
-        "img": "../assets/img/modulo1/descuento_pseint.jpg"
-    },
-    {
-        "nombre": "M1_AE4 ABP1-B",
-        "descripcion": "Proyecto en Java Descuento en Compra del 10% según monto:",
-        "url": "https://github.com/KathyAlde21/descuento_java",
-        "img": "../assets/img/modulo1/descuento_java.jpg"
-    },
-    {
-        "nombre": "M1_AE4 ABP2",
-        "descripcion": "Proyecto en Python Promedio de Notas para aprobar",
-        "url": "https://github.com/KathyAlde21/promedio_notas_python",
-        "img": "../assets/img/modulo1/promedio_notas_python_replit.com.png"
-    },
-    {
-        "nombre": "M1_AE4 ABP3",
-        "descripcion": "Proyecto en Python y PSeInt Calculadora Interactiva:",
-        "url": "https://github.com/KathyAlde21/calculadora_interactiva_python_pseint",
-        "img": "../assets/img/modulo1/calculadora_interactiva_replit.png"
-    },
-    {
-        "nombre": "M1_AE4 ABP4",
-        "descripcion": "Proyecto en Python llamado Buenas Prácticas, evalua promedio de notas para aprobar",
-        "url": "https://github.com/KathyAlde21/notas_apruebo_python",
-        "img": "../assets/img/modulo1/notas_apruebo_replit.png"
-    }
+  {
+    "nombre": "Descuento en compra — PSeInt",
+    "descripcion": "Ejercicio en PSeInt sobre cálculo de descuento del 10% según el monto de compra. Trabaja lógica condicional, entrada de datos y salida de resultados en consola.",
+    "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_4/descuento10porciento.psc",
+    "img": "../assets/img/modulo1/descuento_pseint.jpg"
+  },
+  {
+    "nombre": "Descuento en compra — Java",
+    "descripcion": "Versión en Java del ejercicio de descuento según monto de compra. Me permitió trasladar la lógica planteada en pseudocódigo a su implementación en este lenguaje.",
+    "url": "https://github.com/KathyAlde21/descuento_java",
+    "img": "../assets/img/modulo1/descuento_java.png"
+  },
+  {
+    "nombre": "Calculadora interactiva",
+    "descripcion": "Ejercicio centrado en lógica, validaciones y flujo de ejecución en consola. Fue uno de los trabajos más desafiantes y completos de esta etapa, con foco principal en PSeInt y apoyo complementario en Python.",
+    "url": "https://github.com/KathyAlde21/calculadora_interactiva_python_pseint",
+    "img": "../assets/img/modulo1/calculadora_interactiva_replit.png"
+  },
+  {
+    "nombre": "Promedio de notas con IA",
+    "descripcion": "Proyecto en Python para calcular el promedio de notas y determinar aprobación, desarrollado a partir de pseudocódigo con apoyo de ChatGPT.",
+    "url": "https://github.com/KathyAlde21/promedio_notas_python",
+    "img": "../assets/img/modulo1/promedio_notas_python_replit.com.png"
+  },
+  {
+    "nombre": "Optimización de código en Python",
+    "descripcion": "Trabajo orientado a optimizar código y aplicar buenas prácticas, manteniendo la funcionalidad del cálculo de promedio de notas para aprobación.",
+    "url": "https://github.com/KathyAlde21/notas_apruebo_python",
+    "img": "../assets/img/modulo1/notas_apruebo_replit.png"
+  }
 ]

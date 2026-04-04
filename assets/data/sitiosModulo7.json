@@ -1,13 +1,7 @@
 [
   {
-    "nombre": "M7_AE1-ABP | M7_AE2-ABP | M7_AE3-ABP",
-    "descripcion": "App. de Seguridad con Alerta Vecinal, proyecto desarrollado en 4 etapas incrementando las funcionalidades",
-    "url": "https://github.com/KathyAlde21/app_seg_vec_nvp",
-    "img": "../assets/img/modulo7/emulador_etapa_1_img2.jpg"
-  },
-  {
-    "nombre": "M7_Evaluación Final",
-    "descripcion": "App. de Seguridad con Alerta Vecinal, proyecto completado que permite enviar alerta con gelocalización",
+    "nombre": "NVP de App de Seguridad con Alerta Vecinal",
+    "descripcion": "Proyecto final del curso desarrollado como NVP, pensado para escalar con nuevas funcionalidades hasta convertirse en un prototipo final testeable. Incorpora alertas de salud y seguridad junto con envío de alerta con geolocalización.",
     "url": "https://github.com/KathyAlde21/app_seg_vec_nvp",
     "img": "../assets/img/modulo7/emulador_etapa_1_img1.jpg"
   }

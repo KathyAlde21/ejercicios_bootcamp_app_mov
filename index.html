@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Links Ejercicios</title>
+    <title>Bootcamp App Móviles | Portafolio de proyectos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="preconnect" href="https://i.ytimg.com">
@@ -15,78 +15,136 @@
 <body>
     <!-- Background Matrix - regule velocidad en JS -->
     <canvas id="matrix-bg" aria-hidden="true"></canvas>
-    <!-- Navbar -->
+
     <div id="site-navbar"></div>
 
     <main>
-        <section>
-            <!-- Encabezado -->
-            <header class=" mt-2 py-4">
-                <div class="container mt-4">
-                    <h1 class="text-center" id="bienvenido">Bootcamp App Móviles</h1>
-                </div>
-            </header>
-            <div class="container mt-4">
-                <p class="text-center">Aquí encontrarás los links a los repositorios en GitHub de mis proyectos y
-                    ejercicios realizados en el curso.</p>
-            </div>
-        </section>
-
-        <!-- Cards con imágenes de diferentes proyectos tanto de clases como de trabajos para la plataforma -->
-        <section>
-            <div class="container mt-4" id="imagenes">
-                <div class="container py-4">
-                    <h3 class="text-center mb-3">Imágenes representativas del bootcamp</h3>
-                    <p class="text-center mb-4">
-                        Esta galería reúne imágenes representativas de distintos módulos y proyectos desarrollados
-                        durante el bootcamp de
-                        Desarrollo de Aplicaciones Móviles.<br>
-                        Cada imagen está acompañada de una breve descripción y, al hacer clic, se amplía para verla con
-                        más detalle.
+        <!-- Encabezado -->
+        <section class="hero-section">
+            <div class="container py-5">
+                <div class="hero-content text-center">
+                    <p class="module-kicker mb-2">Portafolio del bootcamp</p>
+                    <h1 class="mb-3" id="bienvenido">Bootcamp Desarrollo de Aplicaciones Móviles</h1>
+                    <p class="hero-text mx-auto">
+                        Este sitio reúne los módulos, proyectos y ejercicios que desarrollé durante el bootcamp,
+                        mostrando la evolución del trabajo desde lógica y bases de datos hasta aplicaciones Android más
+                        completas.
                     </p>
-                    <div id="cards_imagenes"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Cards autocompletadas con los links a videos de Youtube sobre los proyectos -->
+        <!-- imágenes representativas -->
+        <section id="imagenes">
+            <div class="container py-4">
+                <h2 class="index-section-title text-center mb-3">Recorrido representativo del bootcamp</h2>
+                <p class="index-section-text text-center mb-4">
+                    Esta galería resume algunas de las áreas trabajadas durante el proceso:
+                    lógica inicial, bases de datos relacionales, programación en Java y primeros pasos en Android.
+                </p>
+                <div id="cards_imagenes"></div>
+            </div>
+        </section>
+
+        <!-- Lista de Módulos -->
+        <section id="overview">
+            <div class="container py-4">
+                <h2 class="index-section-title text-center mb-3">Módulos y páginas del proyecto</h2>
+                <p class="index-section-text text-center mb-4">
+                    Cada bloque resume el foco principal del módulo y enlaza a su página correspondiente, donde se
+                    encuentran
+                    las capturas, el contexto y los repositorios asociados.
+                </p>
+
+                <div class="overview-list">
+                    <article class="overview-item">
+                        <p class="overview-kicker">Módulo 1</p>
+                        <h4 class="overview-title">Orientación al perfil y metodología del curso</h4>
+                        <p class="overview-text">Lógica inicial con PSeInt, primeros ejercicios, paso a Java y uso
+                            puntual de
+                            Python con apoyo de IA.</p>
+                        <a class="overview-link" href="./pages/sitiosModulo1.html">Ver página del módulo</a>
+                    </article>
+
+                    <article class="overview-item">
+                        <p class="overview-kicker">Módulo 2</p>
+                        <h4 class="overview-title">Fundamentos de programación en Java</h4>
+                        <p class="overview-text">Consolidación del trabajo en Java con ejercicios de consola, arreglos,
+                            matrices, validaciones y proyectos más extensos.</p>
+                        <a class="overview-link" href="./pages/sitiosModulo2.html">Ver página del módulo</a>
+                    </article>
+
+                    <article class="overview-item">
+                        <p class="overview-kicker">Módulo 3</p>
+                        <h4 class="overview-title">Fundamentos de bases de datos relacionales</h4>
+                        <p class="overview-text">Modelado, evolución de bases de datos en MySQL, relaciones entre tablas
+                            y
+                            consultas sobre distintos contextos de uso.</p>
+                        <a class="overview-link" href="./pages/sitiosModulo3.html">Ver página del módulo</a>
+                    </article>
+
+                    <article class="overview-item">
+                        <p class="overview-kicker">Módulo 4</p>
+                        <h4 class="overview-title">Desarrollo de la interfaz de usuario Android</h4>
+                        <p class="overview-text">Primeras interfaces, emulador, Material Design, Fragments y avance
+                            progresivo
+                            del proyecto AppMovil SpA.</p>
+                        <a class="overview-link" href="./pages/sitiosModulo4.html">Ver página del módulo</a>
+                    </article>
+
+                    <article class="overview-item">
+                        <p class="overview-kicker">Módulo 5</p>
+                        <h4 class="overview-title">Arquitectura y ciclo de vida de componentes Android</h4>
+                        <p class="overview-text">Kotlin, Jetpack Compose, formularios, corutinas y aplicaciones con
+                            mayor
+                            estructura interna y flujo entre pantallas.</p>
+                        <a class="overview-link" href="./pages/sitiosModulo5.html">Ver página del módulo</a>
+                    </article>
+
+                    <article class="overview-item">
+                        <p class="overview-kicker">Módulo 6</p>
+                        <h4 class="overview-title">Desarrollo de aplicaciones empresariales Android</h4>
+                        <p class="overview-text">Persistencia local, Room, ViewModel, Retrofit y proyectos con
+                            integración de
+                            datos y lógica más cercana a apps funcionales.</p>
+                        <a class="overview-link" href="./pages/sitiosModulo1.html">Ver página del módulo</a>
+                    </article>
+
+                    <article class="overview-item">
+                        <p class="overview-kicker">Módulo 7</p>
+                        <h4 class="overview-title">Desarrollo de portafolio de un producto digital</h4>
+                        <p class="overview-text">Proyecto final del curso desarrollado como NVP, pensado para escalar
+                            hasta
+                            convertirse en un prototipo final testeable.</p>
+                        <a class="overview-link" href="./pages/sitiosModulo7.html">Ver página del módulo</a>
+                    </article>
+
+                    <article class="overview-item">
+                        <p class="overview-kicker">Complementario</p>
+                        <h4 class="overview-title">Trabajos realizados en clases</h4>
+                        <p class="overview-text">Ejercicios puntuales desarrollados en clases para reforzar conceptos
+                            específicos en Android, Kotlin y Compose.</p>
+                        <a class="overview-link" href="./pages/proyectosClases.html">Ver página</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- Videos linkeados a Youtube de ejecución de código para proyectos Android -->
-        <section>
-            <div class="container mt-4" id="videos">
-                <div class="container py-4">
-                    <h3 class="text-center mb-4">Links a videos que muestran la ejecución de parte de mis proyectos</h3>
-                    <!-- Contenedor de cards -->
-                    <div id="cards_youtube" class="row g-3"></div>
-                </div>
+        <section id="videos">
+            <div class="container py-4">
+                <h2 class="index-section-title text-center mb-3">Videos de proyectos en ejecución</h2>
+                <p class="index-section-text text-center mb-4">
+                    Algunos proyectos incluyen videos breves para mostrar su funcionamiento en ejecución.
+                </p>
+                <!-- Contenedor de cards -->
+                <div id="cards_youtube" class="row g-3 justify-content-center"></div>
             </div>
         </section>
 
-        <!-- Card autocompletada con links en JSON de proyectos desarrollados en clases -->
-        <section>
-            <div class="container mt-4" id="proyectos-clases">
-                <div class="container py-4">
-                    <h3 class="text-center mb-4">Links a ejercicios de clases</h3>
-                    <!-- Contenedor de cards -->
-                    <div id="cards_clases" class="row g-3"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Cards autocompletadas con Json con los links a los repositorios de los proyectos -->
-        <!-- se van a crear secciones separadas para cada json con scroll horizontal -->
-        <section>
-            <div class="container mt-4" id="proyectos-plataforma">
-                <div class="container py-4">
-                    <h3 class="text-center mb-4">Links a los repositorios de mis proyectos</h3>
-                    <!-- Contenedor de cards -->
-                    <div id="modulos-container"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- MODAL CARDS IMAGENES -->
+        <!-- MODAL para ampliar imágenes -->
         <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="imageModalLabel">Imagen ampliada</h5>
@@ -94,7 +152,7 @@
                             aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
-                        <img id="modalImage" src="" alt="" loading="lazy">
+                        <img id="modalImage" src="" alt="">
                         <p id="modalImageCaption" class="mt-3 mb-0"></p>
                     </div>
                 </div>
@@ -102,17 +160,16 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <div id="site-footer"></div>
 
-    <!-- Bootstrap JS y dependencias -->
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    <!-- Script utilizados -->
+
     <script defer src="./assets/js/layout.js"></script>
     <script defer src="./assets/js/matrix.js"></script>
     <script defer src="./assets/js/script.js"></script>

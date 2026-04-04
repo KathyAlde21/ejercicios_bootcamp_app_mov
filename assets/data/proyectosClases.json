@@ -1,25 +1,19 @@
 [
   {
-    "nombre": "Contador Android Java",
-    "descripcion": "App realizada con Android Studio que permite aumentar o disminuir al hacer click en el botón que correspondar",
+    "nombre": "Contador en Android",
+    "descripcion": "Aplicación desarrollada en Android Studio que permite aumentar o disminuir un valor mediante botones.",
     "url": "https://github.com/KathyAlde21/contador_android_java",
     "img": "../assets/img/proyectos_clases/proyecto_contador_2.jpg"
   },
   {
-    "nombre": "Calculadora de Propinas - Semáforo",
-    "descripcion": "App que permite calcular la propina y con el resultado va una cara con los colores de un semáforo",
-    "url": "https://github.com/KathyAlde21/calculadora_propinas_android_java",
-    "img": "../assets/img/proyectos_clases/semaforo_propinas_codigo.jpg"
-  },
-  {
-    "nombre": "Login - Nombre de usuario y Contraseña",
-    "descripcion": "App realizada con Android Studio que permite ingresar datos para registro de sesion.",
+    "nombre": "Login con usuario y contraseña",
+    "descripcion": "Aplicación desarrollada en Android Studio para ingreso de sesión, con validación de campos vacíos y formato de correo.",
     "url": "https://github.com/KathyAlde21/login_android_java_kotlin",
     "img": "../assets/img/proyectos_clases/login_2_layout.jpg"
   },
   {
-    "nombre": "Contactos - Nombre y Teléfono",
-    "descripcion": "Código en Kotlin desarrollado en Android Studio para ver contactos usando compose. Muestra nombre y teléfono",
+    "nombre": "Contactos en Compose",
+    "descripcion": "Proyecto en Kotlin desarrollado en Android Studio con Jetpack Compose para mostrar contactos con nombre y teléfono.",
     "url": "https://github.com/KathyAlde21/contactos_compose_kotlin.git",
     "img": "../assets/img/proyectos_clases/contactos_emulador.jpg"
   }

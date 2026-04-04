@@ -1,146 +1,145 @@
 [
   {
-    "nombre": "M2_AE1 ABP1-P",
-    "descripcion": "Proyecto en PSeInt Instrucciones mensaje WhatsApp, paso a paso",
+    "nombre": "Mensaje de WhatsApp — PSeInt",
+    "descripcion": "Ejercicio en PSeInt que representa paso a paso el envío de un mensaje de WhatsApp, reforzando secuencia lógica y estructura del proceso.",
     "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_1/enviarMensajeWapp.psc",
     "img": "../assets/img/modulo2/enviarMensajeWapp_paso_a_paso.jpg"
   },
   {
-    "nombre": "M2_AE1 ABP1-J",
-    "descripcion": "Proyecto en Java Instrucciones mensaje WhatsApp, paso a paso",
+    "nombre": "Mensaje de WhatsApp — Java",
+    "descripcion": "Versión en Java del ejercicio de envío de mensaje de WhatsApp, utilizada para comparar la lógica planteada en pseudocódigo con su implementación.",
     "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/mensajeWhatsApp",
     "img": "../assets/img/modulo2/enviarMensajeWapp_paso_a_paso_java.jpg"
   },
-
   {
-    "nombre": "M2_AE1 ABP2-P",
-    "descripcion": "Proyecto en PSeInt Conectar a Wifi casa, acceso correcto",
+    "nombre": "Conexión WiFi — PSeInt",
+    "descripcion": "Ejercicio en PSeInt que simula la conexión a una red WiFi validando nombre de red y contraseña.",
     "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_2/ConectarWifiCasa.psc",
     "img": "../assets/img/modulo2/ConectarWifiCasa_acceso_incorrecto.jpg"
   },
   {
-    "nombre": "M2_AE1 ABP2-J",
-    "descripcion": "Proyecto en Java Conectar a Wifi casa, acceso correcto",
+    "nombre": "Conexión WiFi — Java",
+    "descripcion": "Versión en Java del ejercicio de conexión a WiFi, centrada en validaciones y flujo de decisión.",
     "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/conectarWifiCasa",
     "img": "../assets/img/modulo2/ConectarWifiCasa_diferentes_opciones.jpg"
   },
   {
-    "nombre": "M2_AE2 ABP1-P",
-    "descripcion": "Proyecto en PSeInt Matricula Universitaria, ingreso de estudiantes",
+    "nombre": "Matrícula universitaria — PSeInt",
+    "descripcion": "Ejercicio en PSeInt para validar requisitos y permitir la inscripción de estudiantes a cursos universitarios.",
     "url": "https://github.com/KathyAlde21/ejerciciosPseint/blob/main/ejercicio_practico_3/inscripcionUniversidad.psc",
     "img": "../assets/img/modulo2/alumno_caso_dos.jpg"
   },
   {
-    "nombre": "M2_AE2 ABP1-J",
-    "descripcion": "Proyecto en Java Matricula Universitaria, ingreso de estudiantes",
+    "nombre": "Matrícula universitaria — Java",
+    "descripcion": "Versión en Java del ejercicio de matrícula universitaria, enfocada en condiciones y validaciones de ingreso.",
     "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/inscripcion_universidad",
     "img": "../assets/img/modulo2/estudiante_no_cumple_2.jpg"
   },
   {
-    "nombre": "M2_AE2 ABP2",
-    "descripcion": "Proyecto en Java Expresiones Lógicas, Booleanos",
+    "nombre": "Expresiones lógicas y booleanas",
+    "descripcion": "Proyecto en Java orientado al análisis y resolución de expresiones lógicas y uso de valores booleanos.",
     "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/expresiones_logicas",
     "img": "../assets/img/modulo2/booleanosTrueFalse.jpg"
   },
   {
-    "nombre": "M2_AE2 ABP3",
-    "descripcion": "Proyecto en Java Promedio de Notas",
+    "nombre": "Promedio de notas",
+    "descripcion": "Proyecto en Java que procesa notas ingresadas, calcula el promedio y entrega mensajes según el resultado y los datos del estudiante.",
     "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/promedio_notas",
     "img": "../assets/img/modulo2/promedio_notas.jpg"
   },
   {
-    "nombre": "M2_AE2 ABP4",
-    "descripcion": "Proyecto en Java Registro de donaciones",
+    "nombre": "Registro de donaciones",
+    "descripcion": "Proyecto en Java que permite registrar aportes y conocer el monto recaudado según la causa asociada.",
     "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/registro_donaciones",
     "img": "../assets/img/modulo2/registro_donaciones.jpg"
   },
   {
-    "nombre": "M2_AE2 ABP5",
-    "descripcion": "Proyecto en Java Puntaje obtenido en competencia deportiva, orden invertido",
+    "nombre": "Competencia deportiva",
+    "descripcion": "Proyecto en Java que registra puntajes ingresados y los presenta en orden inverso para su análisis.",
     "url": "https://github.com/KathyAlde21/proyectos_java_app_mov/tree/master/modulo_dos/src/puntajes_invertidos_estudiantes",
     "img": "../assets/img/modulo2/puntajes_invertidos_estudiantes_y_mayor_a_menor.jpg"
   },
   {
-    "nombre": "M2_AE2 ABP6",
-    "descripcion": "Proyecto en Java Asientos en el Cine, matriz realizada con valores asignados",
+    "nombre": "Asientos en el cine",
+    "descripcion": "Proyecto en Java que trabaja con matrices y valores asignados para calcular el resultado por zona.",
     "url": "https://github.com/KathyAlde21/asientos_cine_matriz_java",
     "img": "../assets/img/modulo2/tabla_asientos_cine.png"
   },
   {
-    "nombre": "M2_AE2 ABP7",
-    "descripcion": "Proyecto en Java Turnos Semanales, matriz de asignación de turnos",
+    "nombre": "Turnos semanales",
+    "descripcion": "Proyecto en Java basado en una matriz de 5x3 para simular turnos y visualizar la información en distintos órdenes.",
     "url": "https://github.com/KathyAlde21/turnos_trabajador",
     "img": "../assets/img/modulo2/turno_trabajador.png"
   },
   {
-    "nombre": "M2_AE2 ABP8",
-    "descripcion": "Proyecto en Java Monitoreo del Cambio Climático, ingreso de temperatura y conversión a Farenheit, Kelvin y Celsius",
+    "nombre": "Monitoreo del cambio climático",
+    "descripcion": "Proyecto en Java que permite ingresar una temperatura y convertirla entre Fahrenheit, Kelvin y Celsius.",
     "url": "https://github.com/KathyAlde21/monitoreo_climatico",
     "img": "../assets/img/modulo2/temperatura_cambio_unidad_fkc.png"
   },
   {
-    "nombre": "M2_AE3 ABP",
-    "descripcion": "Proyecto en Java Gestion de Inventario, incorporando por Consola para realizar los calculos",
+    "nombre": "Gestión de inventario",
+    "descripcion": "Proyecto en Java con interacción por consola para registrar productos y realizar cálculos asociados al inventario.",
     "url": "https://github.com/KathyAlde21/gestion_de_productos",
     "img": "../assets/img/modulo2/gestion_de_productos_consola.png"
   },
   {
-    "nombre": "M2_AE3 ABPRO",
-    "descripcion": "Proyecto en Java Gestion de Notas, permite por consola crear estudiante, sus notas, calcular el promedio y determinar si aprobaron o no.",
+    "nombre": "Gestión de notas",
+    "descripcion": "Proyecto en Java que permite crear estudiantes, registrar notas, calcular promedios y determinar aprobación por consola.",
     "url": "https://github.com/KathyAlde21/gestion_de_notas",
-    "img": "../assets/img/modulo2/gestion_de_notas_consola.png"
+    "img": "../assets/img/modulo2/gestion_notas_consola.png"
   },
   {
-    "nombre": "M2_AE4 ABP",
-    "descripcion": "Proyecto en Java Gestion de Tareas, a traves de consola gestionar tareas pendientes agregando, eliminando, marcando y mostrando.",
+    "nombre": "Gestión de tareas",
+    "descripcion": "Proyecto en Java para administrar tareas pendientes por consola, permitiendo agregar, eliminar, marcar y mostrar registros.",
     "url": "https://github.com/KathyAlde21/gestion_de_tareas",
-    "img": "../assets/img/modulo2/gestion_de_tareas_consola.png"
+    "img": "../assets/img/modulo2/gestion_tareas_consola.png"
   },
   {
-    "nombre": "M2_AE4 ABP2",
-    "descripcion": "Proyecto en Java Convención y Estándares de Programación, utilizar las buenas prácticas en la creación de una nueva clase e implementar en consola",
+    "nombre": "Clase Quijote y buenas prácticas",
+    "descripcion": "Proyecto en Java enfocado en convenciones, estándares de programación y creación de una nueva clase con implementación en consola.",
     "url": "https://github.com/KathyAlde21/clase_nueva_quijote",
     "img": "../assets/img/modulo2/quijote.jpg"
   },
   {
-    "nombre": "M2_AE5 ABP",
-    "descripcion": "Proyecto en Java Biblioteca que se ejecuta en consola. Permite trabajar con Usuarios, Sucursales, Libros, Prestamos y generar reportes.",
+    "nombre": "Biblioteca",
+    "descripcion": "Proyecto en Java que trabaja con usuarios, sucursales, libros y préstamos, además de generar reportes desde consola.",
     "url": "https://github.com/KathyAlde21/biblioteca_gestion_libros_usuarios_sucursales_java",
     "img": "../assets/img/modulo2/gestion_libros_consola.jpg"
   },
   {
-    "nombre": "M2_AE5 ABPRO1",
-    "descripcion": "Proyecto en Java Sistema Academico, a través de consola permite: registrar estudiantes y docentes, crear curso, asignar evaluaciones, reportes e inscribir alumnos a un curso.",
+    "nombre": "Sistema académico",
+    "descripcion": "Proyecto en Java que permite registrar estudiantes y docentes, crear cursos, asignar evaluaciones y generar reportes.",
     "url": "https://github.com/KathyAlde21/sistema_academico_java",
     "img": "../assets/img/modulo2/registro_crear_curso_inscribir_estudiante.jpg"
   },
   {
-    "nombre": "M2_AE6 ABP5",
-    "descripcion": "Proyecto en Java Movilidad Urbana, incluye uso de diferentes medios de transporte, sus combustibles y estadísticas operativas",
+    "nombre": "Movilidad urbana",
+    "descripcion": "Proyecto en Java que incorpora medios de transporte, tipos de combustible y estadísticas operativas.",
     "url": "https://github.com/KathyAlde21/movilidad_urbana_java",
     "img": "../assets/img/modulo2/movilidad_urbana_terminal.jpg"
   },
   {
-    "nombre": "M2_AE6 ABPRO5",
-    "descripcion": "Proyecto en Java Simulador de Distribucion, permite gestionar la flota de vehículos y simular entregas.",
+    "nombre": "Simulador de distribución",
+    "descripcion": "Proyecto en Java para gestionar una flota de vehículos y simular entregas desde consola.",
     "url": "https://github.com/KathyAlde21/simulador_de_distribucion_java",
     "img": "../assets/img/modulo2/simulador_distribucion_consola.jpg"
   },
   {
-    "nombre": "M2_AE7 ABP 1 y 2",
-    "descripcion": "Proyecto en Java Pruebas Unitarias, implementando JUnit para validar el correcto funcionamiento del sistema de pedidos.",
+    "nombre": "Pruebas unitarias",
+    "descripcion": "Proyecto en Java que implementa pruebas unitarias con JUnit para validar el funcionamiento de un sistema de pedidos.",
     "url": "https://github.com/KathyAlde21/pruebas_unitarias_mercaexpress_pedidos_java.git",
     "img": "../assets/img/modulo2/test_uso_mockito_junit.jpg"
   },
   {
-    "nombre": "M2_AE7 ABP3",
-    "descripcion": "Proyecto en Java que realiza varias iteraciones de TDD, implementando operaciones como multiplicación y división.",
+    "nombre": "Operaciones matemáticas con TDD",
+    "descripcion": "Proyecto en Java que desarrolla operaciones como multiplicación y división mediante iteraciones de TDD.",
     "url": "https://github.com/KathyAlde21/tdd_operaciones_matematicas_java",
     "img": "../assets/img/modulo2/test_operaciones_matematicas.jpg"
   },
   {
-    "nombre": "M2_Evaluación Final",
-    "descripcion": "Proyecto en Java sobre Prevención de Riesgos Laborales, solicita datos, valida, elimina y genera listados.",
+    "nombre": "Prevención de riesgos laborales",
+    "descripcion": "Evaluación final en Java que solicita datos, valida registros, elimina información y genera listados.",
     "url": "https://github.com/KathyAlde21/final_m2_prevencionistas_kagika",
     "img": "../assets/img/modulo2/menu_consola_menu_principal.java.jpg"
   }

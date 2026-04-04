@@ -1,61 +1,49 @@
 [
   {
-    "nombre": "M4_AE2-ABP1",
-    "descripcion": "Proyecto Hola Mundo, creado para validar instalación de la aplicación y funcionamiento del emulador",
+    "nombre": "Hola Mundo",
+    "descripcion": "Proyecto Hola Mundo, creado para validar instalación de la aplicación y funcionamiento del emulador.",
     "url": "https://github.com/KathyAlde21/hola_mundo_app_mov_2025",
     "img": "../assets/img/modulo4/hola_mundo_y_emulador.jpg"
   },
   {
-    "nombre": "M4_AE2 ABPRO1",
-    "descripcion": "Proyecto realizado con Android Studio que incluye dos imágenes y frase AppMovil SpA",
+    "nombre": "AppMovil SpA — Etapa 1",
+    "descripcion": "Proyecto realizado con Android Studio que incluye dos imágenes y frase AppMovil SpA.",
     "url": "https://github.com/KathyAlde21/app_movil_spa",
     "img": "../assets/img/modulo4/app_movil_spa.jpg"
   },
   {
-    "nombre": "M4_AE3-ABP1",
-    "descripcion": "Proyecto Calculadora de Propinas - Semáforo, permite calcular la propina según los valores ingresados",
+    "nombre": "Calculadora de Propinas",
+    "descripcion": "Proyecto Calculadora de Propinas - Semáforo, permite calcular la propina según los valores ingresados.",
     "url": "https://github.com/KathyAlde21/calculadora_propinas_android_java",
     "img": "../assets/img/modulo4/semaforo_propinas_codigo.jpg"
   },
   {
-    "nombre": "M4_AE3-ABPRO1",
-    "descripcion": "Continuación Proyecto AppMovil SpA que incorpora layout-land",
+    "nombre": "AppMovil SpA — Etapa 2",
+    "descripcion": "Segunda etapa del proyecto AppMovil SpA, incorporando una versión adaptada para orientación horizontal mediante layout-land.",
     "url": "https://github.com/KathyAlde21/app_movil_spa",
     "img": "../assets/img/modulo4/app_movil_spa.jpg"
   },
   {
-    "nombre": "M4_AE4-ABP1",
-    "descripcion": "Proyecto con una imagen que debe mostrarse de forma responsiva en diferentes dispositivos",
+    "nombre": "Mi Super Imagen",
+    "descripcion": "Proyecto con una imagen que debe mostrarse de forma responsiva en diferentes dispositivos.",
     "url": "https://github.com/KathyAlde21/mi_super_imagen_android",
     "img": "../assets/img/modulo4/automotive_portrait.jpg"
   },
   {
-    "nombre": "M4_AE4-ABPRO1",
-    "descripcion": "Continuación Proyecto AppMovil SpA, incluye implementación de 3 componentes de Material Design",
-    "url": "https://github.com/KathyAlde21/app_movil_spa",
-    "img": "../assets/img/modulo4/image_project_perfil_usuario.jpg"
-  },
-  {
-    "nombre": "M4_AE5-ABP1",
-    "descripcion": "Proyecto que crea un Fragment con su respectivo layout basado en el proyecto anterior Mi Super Imagen",
+    "nombre": "Mi Super Imagen con Fragment",
+    "descripcion": "Proyecto que crea un Fragment con su respectivo layout basado en el proyecto anterior Mi Super Imagen.",
     "url": "https://github.com/KathyAlde21/mi_primer_fragment_app",
     "img": "../assets/img/modulo4/mi_primer_fragment.jpg"
   },
   {
-    "nombre": "M4_AE5-ABPRO1",
-    "descripcion": "Continuación Proyecto AppMovil SpA, incluye desarrollo de la experiencia del usuario",
+    "nombre": "AppMovil SpA — Etapa 3",
+    "descripcion": "Continuación Proyecto AppMovil SpA, incluye desarrollo de la experiencia del usuario.",
     "url": "https://github.com/KathyAlde21/app_movil_spa_con_fragment",
     "img": "../assets/img/modulo4/image_project.jpg"
   },
   {
-    "nombre": "M4_AE6-ABP1",
-    "descripcion": "Repositorio de ejemplo para descripción de carga de proyectos en GitHub",
-    "url": "https://github.com/KathyAlde21/proyecto_github_ae6_abp1",
-    "img": "../assets/img/github.png"
-  },
-  {
-    "nombre": "M4_Evaluación Final",
-    "descripcion": "Aplicación Biblioteca, permite mostrar libros preingresados",
+    "nombre": "Aplicación Biblioteca",
+    "descripcion": "Aplicación Biblioteca, permite mostrar libros preingresados.",
     "url": "https://github.com/KathyAlde21/app_libreria_android",
     "img": "../assets/img/modulo4/libreria_emulador.png"
   }
